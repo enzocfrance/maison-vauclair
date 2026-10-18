@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* Swiss restraint: one ink, one accent, fine rules. Default palette removed. */
+@theme {
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-ink: #111111;
+  --color-muted: #6e6e6a;
+  --color-line: #e3e2de;
+  --color-surface: #f4f3f0;
+  --color-placeholder: #ddd8cc;
+  --color-accent: #d52b1e;
+
+  --tracking-label: 0.2em;
+  --tracking-brand: 0.27em;
+}
+
+@theme inline {
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background-color: var(--color-ink);
+    color: var(--color-white);
+  }
+}
+
+/* Small spaced capitals used for eyebrows and field labels. */
+@utility label-caps {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
