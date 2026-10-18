@@ -5,6 +5,7 @@
 Mise en situation pour CS Digital (entretien le 21 octobre 2026) : livrer en 3 heures la première version d'une mini-application pour Maison Vauclair, fromagerie et épicerie fine vaudoise **fictive**. Enzo pilote, vérifie et tranche.
 
 Références dans `docs/` :
+
 - `BRIEF.md` : le brief du client, reproduit tel quel ;
 - `ANALYSE.md` : l'analyse, le plan des 3 heures et l'ordre de coupe ;
 - `maquettes/` : 4 maquettes HTML validées (parcours mobile en 390 px, fiche de préparation au format A4).
@@ -72,6 +73,7 @@ src/
 ```
 
 Règles d'import, vérifiées par ESLint :
+
 - `shared` n'importe ni `frontend`, ni `backend`, ni React, ni Next ;
 - `frontend` n'importe jamais `backend` : les composants clients passent par l'API HTTP (`/api/...`) ;
 - `backend` n'importe jamais `frontend` ;
@@ -85,24 +87,26 @@ Le catalogue et les commandes sont derrière des interfaces (`CatalogRepository`
 - Les chemins sont traduits. Une table unique dans `shared` fait correspondre chaque page à son chemin FR et DE ; le middleware réécrit vers les routes internes en anglais, et les liens sont générés à partir de cette table. Les chemins internes ne sont pas exposés.
 - Le sélecteur de langue mène à la même page dans l'autre langue (liens avec `hreflang`), `<html lang>` suit la langue, et les métadonnées déclarent les alternatives.
 
-| Page | FR | DE |
-|---|---|---|
-| Étape 1 : la taille | `/fr` | `/de` |
-| Étape 2 : remplir | `/fr/coffret/composer` | `/de/geschenkbox/zusammenstellen` |
-| Étape 3 : livraison | `/fr/coffret/livraison` | `/de/geschenkbox/lieferung` |
-| Confirmation | `/fr/coffret/confirmation/{n°}` | `/de/geschenkbox/bestaetigung/{n°}` |
-| Bienvenue (cible du QR) | `/fr/bienvenue` | `/de/willkommen` |
-| Données personnelles | `/fr/donnees-personnelles` | `/de/datenschutz` |
-| Espace équipe (français) | `/equipe`, `/equipe/commandes/{n°}`, `/equipe/commandes/{n°}/carte` | — |
+| Page                     | FR                                                                  | DE                                  |
+| ------------------------ | ------------------------------------------------------------------- | ----------------------------------- |
+| Étape 1 : la taille      | `/fr`                                                               | `/de`                               |
+| Étape 2 : remplir        | `/fr/coffret/composer`                                              | `/de/geschenkbox/zusammenstellen`   |
+| Étape 3 : livraison      | `/fr/coffret/livraison`                                             | `/de/geschenkbox/lieferung`         |
+| Confirmation             | `/fr/coffret/confirmation/{n°}`                                     | `/de/geschenkbox/bestaetigung/{n°}` |
+| Bienvenue (cible du QR)  | `/fr/bienvenue`                                                     | `/de/willkommen`                    |
+| Données personnelles     | `/fr/donnees-personnelles`                                          | `/de/datenschutz`                   |
+| Espace équipe (français) | `/equipe`, `/equipe/commandes/{n°}`, `/equipe/commandes/{n°}/carte` | —                                   |
 
 ## Décisions validées
 
 **Prix**
+
 - Total = somme des produits + forfait coffret, affiché sur une ligne à part : Petit (4) CHF 9.–, Classique (6) CHF 12.–, Grand (9) CHF 15.–. Le forfait couvre la boîte, le calage isotherme, la carte et l'envoi : aucun autre frais.
 - Étape 1 : « dès CHF … » = les produits les moins chers du catalogue pour la taille + le forfait.
 - Un exemplaire au plus par produit ; on ne continue qu'avec un coffret plein.
 
 **Livraison** (fonction pure, tests d'abord)
+
 - Jour ouvré : du lundi au vendredi, hors jours fériés vaudois.
 - Expédition au plus tôt le lendemain de la commande, sans heure limite.
 - Coffret contenant au moins un produit frais : expédition du lundi au mercredi, et seulement si la livraison du lendemain tombe un jour ouvré. Test obligatoire : mercredi 13 mai 2026, veille de l'Ascension.
@@ -112,22 +116,26 @@ Le catalogue et les commandes sont derrière des interfaces (`CatalogRepository`
 - Limite de la v1, à écrire dans le README : les jours fériés du canton du destinataire ne sont pas gérés.
 
 **Étape 3 : le formulaire**
+
 - Destinataire : nom, rue, NPA (4 chiffres), localité, avec la mention « Livraison en Suisse uniquement ».
 - Langue de la carte (FR ou DE), par défaut celle de l'interface ; message de longueur limitée ; carte de bienvenue.
 - Acheteur : nom et e-mail.
 - Si le coffret contient du vin, case obligatoire : « L'acheteur et le destinataire ont 16 ans ou plus. »
 
 **Après la validation**
+
 - Le client voit une page de confirmation (numéro, date de livraison, aperçu de la carte). La fiche de préparation est réservée à l'espace équipe.
 - Si la date recalculée par le serveur diffère de celle affichée, la confirmation le dit clairement.
 
 **Espace équipe**
+
 - Protégé par un mot de passe HTTP géré par le middleware, avec sa valeur dans `TEAM_PASSWORD` (variables Dokploy). Variable absente en production : l'espace reste fermé.
 - En français. Fiche de préparation A4 et carte de bienvenue A6 imprimables.
 
 **Carte de bienvenue** : un code aléatoire par commande, un QR code vers la page « Bienvenue » dans la langue de la carte, avec des paramètres `utm_*`, sans cookie, et un avantage fictif de 10 % sur la première commande.
 
 **Mode démonstration**
+
 - Une date simulée passée en paramètre d'URL, sans cookie, acceptée par le serveur seulement si `DEMO_MODE` est activé.
 - Elle reste active pendant tout le parcours : liens, état du coffret, envoi de la commande.
 - Un bandeau visible sur chaque page affiche « Mode démonstration · date simulée : … ».
@@ -140,6 +148,7 @@ Le catalogue et les commandes sont derrière des interfaces (`CatalogRepository`
 ## Direction visuelle (issue des maquettes)
 
 Luxe suisse : de la retenue, des filets fins, un seul accent de couleur.
+
 - Couleurs : encre `#111111`, texte secondaire `#6E6E6A`, filets `#E3E2DE`, fond produit `#F4F3F0`, accent unique `#D52B1E`, réservé aux signaux (date de livraison, frais, « le plus offert »).
 - Police Archivo (300 à 600) : titres légers à interlettrage serré, libellés en petites capitales espacées, montants en chiffres tabulaires.
 - Filets de 1 px, aucun arrondi sauf les pastilles, zones tactiles d'au moins 44 px.
