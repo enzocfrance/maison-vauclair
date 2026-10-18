@@ -1,0 +1,16 @@
+import { Fragment, type ReactNode } from "react";
+
+/** Like `format`, but values can be elements, e.g. a date in bold. */
+export function formatRich(
+  template: string,
+  values: Readonly<Record<string, ReactNode>>,
+): ReactNode {
+  return template.split(/(\{\w+\})/g).map((part, index) => {
+    const name = /^\{(\w+)\}$/.exec(part)?.[1];
+    return (
+      <Fragment key={index}>
+        {name !== undefined && name in values ? values[name] : part}
+      </Fragment>
+    );
+  });
+}
