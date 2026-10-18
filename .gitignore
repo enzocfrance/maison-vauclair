@@ -1,0 +1,31 @@
+# Dépendances
+node_modules/
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+
+# Build et tests
+build/
+coverage/
+*.tsbuildinfo
+
+# Variables d'environnement (seul .env.example est versionné)
+.env
+.env.*
+!.env.example
+
+# Commandes stockées localement (jamais versionnées)
+data/orders/*.json
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
