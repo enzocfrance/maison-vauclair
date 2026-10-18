@@ -1,0 +1,20 @@
+.git
+.github
+.next
+.vscode
+node_modules
+coverage
+out
+data
+docs
+*.md
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*
+
+# Secrets never enter the image.
+.env
+.env.*
+
+Dockerfile
+.dockerignore
