@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Livraison et message · maquette Maison Vauclair</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#111111}a:hover{color:#D52B1E}
+</style>
+</head>
+<body>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #FFFFFF; color: #111111; font-family: Archivo, sans-serif; display: flex; flex-direction: column">
+  <header style="display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-bottom: 1px solid #E3E2DE">
+    <a href="2-composer.html" aria-label="Retour" style="display: flex; justify-content: center; align-items: center; width: 44px; height: 44px; color: #111111">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12H4M10 6l-6 6 6 6"></path></svg>
+    </a>
+    <div style="display: flex; flex-direction: column; gap: 3px">
+      <div style="font-size: 11px; font-weight: 600; letter-spacing: 2.5px; color: #6E6E6A">LIVRAISON · 3 / 3</div>
+      <div style="font-size: 24px; font-weight: 300; letter-spacing: -0.5px">Pour qui, et quand.</div>
+    </div>
+  </header>
+
+  <section aria-label="Date de livraison" style="display: flex; flex-direction: column; gap: 10px; padding: 28px 16px 22px">
+    <div style="font-size: 11px; font-weight: 600; letter-spacing: 2.5px; color: #6E6E6A">LIVRAISON PRÉVUE</div>
+    <div style="display: flex; align-items: center; gap: 12px">
+      <div aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #D52B1E; flex-shrink: 0"></div>
+      <div style="font-size: 34px; font-weight: 300; letter-spacing: -1px; line-height: 1.05">Mardi 15 décembre</div>
+    </div>
+    <div style="font-size: 14px; line-height: 1.5; color: #6E6E6A">Expédié le lundi 14 décembre, en emballage réfrigéré.</div>
+  </section>
+
+  <div style="margin: 0 16px; padding: 12px 0; border-top: 1px solid #111111; border-bottom: 1px solid #111111; font-size: 13px; line-height: 1.45">Le frais voyage du lundi au mercredi. Dernière commande pour Noël : <strong style="font-weight: 600">mardi 22 décembre</strong>.</div>
+
+  <div style="display: flex; flex-direction: column; gap: 22px; padding: 24px 16px; flex-grow: 1">
+    <div style="display: flex; flex-direction: column; gap: 4px">
+      <label for="dest" style="font-size: 10px; font-weight: 600; letter-spacing: 2px; color: #6E6E6A">DESTINATAIRE</label>
+      <input id="dest" type="text" value="Ursula Meier" style="min-height: 44px; box-sizing: border-box; border: 0; border-bottom: 1px solid #111111; border-radius: 0; background: transparent; padding: 0; font: 400 16px Archivo, sans-serif; color: #111111">
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <label for="msg" style="font-size: 10px; font-weight: 600; letter-spacing: 2px; color: #6E6E6A">VOTRE MESSAGE</label>
+      <textarea id="msg" rows="3" style="box-sizing: border-box; border: 1px solid #111111; border-radius: 0; background: transparent; padding: 12px; font: 400 15px Archivo, sans-serif; line-height: 1.5; color: #111111; resize: none">Joyeux Noël, maman ! Des fromages de chez nous pour les fêtes. Thomas</textarea>
+    </div>
+    <label style="display: flex; gap: 12px; align-items: flex-start; font-size: 14px; line-height: 1.45; cursor: pointer">
+      <input type="checkbox" checked style="width: 20px; height: 20px; margin: 0; accent-color: #111111; flex-shrink: 0">
+      <span><span style="font-weight: 500">Glisser une carte de bienvenue</span> pour Ursula, avec un avantage sur sa première commande.</span>
+    </label>
+  </div>
+
+  <footer style="display: flex; flex-direction: column; gap: 12px; padding: 14px 16px 22px; border-top: 1px solid #111111">
+    <div style="display: flex; justify-content: space-between; align-items: baseline">
+      <span style="font-size: 10px; font-weight: 600; letter-spacing: 2px; color: #6E6E6A">CLASSIQUE · 6 PRODUITS</span>
+      <span style="font-size: 22px; font-weight: 400; font-variant-numeric: tabular-nums">CHF 104.20</span>
+    </div>
+    <a href="4-fiche-preparation.html" style="display: flex; justify-content: space-between; align-items: center; min-height: 56px; padding: 0 22px; background: #111111; color: #FFFFFF; font-size: 13px; font-weight: 600; letter-spacing: 2px; text-decoration: none">
+      <span>VALIDER MON COFFRET</span>
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6"></path></svg>
+    </a>
+  </footer>
+</div>
+</body>
+</html>
