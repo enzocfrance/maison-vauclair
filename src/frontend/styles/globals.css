@@ -33,6 +33,13 @@
     outline-offset: 3px;
   }
 
+  /* WCAG 2.4.11: the sticky total bar on mobile must not hide the focused element. */
+  @media (width < 64rem) {
+    html {
+      scroll-padding-bottom: 9rem;
+    }
+  }
+
   ::selection {
     background-color: var(--color-ink);
     color: var(--color-white);
