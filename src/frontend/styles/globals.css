@@ -46,6 +46,12 @@
   }
 }
 
+/* The preparation sheet and the welcome card are printed on A4. */
+@page {
+  size: A4;
+  margin: 12mm;
+}
+
 /* Small spaced capitals used for eyebrows and field labels. */
 @utility label-caps {
   font-size: 0.6875rem;

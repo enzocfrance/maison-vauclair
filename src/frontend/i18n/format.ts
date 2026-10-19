@@ -32,6 +32,16 @@ export function formatLongDate(
   return options.year ? `${dayAndMonth} ${date.slice(0, 4)}` : dayAndMonth;
 }
 
+/** « lundi 14 déc. », for the preparation sheet. */
+export function formatShortDate(date: IsoDate, locale: Locale): string {
+  return new Intl.DateTimeFormat(intlLocales[locale], {
+    weekday: "long",
+    day: "numeric",
+    month: "short",
+    timeZone: "UTC",
+  }).format(new Date(`${date}T00:00:00Z`));
+}
+
 export function capitalize(text: string): string {
   return text.charAt(0).toLocaleUpperCase() + text.slice(1);
 }
