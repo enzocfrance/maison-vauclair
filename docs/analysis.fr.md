@@ -1,6 +1,6 @@
 # Analyse du brief · Maison Vauclair
 
-> **Origine de ce document.** Les sections 1 à 7 sont une première analyse faite avec Claude (claude.ai) entre le 16 et le 18 octobre 2026, que j'ai relue et discutée. Les maquettes de `docs/maquettes/` ont été produites de la même façon avec ma vision d'une interface moderne stylysée pour Maison Vauclair. La section 8 est mon avis personnel, écrit par moi : ce que je garde, ce que je change et pourquoi.
+> **Origine de ce document.** Les sections 1 à 7 sont une première analyse faite avec Claude (claude.ai) entre le 16 et le 18 octobre 2026, que j'ai relue et discutée. Les maquettes de `docs/mockups/` ont été produites de la même façon avec ma vision d'une interface moderne stylysée pour Maison Vauclair. La section 8 est mon avis personnel, écrit par moi : ce que je garde, ce que je change et pourquoi.
 
 ## 1. Ce que le brief teste vraiment *(fait avec Claude)*
 
