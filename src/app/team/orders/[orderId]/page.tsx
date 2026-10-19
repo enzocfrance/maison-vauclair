@@ -34,7 +34,17 @@ export default async function SheetPage({ params }: SheetPageProps) {
           <ArrowLeftIcon className="size-5" />
           {teamTexts.sheet.back}
         </Link>
-        <PrintButton label={teamTexts.sheet.print} />
+        <div className="flex flex-wrap items-center gap-6">
+          {order.welcomeCode && (
+            <Link
+              href={teamPath("card", { orderId })}
+              className="text-sm underline underline-offset-4 hover:no-underline"
+            >
+              {teamTexts.sheet.welcomeCard}
+            </Link>
+          )}
+          <PrintButton label={teamTexts.sheet.print} />
+        </div>
       </div>
       <PreparationSheet order={order} />
     </main>

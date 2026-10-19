@@ -145,4 +145,21 @@ export const de: Dictionary = {
     noWelcomeCard: "Ohne Willkommenskarte.",
     another: "Eine weitere Box zusammenstellen",
   },
+  welcome: {
+    title: "Willkommen",
+    eyebrow: "Willkommen bei Maison Vauclair",
+    heading: "Jemand hat an Sie gedacht.",
+    lead: "Die Box, die Sie erhalten haben, wurde in unserer Waadtländer Käserei von Hand zusammengestellt. Bei Ihrer ersten Bestellung erhalten Sie {discount} % Rabatt.",
+    codeLabel: "Ihr Code",
+    codeHint: "Bei Ihrer ersten Bestellung einzugeben.",
+    cta: "Eine Box zusammenstellen",
+    card: {
+      eyebrow: "Willkommen",
+      heading: "Diese Box kommt von uns.",
+      text: "Als Waadtländer Käserei und Feinkostgeschäft stellen wir jede Box von Hand zusammen. Bei Ihrer ersten Bestellung erhalten Sie {discount} % Rabatt.",
+      codeLabel: "Ihr Code",
+      scan: "Scannen und das Haus entdecken",
+      qrLabel: "QR-Code zur Willkommensseite von Maison Vauclair",
+    },
+  },
 };

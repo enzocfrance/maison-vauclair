@@ -41,5 +41,11 @@ export const teamTexts = {
     preparedBy: "Préparé par : ____________",
     print: "Imprimer la fiche",
     back: "Toutes les commandes",
+    welcomeCard: "Carte de bienvenue",
+  },
+  cardPage: {
+    title: "Carte de bienvenue",
+    print: "Imprimer la carte",
+    back: "Fiche de préparation",
   },
 };

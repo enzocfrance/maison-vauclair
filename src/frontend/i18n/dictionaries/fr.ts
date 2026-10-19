@@ -145,6 +145,23 @@ export const fr = {
     noWelcomeCard: "Sans carte de bienvenue.",
     another: "Composer un autre coffret",
   },
+  welcome: {
+    title: "Bienvenue",
+    eyebrow: "Bienvenue chez Maison Vauclair",
+    heading: "Quelqu'un a pensé à vous.",
+    lead: "Le coffret que vous avez reçu a été assemblé à la main dans notre fromagerie vaudoise. Pour votre première commande, profitez de {discount} % de réduction.",
+    codeLabel: "Votre code",
+    codeHint: "À saisir lors de votre première commande.",
+    cta: "Composer un coffret",
+    card: {
+      eyebrow: "Bienvenue",
+      heading: "Ce coffret vient de chez nous.",
+      text: "Fromagerie et épicerie fine vaudoise, nous assemblons chaque coffret à la main. Pour votre première commande, profitez de {discount} % de réduction.",
+      codeLabel: "Votre code",
+      scan: "Scannez pour découvrir la maison",
+      qrLabel: "QR code vers la page de bienvenue de Maison Vauclair",
+    },
+  },
 };
 
 export type Dictionary = typeof fr;
