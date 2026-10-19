@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { primaryAction } from "@/frontend/components/action-styles";
@@ -17,6 +18,7 @@ import {
   formatSize,
 } from "@/frontend/i18n/format";
 import { boxSizes } from "@/shared/catalog/box-sizes";
+import { categoryImage, productImage } from "@/shared/catalog/images";
 import {
   categories,
   type Category,
@@ -140,6 +142,21 @@ export function BoxFiller({
               );
             })}
           </div>
+
+          <figure className="relative mt-5 overflow-hidden bg-surface">
+            <Image
+              src={categoryImage(category)}
+              alt=""
+              width={1200}
+              height={480}
+              priority
+              className="aspect-[5/2] w-full object-cover"
+            />
+            <figcaption className="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/90 to-transparent px-4 pt-12 pb-3.5 text-white">
+              <p className="text-lg font-light">{t.categories[category]}</p>
+              <p className="text-[0.8125rem]">{t.categoryIntro[category]}</p>
+            </figcaption>
+          </figure>
 
           <ul>
             {products
@@ -297,13 +314,6 @@ function Progress({
   );
 }
 
-const visualShapes: Record<Category, string> = {
-  cheese: "size-9 rounded-full",
-  charcuterie: "h-6 w-10 rounded-full",
-  wine: "h-10 w-3.5 rounded-sm",
-  grocery: "size-8 rounded-md",
-};
-
 function ProductRow({
   product,
   locale,
@@ -324,12 +334,14 @@ function ProductRow({
 
   return (
     <li className="flex items-center gap-3.5 border-b border-line py-3.5">
-      <div
-        aria-hidden="true"
-        className="flex size-16 shrink-0 items-center justify-center bg-surface"
-      >
-        <div className={`bg-placeholder ${visualShapes[product.category]}`} />
-      </div>
+      {/* The name is right next to it: the photo adds an idea, not information. */}
+      <Image
+        src={productImage(product.id)}
+        alt=""
+        width={160}
+        height={160}
+        className="size-20 shrink-0 bg-surface object-cover"
+      />
       <div className="flex min-w-0 grow flex-col gap-1">
         {product.fresh && (
           <p className="text-[0.625rem] font-semibold tracking-label text-muted uppercase">

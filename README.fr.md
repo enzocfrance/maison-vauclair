@@ -95,6 +95,7 @@ Les raisons de chaque choix sont dans [docs/decisions.fr.md](docs/decisions.fr.m
 - **Sécurité** : le serveur recalcule prix et dates et refuse les champs inconnus ; la page de confirmation exige la clé secrète de la commande ; l'espace équipe a un mot de passe et reste fermé sans lui ; les numéros de commande sont vérifiés avant de toucher au disque ; la taille des requêtes et le nombre de commandes sont limités ; en-têtes de sécurité (CSP, `nosniff`, pas d'intégration en iframe, politique de référent, HSTS).
 - **Accessibilité** (objectif WCAG 2.2 AA) : contrôles natifs, focus visible, lien d'évitement, erreurs liées à leur champ avec le focus sur la première, annonces en direct du contenu du coffret, `autocomplete`, attributs `lang`, focus jamais masqué par les barres fixes, mode couleurs forcées.
 - **Données personnelles** : aucun cookie, polices servies par le site lui-même, aucune donnée envoyée à des tiers ni à un service d'IA.
+- **Photos** : chaque produit et chaque catégorie a une photo de Wikimedia Commons sous licence libre (CC0, domaine public, CC BY, CC BY-SA), recadrée et compressée en WebP dans `public/images` ; auteurs et licences sont crédités sur `/fr/credits-photos` et `/de/bildnachweis`.
 
 ## Déploiement
 

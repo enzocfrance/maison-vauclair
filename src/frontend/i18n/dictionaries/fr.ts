@@ -55,6 +55,12 @@ export const fr = {
       wine: "Vins",
       grocery: "Épicerie",
     },
+    categoryIntro: {
+      cheese: "Six fromages d'alpage et de cave, coupés à la commande.",
+      charcuterie: "Spécialités vaudoises et valaisannes, fumées ou séchées.",
+      wine: "Les vins du Lavaux et du Chablais, à deux pas de la fromagerie.",
+      grocery: "Miel, vin cuit, bricelets : les douceurs du canton.",
+    },
     fresh: "Frais",
     add: "Ajouter {name}",
     remove: "Retirer {name}",
@@ -190,6 +196,17 @@ export const fr = {
         body: "Selon la loi fédérale sur la protection des données (nLPD), vous pouvez demander l'accès à vos données, leur rectification ou leur suppression.",
       },
     ],
+  },
+  credits: {
+    title: "Crédits photos",
+    link: "Crédits photos",
+    eyebrow: "Photographies",
+    heading: "Crédits photos",
+    intro:
+      "Les photos des produits viennent de Wikimedia Commons, publiées sous licence libre par leurs auteurs. Certaines ont été recadrées. Elles illustrent des produits fictifs.",
+    author: "Auteur :",
+    license: "Licence :",
+    source: "Voir la photo d'origine",
   },
 };
 

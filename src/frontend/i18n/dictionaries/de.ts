@@ -57,6 +57,14 @@ export const de: Dictionary = {
       wine: "Weine",
       grocery: "Feinkost",
     },
+    categoryIntro: {
+      cheese: "Sechs Alp- und Kellerkäse, auf Bestellung geschnitten.",
+      charcuterie:
+        "Waadtländer und Walliser Spezialitäten, geräuchert oder getrocknet.",
+      wine: "Weine aus dem Lavaux und dem Chablais, gleich neben der Käserei.",
+      grocery:
+        "Honig, Vin cuit, Bricelets: die süssen Spezialitäten des Kantons.",
+    },
     fresh: "Frisch",
     add: "{name} hinzufügen",
     remove: "{name} entfernen",
@@ -190,5 +198,16 @@ export const de: Dictionary = {
         body: "Nach dem Bundesgesetz über den Datenschutz (DSG) können Sie Auskunft über Ihre Daten sowie deren Berichtigung oder Löschung verlangen.",
       },
     ],
+  },
+  credits: {
+    title: "Bildnachweis",
+    link: "Bildnachweis",
+    eyebrow: "Fotografien",
+    heading: "Bildnachweis",
+    intro:
+      "Die Produktfotos stammen von Wikimedia Commons und wurden von ihren Urhebern unter freien Lizenzen veröffentlicht. Einige wurden zugeschnitten. Sie illustrieren fiktive Produkte.",
+    author: "Urheber:",
+    license: "Lizenz:",
+    source: "Originalfoto ansehen",
   },
 };

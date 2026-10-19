@@ -95,6 +95,7 @@ The reasons behind each choice are in [docs/decisions.md](docs/decisions.md).
 - **Security**: the server recomputes prices and dates and rejects unknown fields; the confirmation page needs the order's secret key; the team space has a password and stays closed without one; order numbers are checked before touching the file system; request size and order rate are limited; security headers (CSP, `nosniff`, no framing, referrer policy, HSTS).
 - **Accessibility** (WCAG 2.2 AA target): native controls, visible focus, skip link, errors tied to their field with focus on the first one, live announcements of the box contents, `autocomplete`, `lang` attributes, focus never hidden by sticky bars, forced colours mode.
 - **Privacy**: no cookie, fonts served by the site itself, no data sent to third parties or to any AI service.
+- **Photos**: every product and category has a photo from Wikimedia Commons under a free licence (CC0, public domain, CC BY, CC BY-SA), cropped and compressed to WebP in `public/images`; authors and licences are credited on `/fr/credits-photos` and `/de/bildnachweis`.
 
 ## Deployment
 

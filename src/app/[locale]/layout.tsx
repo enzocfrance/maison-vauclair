@@ -26,10 +26,16 @@ export default async function LocaleLayout({
       {children}
       <SiteFooter
         demoNotice={dictionary.site.demoNotice}
-        privacyLink={{
-          href: localizedPath(locale, "privacy"),
-          label: dictionary.privacy.link,
-        }}
+        links={[
+          {
+            href: localizedPath(locale, "privacy"),
+            label: dictionary.privacy.link,
+          },
+          {
+            href: localizedPath(locale, "photoCredits"),
+            label: dictionary.credits.link,
+          },
+        ]}
       />
     </div>
   );

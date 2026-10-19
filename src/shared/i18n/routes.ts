@@ -27,6 +27,11 @@ export const localizedRoutes = {
     fr: "donnees-personnelles",
     de: "datenschutz",
   },
+  photoCredits: {
+    internal: "photo-credits",
+    fr: "credits-photos",
+    de: "bildnachweis",
+  },
 } as const satisfies Record<string, Record<"internal" | Locale, string>>;
 
 export type RouteKey = keyof typeof localizedRoutes;
