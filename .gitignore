@@ -1,4 +1,4 @@
-# Dépendances
+# Dependencies
 node_modules/
 
 # Next.js
@@ -6,17 +6,17 @@ node_modules/
 out/
 next-env.d.ts
 
-# Build et tests
+# Build and tests
 build/
 coverage/
 *.tsbuildinfo
 
-# Variables d'environnement (seul .env.example est versionné)
+# Environment variables (only .env.example is versioned)
 .env
 .env.*
 !.env.example
 
-# Commandes stockées localement (jamais versionnées)
+# Orders stored locally (never versioned)
 data/orders/*.json
 data/orders/.*.tmp
 
@@ -26,7 +26,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Fichiers système
+# System files
 .DS_Store
 Thumbs.db
 desktop.ini

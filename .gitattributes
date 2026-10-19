@@ -1,7 +1,7 @@
-# Fins de ligne LF pour tous les fichiers texte
+# LF line endings for every text file
 * text=auto eol=lf
 
-# Fichiers binaires
+# Binary files
 *.png binary
 *.jpg binary
 *.jpeg binary

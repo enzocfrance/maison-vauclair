@@ -1,160 +1,175 @@
-# CLAUDE.md · Maison Vauclair, « Composez votre coffret »
+# CLAUDE.md · Maison Vauclair, "Build your gift box"
 
-## Contexte
+## Context
 
-Mise en situation pour CS Digital (entretien le 21 octobre 2026) : livrer en 3 heures la première version d'une mini-application pour Maison Vauclair, fromagerie et épicerie fine vaudoise **fictive**. Enzo pilote, vérifie et tranche.
+Role-play exercise for CS Digital (interview on 21 October 2026): deliver in 3 hours the first version of a mini-application for Maison Vauclair, a **fictitious** cheese shop and delicatessen from the canton of Vaud. Enzo leads, checks and decides.
 
-Références dans `docs/` :
+References in `docs/` (English by default, French in `*.fr.md`):
 
-- `BRIEF.md` : le brief du client, reproduit tel quel ;
-- `ANALYSE.md` : l'analyse, le plan des 3 heures et l'ordre de coupe ;
-- `maquettes/` : 4 maquettes HTML validées (parcours mobile en 390 px, fiche de préparation au format A4).
+- `brief.md`: the client's brief (the French original, reproduced as is, is `brief.fr.md`);
+- `analysis.md`: the analysis, the 3-hour plan and the cutting order;
+- `mockups/`: 4 approved HTML mock-ups (mobile journey at 390 px, A4 preparation sheet);
+- `decisions.md`: decisions and trade-offs; `director-note.md`: the one-page note for the director.
 
-## Le problème
+## The problem
 
-Près de la moitié des ventes en ligne se fait à Noël, par des clients qui ne commandent qu'une fois par an pour offrir un cadeau, alors que le coffret cadeau n'est vendu qu'en boutique. Le frais ne part que du lundi au mercredi et, en 2026, le 24 décembre tombe un jeudi : personne ne sait jusqu'à quand commander. Enfin, chaque coffret fait découvrir la maison à un destinataire qui n'est pas encore client.
+Almost half of online sales happen at Christmas, from customers who order once a year to give a gift, while the gift box is only sold in the shops. Fresh products only ship from Monday to Wednesday and, in 2026, 24 December is a Thursday: nobody knows until when to order. Finally, every box introduces the shop to a recipient who is not a customer yet.
 
-## Périmètre de la v1
+## v1 scope
 
-1. Composer un coffret en ligne : choisir une taille (4, 6 ou 9 produits), le remplir, voir le total.
-2. Afficher une date de livraison fiable, qui respecte la règle du frais, et la date limite pour Noël.
-3. Saisir le destinataire, la langue de sa carte et un message.
-4. Enregistrer la commande côté serveur et produire une fiche de préparation imprimable pour l'équipe, sans outil de plus à apprendre.
-5. Produire une carte de bienvenue avec QR code pour transformer le destinataire en client.
-6. Fonctionner en français et en allemand.
+1. Build a box online: choose a size (4, 6 or 9 products), fill it, see the total.
+2. Show a reliable delivery date that respects the fresh-product rule, and the Christmas deadline.
+3. Enter the recipient, the language of their card and a message.
+4. Store the order on the server and produce a printable preparation sheet for the team, with no new tool to learn.
+5. Produce a welcome card with a QR code to turn the recipient into a customer.
+6. Work in French and German.
 
-**Hors périmètre, volontairement** : paiement, comptes clients, connexion réelle à WooCommerce, chatbot, application mobile native.
+**Deliberately out of scope**: payment, customer accounts, real WooCommerce connection, chatbot, native mobile app.
 
-## Contraintes non négociables
+## Non-negotiable constraints
 
-- Aucune IA ni appel à un modèle dans l'application (exigence de la direction).
-- Pas de base de données en v1 : catalogue en JSON, commandes en fichiers JSON dans `data/orders/` (jamais versionnés), derrière une interface remplaçable par une connexion WooCommerce.
-- Mobile d'abord, mais impeccable sur ordinateur : la démo se fait sur grand écran.
-- Accessible : WCAG 2.2 AA.
-- Données inventées, avec la mention « Projet de démonstration · entreprise fictive » sur chaque page, impression comprise.
+- No AI and no call to a model in the application (management requirement).
+- No database in v1: catalogue in JSON, orders as JSON files in `data/orders/` (never versioned), behind an interface a WooCommerce connection can replace.
+- Mobile first, but flawless on desktop: the demo is shown on a big screen.
+- Accessible: WCAG 2.2 AA.
+- Invented data, with the notice « Projet de démonstration · entreprise fictive » on every page, printouts included.
 
 ## Stack
 
-- Next.js 15 (App Router) et TypeScript strict
+- Next.js 15 (App Router) and strict TypeScript
 - Tailwind CSS v4
-- Zod pour la validation partagée entre client et serveur
-- Vitest pour les tests
-- Docker pour l'image, déploiement sur le VPS via Dokploy, sous `maison-vauclair.enzo-chamanier.fr`
+- Zod for validation shared between client and server
+- Vitest for tests
+- Docker image, deployed to the VPS with Dokploy at `maison-vauclair.enzo-chamanier.fr`
 
-Versions fixées : `next` et `eslint-config-next` 15.5.28, `typescript` 5.x (la 7 n'est pas prise en charge par Next 15), `eslint` 9.x (`eslint-config-next` 15 refuse la 10).
+Pinned versions: `next` and `eslint-config-next` 15.5.28, `typescript` 5.x (7 is not supported by Next 15), `eslint` 9.x (`eslint-config-next` 15 refuses 10), `postcss` forced to 8.5.30 through `overrides` (the version bundled with Next 15 is vulnerable).
+
+## Commands
+
+```bash
+npm run dev           # development server, http://localhost:3000
+npm run build         # production build (standalone output)
+npm test              # Vitest
+npm run typecheck     # route types + tsc
+npm run lint          # ESLint, including the layer rules
+npm run format:check  # Prettier
+```
 
 ## Conventions
 
-- Code et noms (fichiers, variables, types, routes internes) en anglais.
-- Textes d'interface en français et en allemand, jamais en dur dans les composants.
-- TypeScript strict, sans `any`.
-- Montants en centimes, en entiers (`priceCents: 1450`) ; le formatage en CHF n'a lieu qu'à l'affichage.
-- Dates métier au format `AAAA-MM-JJ`.
-- Commits au format Conventional Commits (`feat:`, `fix:`, `test:`, `docs:`, `chore:`…).
-- **Demander à Enzo avant d'ajouter une dépendance.**
+- Code, names, file names, comments, commit messages and project documents in English.
+- Deliverables and documents in English by default, with a French version next to them (`name.fr.md`) and a language link at the top of each.
+- Interface texts in French and German, never hard-coded in components (dictionaries in `src/frontend/i18n/`). The team space is French only (`src/frontend/team/team-texts.ts`).
+- Strict TypeScript, no `any`.
+- Amounts in cents, as integers (`priceCents: 1450`); formatting to CHF only happens on display.
+- Business dates as `YYYY-MM-DD` strings.
+- Commits follow Conventional Commits, in English.
+- **Ask Enzo before adding a dependency.**
 
-## Règles de travail
+## Working rules
 
-- Le serveur recalcule toujours les prix et les dates : il ne fait jamais confiance au navigateur.
-- La règle de livraison est isolée dans une fonction pure, écrite en commençant par les tests.
-- Ne jamais lire un fichier `.env` ; n'écrire aucun secret dans le dépôt. Variables d'environnement : `TEAM_PASSWORD`, `DEMO_MODE`, `SITE_URL`.
+- The server always recomputes prices and dates: it never trusts the browser.
+- The delivery rule is isolated in a pure function, written test first.
+- Never read a `.env` file; never write a secret in the repository.
+- Environment variables: `TEAM_PASSWORD`, `DEMO_MODE`, `SITE_URL`, `ORDERS_DIR` (optional). Deployment secrets live in GitHub Actions: `DOKPLOY_URL`, `DOKPLOY_API_KEY`, `DOKPLOY_APPLICATION_ID`.
 
 ## Architecture
 
-Une seule application Next.js, découpée en couches séparées :
+One Next.js application, split into layers:
 
 ```
 src/
-├── app/           Routage Next.js uniquement : pages, layouts, routes d'API. Fin, il assemble les couches.
-├── frontend/      Interface : composants, parcours du coffret, dictionnaires FR/DE.
-├── backend/       Serveur uniquement : cas d'usage, dépôts (catalogue, commandes), configuration.
-├── shared/        Pur, utilisé des deux côtés : règles métier, schémas Zod, table des routes localisées.
-└── middleware.ts  Langue, URL localisées, mot de passe de l'espace équipe.
+├── app/           Next.js routing only: pages, layouts, API routes. Thin: it wires the layers.
+├── frontend/      Interface: components, box journey, team space, FR/DE dictionaries.
+├── backend/       Server only: use cases, repositories (catalogue, orders), configuration, access.
+├── shared/        Pure, used on both sides: business rules, Zod schemas, localised route table.
+└── middleware.ts  Language, localised URLs, team space password.
 ```
 
-Règles d'import, vérifiées par ESLint :
+Import rules, enforced by ESLint:
 
-- `shared` n'importe ni `frontend`, ni `backend`, ni React, ni Next ;
-- `frontend` n'importe jamais `backend` : les composants clients passent par l'API HTTP (`/api/...`) ;
-- `backend` n'importe jamais `frontend` ;
-- seul `app` assemble : une page serveur peut appeler un service du backend et passer le résultat à un composant du frontend.
+- `shared` imports neither `frontend`, `backend`, React nor Next;
+- `frontend` never imports `backend`: client components go through the HTTP API (`/api/orders`);
+- `backend` never imports `frontend`;
+- only `app` wires things together: a server page may call a backend service and pass the result to a frontend component.
 
-Le catalogue et les commandes sont derrière des interfaces (`CatalogRepository`, `OrderRepository`) : implémentation en fichiers JSON en v1, WooCommerce ensuite.
+The catalogue and the orders sit behind interfaces (`CatalogRepository`, `OrderRepository`): JSON files in v1, WooCommerce later. `src/backend/container.ts` is the only place where implementations are chosen.
 
-## URL et langues
+## URLs and languages
 
-- La langue est le premier segment de l'URL (`/fr/...`, `/de/...`). `/` redirige selon la langue du navigateur, en français par défaut.
-- Les chemins sont traduits. Une table unique dans `shared` fait correspondre chaque page à son chemin FR et DE ; le middleware réécrit vers les routes internes en anglais, et les liens sont générés à partir de cette table. Les chemins internes ne sont pas exposés.
-- Le sélecteur de langue mène à la même page dans l'autre langue (liens avec `hreflang`), `<html lang>` suit la langue, et les métadonnées déclarent les alternatives.
+- The language is the first URL segment (`/fr/...`, `/de/...`). `/` redirects according to the browser's language, French by default.
+- Paths are translated. One table in `src/shared/i18n/routes.ts` maps each page to its FR and DE path; the middleware rewrites to the internal English routes, and links are generated from that table. Internal paths are never exposed.
+- The language switcher leads to the same page in the other language (links with `hreflang`), `<html lang>` follows the language.
 
-| Page                     | FR                                                                  | DE                                  |
-| ------------------------ | ------------------------------------------------------------------- | ----------------------------------- |
-| Étape 1 : la taille      | `/fr`                                                               | `/de`                               |
-| Étape 2 : remplir        | `/fr/coffret/composer`                                              | `/de/geschenkbox/zusammenstellen`   |
-| Étape 3 : livraison      | `/fr/coffret/livraison`                                             | `/de/geschenkbox/lieferung`         |
-| Confirmation             | `/fr/coffret/confirmation/{n°}`                                     | `/de/geschenkbox/bestaetigung/{n°}` |
-| Bienvenue (cible du QR)  | `/fr/bienvenue`                                                     | `/de/willkommen`                    |
-| Données personnelles     | `/fr/donnees-personnelles`                                          | `/de/datenschutz`                   |
-| Espace équipe (français) | `/equipe`, `/equipe/commandes/{n°}`, `/equipe/commandes/{n°}/carte` | —                                   |
+| Page                | FR                                                                  | DE                                        |
+| ------------------- | ------------------------------------------------------------------- | ----------------------------------------- |
+| Step 1: size        | `/fr`                                                               | `/de`                                     |
+| Step 2: fill        | `/fr/coffret/composer`                                              | `/de/geschenkbox/zusammenstellen`         |
+| Step 3: delivery    | `/fr/coffret/livraison`                                             | `/de/geschenkbox/lieferung`               |
+| Confirmation        | `/fr/coffret/confirmation/{id}?key=…`                               | `/de/geschenkbox/bestaetigung/{id}?key=…` |
+| Welcome (QR target) | `/fr/bienvenue`                                                     | `/de/willkommen`                          |
+| Personal data       | `/fr/donnees-personnelles`                                          | `/de/datenschutz`                         |
+| Team space (French) | `/equipe`, `/equipe/commandes/{id}`, `/equipe/commandes/{id}/carte` | —                                         |
 
-## Décisions validées
+## Approved decisions
 
-**Prix**
+**Price**
 
-- Total = somme des produits + forfait coffret, affiché sur une ligne à part : Petit (4) CHF 9.–, Classique (6) CHF 12.–, Grand (9) CHF 15.–. Le forfait couvre la boîte, le calage isotherme, la carte et l'envoi : aucun autre frais.
-- Étape 1 : « dès CHF … » = les produits les moins chers du catalogue pour la taille + le forfait.
-- Un exemplaire au plus par produit ; on ne continue qu'avec un coffret plein.
+- Total = sum of the products + a box fee shown on its own line: Small (4) CHF 9.–, Classic (6) CHF 12.–, Large (9) CHF 15.–. The fee covers the box, insulated packing, card and shipping: no other fee.
+- Step 1: « dès CHF … » = cheapest products of the catalogue for the size + the fee.
+- At most one of each product; the journey only continues with a full box.
 
-**Livraison** (fonction pure, tests d'abord)
+**Delivery** (pure function, test first)
 
-- Jour ouvré : du lundi au vendredi, hors jours fériés vaudois.
-- Expédition au plus tôt le lendemain de la commande, sans heure limite.
-- Coffret contenant au moins un produit frais : expédition du lundi au mercredi, et seulement si la livraison du lendemain tombe un jour ouvré. Test obligatoire : mercredi 13 mai 2026, veille de l'Ascension.
-- Coffret sans produit frais : expédition n'importe quel jour ouvré, livraison le jour ouvré suivant.
-- Livré le 24 décembre = à temps pour Noël. Date limite de Noël 2026 : mardi 22 décembre ; une commande du mercredi 23 est livrée le mardi 29.
-- « Aujourd'hui » est la date du jour à Europe/Zurich, passée en paramètre aux fonctions.
-- Limite de la v1, à écrire dans le README : les jours fériés du canton du destinataire ne sont pas gérés.
+- Working day: Monday to Friday, outside Vaud public holidays.
+- Shipping at the earliest the day after the order, no cut-off time.
+- Box with at least one fresh product: ships Monday to Wednesday, and only if the next-day delivery falls on a working day (test: Wednesday 13 May 2026, eve of Ascension).
+- Box without fresh products: ships on any working day, delivered on the next working day.
+- Delivered on 24 December = in time for Christmas. 2026 deadline: Tuesday 22 December; an order on Wednesday 23 is delivered on Tuesday 29.
+- "Today" is the date in Europe/Zurich, passed as a parameter.
+- v1 limit (in the README): the public holidays of the recipient's canton are not handled.
 
-**Étape 3 : le formulaire**
+**Step 3: the form**
 
-- Destinataire : nom, rue, NPA (4 chiffres), localité, avec la mention « Livraison en Suisse uniquement ».
-- Langue de la carte (FR ou DE), par défaut celle de l'interface ; message de longueur limitée ; carte de bienvenue.
-- Acheteur : nom et e-mail.
-- Si le coffret contient du vin, case obligatoire : « L'acheteur et le destinataire ont 16 ans ou plus. »
+- Recipient: name, street, 4-digit postcode, town, with « Livraison en Suisse uniquement ».
+- Card language (FR or DE), defaulting to the interface language; message of limited length; welcome card.
+- Buyer: name and email.
+- If the box contains wine, mandatory box: « L'acheteur et le destinataire ont 16 ans ou plus. »
 
-**Après la validation**
+**After validation**
 
-- Le client voit une page de confirmation (numéro, date de livraison, aperçu de la carte). La fiche de préparation est réservée à l'espace équipe.
-- Si la date recalculée par le serveur diffère de celle affichée, la confirmation le dit clairement.
+- The customer sees a confirmation page protected by the order's secret key. The preparation sheet is only in the team space.
+- If the date recomputed by the server differs from the one shown, the confirmation says so clearly.
 
-**Espace équipe**
+**Team space**
 
-- Protégé par un mot de passe HTTP géré par le middleware, avec sa valeur dans `TEAM_PASSWORD` (variables Dokploy). Variable absente en production : l'espace reste fermé.
-- En français. Fiche de préparation A4 et carte de bienvenue A6 imprimables.
+- Protected by an HTTP password handled by the middleware, value in `TEAM_PASSWORD`. Missing variable in production: the space stays closed.
+- In French. Printable A4 preparation sheet and A6 welcome card.
 
-**Carte de bienvenue** : un code aléatoire par commande, un QR code vers la page « Bienvenue » dans la langue de la carte, avec des paramètres `utm_*`, sans cookie, et un avantage fictif de 10 % sur la première commande.
+**Welcome card**: one random code per order, a QR code to the Welcome page in the card's language with `utm_*` parameters, no cookie, a fictitious 10% advantage on the first order.
 
-**Mode démonstration**
+**Demo mode**
 
-- Une date simulée passée en paramètre d'URL, sans cookie, acceptée par le serveur seulement si `DEMO_MODE` est activé.
-- Elle reste active pendant tout le parcours : liens, état du coffret, envoi de la commande.
-- Un bandeau visible sur chaque page affiche « Mode démonstration · date simulée : … ».
-- La commande garde sa date réelle de création à côté de la date simulée, et la fiche signale la simulation.
+- A simulated date passed as a URL parameter (`?date=2026-12-23`), no cookie, accepted by the server only when `DEMO_MODE=true`.
+- It stays active through the whole journey, with a visible banner « Mode démonstration · date simulée : … ».
+- The order keeps its real creation date next to the simulated date, and the sheet flags the simulation.
 
-## Règles et détails suisses
+**Deployment**: the CI deploys to Dokploy through its API, only after every check passed (Dokploy autodeploy is off).
 
-- Prix au format `CHF 79.–` et `CHF 14.50`, NPA à 4 chiffres, allemand sans « ß », jours fériés vaudois, âge légal de 16 ans pour le vin, page « Données personnelles » dans l'esprit de la nLPD, aucun cookie de suivi.
+## Swiss rules and details
 
-## Direction visuelle (issue des maquettes)
+Prices written `CHF 79.–` and `CHF 14.50`, 4-digit postcodes, German without "ß", Vaud public holidays, legal age of 16 for wine, a « Données personnelles » page in the spirit of the nLPD, no tracking cookie.
 
-Luxe suisse : de la retenue, des filets fins, un seul accent de couleur.
+## Visual direction (from the mock-ups)
 
-- Couleurs : encre `#111111`, texte secondaire `#6E6E6A`, filets `#E3E2DE`, fond produit `#F4F3F0`, accent unique `#D52B1E`, réservé aux signaux (date de livraison, frais, « le plus offert »).
-- Police Archivo (300 à 600) : titres légers à interlettrage serré, libellés en petites capitales espacées, montants en chiffres tabulaires.
-- Filets de 1 px, aucun arrondi sauf les pastilles, zones tactiles d'au moins 44 px.
-- Les maquettes sont en 390 px : sur ordinateur, deux colonnes dès 1024 px aux étapes 2 et 3 (catalogue, récapitulatif fixe).
+Swiss luxury: restraint, fine rules, a single accent colour.
 
-## Priorités en cas de retard
+- Colours: ink `#111111`, secondary text `#6E6E6A`, rules `#E3E2DE`, product background `#F4F3F0`, single accent `#D52B1E`, kept for signals (delivery date, fresh products, « le plus offert »).
+- Archivo typeface (300 to 600): light headings with tight tracking, labels in spaced small capitals, prices in tabular figures.
+- 1 px rules, no rounded corners except dots, touch targets of at least 44 px.
+- The mock-ups are 390 px wide: on desktop, two columns from 1024 px on steps 2 and 3 (catalogue, sticky summary).
 
-Couper dans cet ordre : la page de style, les chiffres de l'espace équipe, la carte de bienvenue, la mise en page en deux colonnes.
-Ne jamais couper : la règle de livraison et ses tests, le parcours complet, la mise en ligne, les livrables.
+## Priorities when running late
+
+Cut in this order: the style page, the team space figures, the welcome card, the two-column layout.
+Never cut: the delivery rule and its tests, the complete journey, the deployment, the deliverables.

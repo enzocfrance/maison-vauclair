@@ -2,7 +2,7 @@
   "name": "maison-vauclair",
   "version": "0.1.0",
   "private": true,
-  "description": "Composez votre coffret : configurateur de coffrets cadeaux pour Maison Vauclair (entreprise fictive).",
+  "description": "Build your gift box: a gift box configurator for Maison Vauclair (fictitious company).",
   "engines": {
     "node": ">=22.12.0"
   },

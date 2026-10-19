@@ -28,11 +28,11 @@ const eslintConfig = [
     ...restrictImports(
       {
         group: [...layer("app"), ...layer("frontend"), ...layer("backend")],
-        message: "shared est pur : il n'importe aucune autre couche.",
+        message: "shared is pure: it imports no other layer.",
       },
       {
         group: ["react", "react-dom", "next", "next/**"],
-        message: "shared est pur : ni React ni Next.",
+        message: "shared is pure: no React, no Next.",
       },
     ),
   },
@@ -40,14 +40,14 @@ const eslintConfig = [
     files: ["src/frontend/**"],
     ...restrictImports({
       group: [...layer("app"), ...layer("backend")],
-      message: "frontend ne parle au backend que par l'API HTTP.",
+      message: "frontend reaches the backend through the HTTP API only.",
     }),
   },
   {
     files: ["src/backend/**"],
     ...restrictImports({
       group: [...layer("app"), ...layer("frontend")],
-      message: "backend n'importe jamais l'interface.",
+      message: "backend never imports the interface.",
     }),
   },
 ];
