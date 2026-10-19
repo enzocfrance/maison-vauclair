@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { SiteFooter } from "@/frontend/components/site-footer";
 import { getDictionary, resolvePageLocale } from "@/frontend/i18n";
+import { localizedPath } from "@/shared/i18n/routes";
 
 type LocaleLayoutProps = {
   children: ReactNode;
@@ -11,7 +12,8 @@ export default async function LocaleLayout({
   children,
   params,
 }: LocaleLayoutProps) {
-  const dictionary = getDictionary(await resolvePageLocale(params));
+  const locale = await resolvePageLocale(params);
+  const dictionary = getDictionary(locale);
 
   return (
     <div className="flex min-h-dvh flex-col">
@@ -22,7 +24,13 @@ export default async function LocaleLayout({
         {dictionary.site.skipToContent}
       </a>
       {children}
-      <SiteFooter demoNotice={dictionary.site.demoNotice} />
+      <SiteFooter
+        demoNotice={dictionary.site.demoNotice}
+        privacyLink={{
+          href: localizedPath(locale, "privacy"),
+          label: dictionary.privacy.link,
+        }}
+      />
     </div>
   );
 }

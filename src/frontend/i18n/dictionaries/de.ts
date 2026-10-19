@@ -162,4 +162,33 @@ export const de: Dictionary = {
       qrLabel: "QR-Code zur Willkommensseite von Maison Vauclair",
     },
   },
+  privacy: {
+    title: "Datenschutz",
+    link: "Datenschutz",
+    eyebrow: "Datenschutz",
+    heading: "Ihre Daten, und nur die nötigen.",
+    demo: "Diese Website ist ein Demonstrationsprojekt: Maison Vauclair ist ein fiktives Unternehmen. Geben Sie hier keine echten Daten ein.",
+    sections: [
+      {
+        heading: "Was wir erheben",
+        body: "Für eine Bestellung: Name und Adresse des Empfängers, Ihr Name, Ihre E-Mail und die Nachricht der Karte. Nichts weiter.",
+      },
+      {
+        heading: "Wozu",
+        body: "Ausschliesslich, um die Box vorzubereiten und zu liefern, die Karte beizulegen und Sie wegen dieser Bestellung zu kontaktieren. Keine Werbung, kein Weiterverkauf.",
+      },
+      {
+        heading: "Wo und mit wem",
+        body: "Die Bestellungen werden auf dem Server gespeichert, der diese Website betreibt. Sie werden weder an Dritte noch an einen Dienst für künstliche Intelligenz weitergegeben. Die Schriften liefert die Website selbst.",
+      },
+      {
+        heading: "Keine Cookies, kein Tracking",
+        body: "Diese Website setzt keine Cookies. Die Box, die Sie zusammenstellen, bleibt bis zum Schliessen des Tabs in Ihrem Browser. Der QR-Code der Willkommenskarte zeigt nur an, dass der Besuch von einer Karte stammt.",
+      },
+      {
+        heading: "Ihre Rechte",
+        body: "Nach dem Bundesgesetz über den Datenschutz (DSG) können Sie Auskunft über Ihre Daten sowie deren Berichtigung oder Löschung verlangen.",
+      },
+    ],
+  },
 };

@@ -162,6 +162,35 @@ export const fr = {
       qrLabel: "QR code vers la page de bienvenue de Maison Vauclair",
     },
   },
+  privacy: {
+    title: "Données personnelles",
+    link: "Données personnelles",
+    eyebrow: "Protection des données",
+    heading: "Vos données, et seulement ce qu'il faut.",
+    demo: "Ce site est un projet de démonstration : Maison Vauclair est une entreprise fictive. N'y saisissez pas de vraies données.",
+    sections: [
+      {
+        heading: "Ce que nous collectons",
+        body: "Pour une commande : le nom et l'adresse du destinataire, votre nom, votre e-mail et le message de la carte. Rien d'autre.",
+      },
+      {
+        heading: "Pourquoi",
+        body: "Uniquement pour préparer et livrer le coffret, y glisser la carte et vous joindre au sujet de cette commande. Aucune publicité, aucune revente.",
+      },
+      {
+        heading: "Où et avec qui",
+        body: "Les commandes sont enregistrées sur le serveur qui héberge ce site. Elles ne sont transmises à aucun tiers, ni à aucun service d'intelligence artificielle. Les polices de caractères sont servies par le site lui-même.",
+      },
+      {
+        heading: "Ni cookie, ni suivi",
+        body: "Ce site ne dépose aucun cookie. Le coffret en cours de composition reste dans votre navigateur jusqu'à la fermeture de l'onglet. Le QR code de la carte de bienvenue indique seulement que la visite vient d'une carte.",
+      },
+      {
+        heading: "Vos droits",
+        body: "Selon la loi fédérale sur la protection des données (nLPD), vous pouvez demander l'accès à vos données, leur rectification ou leur suppression.",
+      },
+    ],
+  },
 };
 
 export type Dictionary = typeof fr;
