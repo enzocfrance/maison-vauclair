@@ -162,3 +162,50 @@ function safeDecode(segment: string): string | null {
     return null;
   }
 }
+
+/** Team pages: in French only, outside the language prefix. */
+export const teamRoutes = {
+  orders: { internal: "team", public: "equipe" },
+  order: {
+    internal: "team/orders/:orderId",
+    public: "equipe/commandes/:orderId",
+  },
+  card: {
+    internal: "team/orders/:orderId/card",
+    public: "equipe/commandes/:orderId/carte",
+  },
+} as const;
+
+export type TeamRouteKey = keyof typeof teamRoutes;
+
+const teamRouteKeys = Object.keys(teamRoutes) as TeamRouteKey[];
+
+export function teamPath(
+  key: TeamRouteKey,
+  params?: Readonly<Record<string, string>>,
+): string {
+  return `/${fillPattern(teamRoutes[key].public, params)}`;
+}
+
+export function isTeamPath(pathname: string): boolean {
+  return pathname === "/equipe" || pathname.startsWith("/equipe/");
+}
+
+/** Resolves `/equipe/...` to its internal route. */
+export function matchTeamPath(pathname: string): string | null {
+  const segments = splitPath(pathname);
+  for (const key of teamRouteKeys) {
+    const params = matchPattern(teamRoutes[key].public, segments);
+    if (params) return `/${fillPattern(teamRoutes[key].internal, params)}`;
+  }
+  return null;
+}
+
+export function publicTeamPathForInternal(pathname: string): string | null {
+  const segments = splitPath(pathname);
+  for (const key of teamRouteKeys) {
+    const params = matchPattern(teamRoutes[key].internal, segments);
+    if (params) return `/${fillPattern(teamRoutes[key].public, params)}`;
+  }
+  return null;
+}

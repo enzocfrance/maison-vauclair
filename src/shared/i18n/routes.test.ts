@@ -6,6 +6,10 @@ import {
   localizedRoutes,
   matchLocalizedPath,
   publicPathForInternal,
+  isTeamPath,
+  matchTeamPath,
+  publicTeamPathForInternal,
+  teamPath,
   type RouteKey,
 } from "./routes";
 
@@ -99,5 +103,32 @@ describe("route table", () => {
         expect(internals).not.toContain(localizedRoutes[key][locale]);
       }
     }
+  });
+});
+
+describe("team routes", () => {
+  it("serves the French team paths from their internal routes", () => {
+    expect(teamPath("order", { orderId: "VC-2026-0001" })).toBe(
+      "/equipe/commandes/VC-2026-0001",
+    );
+    expect(matchTeamPath("/equipe")).toBe("/team");
+    expect(matchTeamPath("/equipe/commandes/VC-2026-0001/carte")).toBe(
+      "/team/orders/VC-2026-0001/card",
+    );
+    expect(matchTeamPath("/equipe/inconnu")).toBeNull();
+  });
+
+  it("never exposes the internal team paths", () => {
+    expect(publicTeamPathForInternal("/team/orders/VC-2026-0001")).toBe(
+      "/equipe/commandes/VC-2026-0001",
+    );
+    expect(publicTeamPathForInternal("/fr/coffret")).toBeNull();
+  });
+
+  it("recognises every page of the team space", () => {
+    expect(isTeamPath("/equipe")).toBe(true);
+    expect(isTeamPath("/equipe/commandes/VC-2026-0001")).toBe(true);
+    expect(isTeamPath("/equipes")).toBe(false);
+    expect(isTeamPath("/fr")).toBe(false);
   });
 });
