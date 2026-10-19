@@ -18,6 +18,7 @@ coverage/
 
 # Commandes stockées localement (jamais versionnées)
 data/orders/*.json
+data/orders/.*.tmp
 
 # Logs
 npm-debug.log*
