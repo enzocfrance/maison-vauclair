@@ -26,8 +26,9 @@ import type { IsoDate } from "@/shared/delivery/calendar";
 import { estimateDelivery, shippingProfile } from "@/shared/delivery/delivery";
 import type { Locale } from "@/shared/i18n/locales";
 import { formatChf } from "@/shared/money";
-import { priceBox, type BoxPrice } from "@/shared/pricing";
+import { priceBox } from "@/shared/pricing";
 import { boxActions, useBox, useHydrated } from "./box-store";
+import { PriceLines } from "./price-lines";
 
 type FillTexts = Dictionary["fill"];
 
@@ -363,36 +364,6 @@ function ProductRow({
         </span>
       </button>
     </li>
-  );
-}
-
-function PriceLines({
-  price,
-  texts: t,
-}: {
-  price: BoxPrice;
-  texts: FillTexts;
-}) {
-  return (
-    <dl className="flex flex-col gap-2 border-t border-line pt-4 text-sm">
-      <div className="flex justify-between gap-3">
-        <dt>{t.products}</dt>
-        <dd className="tabular-nums">{formatChf(price.productsCents)}</dd>
-      </div>
-      <div className="flex justify-between gap-3">
-        <dt>
-          {t.packaging}
-          <span className="block text-xs text-muted">{t.packagingDetail}</span>
-        </dt>
-        <dd className="tabular-nums">{formatChf(price.packagingCents)}</dd>
-      </div>
-      <div className="flex items-baseline justify-between gap-3 border-t border-ink pt-3">
-        <dt className="label-caps">{t.total}</dt>
-        <dd className="text-[1.375rem] tabular-nums">
-          {formatChf(price.totalCents)}
-        </dd>
-      </div>
-    </dl>
   );
 }
 

@@ -74,6 +74,77 @@ export const fr = {
     noSize: "Choisissez d'abord la taille de votre coffret.",
     chooseSize: "Choisir une taille",
   },
+  /** Language names inside a French sentence: « une carte en allemand ». */
+  languageIn: {
+    fr: "français",
+    de: "allemand",
+  },
+  delivery: {
+    title: "Livraison et message",
+    eyebrow: "Livraison · 3 / 3",
+    heading: "Pour qui, et quand.",
+    back: "Retour au remplissage du coffret",
+    expected: "Livraison prévue",
+    shippedFresh: "Expédié le {date}, en emballage réfrigéré.",
+    shippedAmbient: "Expédié le {date}.",
+    ruleBefore:
+      "Le frais voyage du lundi au mercredi. Dernière commande pour Noël : {date}.",
+    rulePassed:
+      "Le frais voyage du lundi au mercredi. Les commandes pour Noël sont closes depuis le {date}.",
+    recipient: "Destinataire",
+    recipientName: "Nom et prénom",
+    street: "Rue et numéro",
+    postalCode: "NPA",
+    city: "Localité",
+    switzerlandOnly: "Livraison en Suisse uniquement.",
+    cardLanguage: "Langue de la carte",
+    message: "Votre message",
+    messageHint: "Glissé dans le coffret. {count} / {max} caractères.",
+    welcomeCard: "Glisser une carte de bienvenue",
+    welcomeCardDetail:
+      "pour {name}, avec un avantage sur sa première commande.",
+    welcomeCardFallback: "le destinataire",
+    buyer: "Vous",
+    buyerName: "Votre nom",
+    buyerEmail: "Votre e-mail",
+    buyerEmailHint: "Uniquement pour vous joindre au sujet de cette commande.",
+    age: "L'acheteur et le destinataire ont 16 ans ou plus.",
+    ageHint: "Le coffret contient du vin.",
+    summary: "{size} · {count} produits",
+    submit: "Valider mon coffret",
+    sending: "Envoi en cours…",
+    incomplete: "Votre coffret n'est pas complet.",
+    backToFill: "Compléter le coffret",
+    errors: {
+      "recipient.name": "Indiquez le nom du destinataire.",
+      "recipient.street": "Indiquez la rue et le numéro.",
+      "recipient.postalCode": "Indiquez un NPA suisse à 4 chiffres.",
+      "recipient.city": "Indiquez la localité.",
+      message: "Le message ne doit pas dépasser {max} caractères.",
+      "buyer.name": "Indiquez votre nom.",
+      "buyer.email": "Indiquez une adresse e-mail valide.",
+      ageConfirmed:
+        "Confirmez que l'acheteur et le destinataire ont 16 ans ou plus.",
+      box: "Votre coffret a changé : revenez à l'étape précédente pour le vérifier.",
+      network:
+        "La commande n'a pas pu être envoyée. Vérifiez votre connexion et réessayez.",
+    },
+  },
+  confirmation: {
+    title: "Commande confirmée",
+    eyebrow: "Commande {id}",
+    heading: "Merci, votre coffret est commandé.",
+    dateChanged:
+      "La date de livraison a changé pendant votre commande : le coffret arrivera le {date}.",
+    expected: "Livraison prévue",
+    shipped: "Expédié le {date}.",
+    to: "Pour {name}, {postalCode} {city}.",
+    box: "{size} · {count} produits · {total}",
+    welcomeCard:
+      "Une carte de bienvenue en {language} sera glissée dans le coffret.",
+    noWelcomeCard: "Sans carte de bienvenue.",
+    another: "Composer un autre coffret",
+  },
 };
 
 export type Dictionary = typeof fr;
