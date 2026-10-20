@@ -12,8 +12,26 @@ import { formatChf } from "@/shared/money";
 import { boxActions } from "./box-store";
 import type { SizeOption } from "./size-picker";
 
-/** Once per visit: sessionStorage belongs to the tab and is cleared when it closes. */
-const seenKey = "maison-vauclair:start-dialog";
+/** Once per page load: coming back to step 1 inside the site keeps it closed. */
+let shownInThisDocument = false;
+
+/**
+ * A visit starts on the home page: address typed, outside link, QR code or
+ * reload. Not when the visitor comes from another page of the site, for
+ * instance through the language switch, which reloads the page.
+ */
+function visitStartsHere(): boolean {
+  const [entry] = performance.getEntriesByType(
+    "navigation",
+  ) as PerformanceNavigationTiming[];
+  if (!entry) return true;
+  if (new URL(entry.name).pathname !== window.location.pathname) return false;
+  if (entry.type === "reload") return true;
+  return (
+    !document.referrer ||
+    new URL(document.referrer).origin !== window.location.origin
+  );
+}
 
 type StartDialogProps = {
   locale: Locale;
@@ -40,16 +58,12 @@ export function StartDialog({
   const router = useRouter();
 
   useEffect(() => {
-    let seen = false;
-    try {
-      seen = window.sessionStorage.getItem(seenKey) === "1";
-      window.sessionStorage.setItem(seenKey, "1");
-    } catch {
-      // Storage unavailable (private mode): show it, once per page load.
-    }
-    if (seen) return;
+    if (shownInThisDocument || !visitStartsHere()) return;
+    // Marked when it opens, not before: the development double effect cancels the first timer.
     const timer = window.setTimeout(() => {
-      dialog.current?.showModal();
+      if (!dialog.current || dialog.current.open) return;
+      shownInThisDocument = true;
+      dialog.current.showModal();
       featured.current?.focus();
     }, 400);
     return () => window.clearTimeout(timer);
