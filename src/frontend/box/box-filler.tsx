@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { primaryAction } from "@/frontend/components/action-styles";
 import {
   ArrowRightIcon,
@@ -29,6 +29,7 @@ import { estimateDelivery, shippingProfile } from "@/shared/delivery/delivery";
 import type { Locale } from "@/shared/i18n/locales";
 import { formatChf } from "@/shared/money";
 import { priceBox } from "@/shared/pricing";
+import { BoxDial } from "./box-dial";
 import { boxActions, useBox, useHydrated } from "./box-store";
 import { PriceLines } from "./price-lines";
 
@@ -180,10 +181,19 @@ export function BoxFiller({
 
         <aside aria-label={t.yourBox} className="hidden lg:block">
           <div className="sticky top-8 flex flex-col gap-5 border border-ink p-6">
-            <h2 className="label-caps text-muted">
-              {t.yourBox}
-              {size && ` · ${dictionary.sizes[size.id]}`}
-            </h2>
+            <div className="flex items-center justify-between gap-4">
+              <h2 className="label-caps text-muted">
+                {t.yourBox}
+                {size && ` · ${dictionary.sizes[size.id]}`}
+              </h2>
+              {size && (
+                <BoxDial
+                  count={chosen.length}
+                  capacity={capacity}
+                  className="size-14 shrink-0 text-ink"
+                />
+              )}
+            </div>
             {chosen.length === 0 ? (
               <p className="text-sm text-muted">{t.empty}</p>
             ) : (
@@ -267,6 +277,43 @@ function Progress({
   capacity: number;
   texts: FillTexts;
 }) {
+  const { detail, label } = describeProgress(count, capacity, t);
+  const isOver = count > capacity;
+  // Announce changes only: on arrival, the dial's own label is enough.
+  const [announcement, setAnnouncement] = useState("");
+  const announcedCount = useRef(count);
+  useEffect(() => {
+    if (announcedCount.current === count) return;
+    announcedCount.current = count;
+    setAnnouncement(label);
+  }, [count, label]);
+
+  return (
+    <div className="flex min-h-[7.5rem] items-center gap-5 py-5">
+      {capacity > 0 && (
+        <>
+          <BoxDial
+            count={count}
+            capacity={capacity}
+            label={label}
+            className="size-20 shrink-0 text-ink"
+          />
+          <p
+            aria-hidden="true"
+            className={`text-sm ${isOver ? "text-accent" : "text-muted"}`}
+          >
+            {detail}
+          </p>
+        </>
+      )}
+      <p role="status" className="sr-only">
+        {announcement}
+      </p>
+    </div>
+  );
+}
+
+function describeProgress(count: number, capacity: number, t: FillTexts) {
   const gap = capacity - count;
   const detail =
     gap === 0
@@ -278,40 +325,8 @@ function Progress({
         : gap === -1
           ? t.overflowOne
           : format(t.overflowOther, { count: -gap });
-  const dots = Math.max(capacity, count);
-
-  return (
-    <div className="flex min-h-[4.5rem] items-center justify-between gap-4 py-5">
-      <div aria-hidden="true" className="flex flex-wrap gap-1.5 sm:gap-2.5">
-        {Array.from({ length: dots }, (_, index) => (
-          <span
-            key={index}
-            className={`size-[1.125rem] rounded-full border-[1.5px] sm:size-6 ${
-              index >= capacity
-                ? "border-accent bg-accent"
-                : index < count
-                  ? "border-ink bg-ink"
-                  : "border-ink"
-            }`}
-          />
-        ))}
-      </div>
-      {capacity > 0 && (
-        <p
-          aria-live="polite"
-          aria-atomic="true"
-          className="flex shrink-0 flex-col items-end gap-0.5 text-right"
-        >
-          <span className="text-[0.9375rem] font-medium tabular-nums">
-            {format(t.progress, { count, total: capacity })}
-          </span>
-          <span className={`text-xs ${gap < 0 ? "text-accent" : "text-muted"}`}>
-            {detail}
-          </span>
-        </p>
-      )}
-    </div>
-  );
+  const progress = format(t.progress, { count, total: capacity });
+  return { detail, label: format(t.dialLabel, { progress, detail }) };
 }
 
 function ProductRow({

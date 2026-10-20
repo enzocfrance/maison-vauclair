@@ -43,6 +43,7 @@ export const fr = {
     heading: "Remplissez-le.",
     back: "Retour au choix de la taille",
     progress: "{count} sur {total}",
+    dialLabel: "Votre coffret : {progress}, {detail}",
     remainingOne: "encore 1 place",
     remainingOther: "encore {count} places",
     complete: "coffret complet",

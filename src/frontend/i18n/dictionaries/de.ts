@@ -45,6 +45,7 @@ export const de: Dictionary = {
     heading: "Füllen Sie sie.",
     back: "Zurück zur Grössenwahl",
     progress: "{count} von {total}",
+    dialLabel: "Ihre Box: {progress}, {detail}",
     remainingOne: "noch 1 Platz frei",
     remainingOther: "noch {count} Plätze frei",
     complete: "Box vollständig",
