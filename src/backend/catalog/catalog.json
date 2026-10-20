@@ -252,7 +252,6 @@
       "unit": "cl"
     },
     "priceCents": 2450,
-    "appellation": "AOC",
     "fresh": false,
     "alcohol": true
   },
@@ -272,7 +271,6 @@
       "unit": "cl"
     },
     "priceCents": 3400,
-    "appellation": "AOC",
     "fresh": false,
     "alcohol": true
   },
@@ -292,7 +290,6 @@
       "unit": "cl"
     },
     "priceCents": 2690,
-    "appellation": "AOC",
     "fresh": false,
     "alcohol": true
   },
@@ -312,7 +309,6 @@
       "unit": "cl"
     },
     "priceCents": 1890,
-    "appellation": "AOC",
     "fresh": false,
     "alcohol": true
   },
@@ -332,7 +328,6 @@
       "unit": "cl"
     },
     "priceCents": 2650,
-    "appellation": "AOC",
     "fresh": false,
     "alcohol": true
   },

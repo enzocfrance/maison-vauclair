@@ -32,6 +32,7 @@ import { estimateDelivery, shippingProfile } from "@/shared/delivery/delivery";
 import type { Locale } from "@/shared/i18n/locales";
 import { formatChf } from "@/shared/money";
 import { priceBox } from "@/shared/pricing";
+import { withoutAppellation } from "@/shared/catalog/appellation";
 import { AppellationStamp } from "./appellation-stamp";
 import { BoxDial } from "./box-dial";
 import { boxActions, useBox, useHydrated } from "./box-store";
@@ -368,9 +369,13 @@ function ProductRow({
           </p>
         )}
         <p className="flex items-center gap-2.5 text-[0.9375rem] font-medium">
-          {name}
-          {product.appellation && (
-            <AppellationStamp appellation={product.appellation} />
+          {product.appellation ? (
+            <>
+              {withoutAppellation(name, product.appellation)}
+              <AppellationStamp appellation={product.appellation} />
+            </>
+          ) : (
+            name
           )}
         </p>
         {product.origin && (

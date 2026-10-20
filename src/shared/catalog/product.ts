@@ -6,8 +6,8 @@ export type Category = (typeof categories)[number];
 
 export const sizeUnits = ["g", "cl", "piece"] as const;
 
-/** AOP and IGP for food, AOC for Swiss wines. */
-export const appellations = ["AOP", "AOC", "IGP"] as const;
+/** Shown as a hallmark. Wines keep their AOC in the name, without a hallmark. */
+export const appellations = ["AOP", "IGP"] as const;
 
 const localizedText = z.strictObject({
   fr: z.string().min(1),

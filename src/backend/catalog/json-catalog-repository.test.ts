@@ -35,7 +35,7 @@ describe("JSON catalog", () => {
 
   it("gives an appellation exactly to the products whose name carries one", () => {
     for (const product of products) {
-      const inName = /\b(AOP|AOC|IGP)\b/.exec(product.name.fr)?.[1];
+      const inName = /\b(AOP|IGP)\b/.exec(product.name.fr)?.[1];
       expect(product.appellation, product.id).toBe(inName);
     }
   });
