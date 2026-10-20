@@ -29,6 +29,7 @@ import { estimateDelivery, shippingProfile } from "@/shared/delivery/delivery";
 import type { Locale } from "@/shared/i18n/locales";
 import { formatChf } from "@/shared/money";
 import { priceBox } from "@/shared/pricing";
+import { AppellationStamp } from "./appellation-stamp";
 import { BoxDial } from "./box-dial";
 import { boxActions, useBox, useHydrated } from "./box-store";
 import { PriceLines } from "./price-lines";
@@ -363,7 +364,12 @@ function ProductRow({
             {t.fresh}
           </p>
         )}
-        <p className="text-[0.9375rem] font-medium">{name}</p>
+        <p className="flex items-center gap-2.5 text-[0.9375rem] font-medium">
+          {name}
+          {product.appellation && (
+            <AppellationStamp appellation={product.appellation} />
+          )}
+        </p>
         <p className="text-[0.8125rem] text-muted tabular-nums">
           {formatSize(product.size, dictionary)} ·{" "}
           {formatChf(product.priceCents)}

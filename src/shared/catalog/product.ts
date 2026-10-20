@@ -6,6 +6,9 @@ export type Category = (typeof categories)[number];
 
 export const sizeUnits = ["g", "cl", "piece"] as const;
 
+/** AOP and IGP for food, AOC for Swiss wines. */
+export const appellations = ["AOP", "AOC", "IGP"] as const;
+
 const localizedText = z.strictObject({
   fr: z.string().min(1),
   de: z.string().min(1),
@@ -20,6 +23,8 @@ export const productSchema = z.strictObject({
     unit: z.enum(sizeUnits),
   }),
   priceCents: z.number().int().positive(),
+  /** Protected designation, shown as a hallmark next to the name. */
+  appellation: z.enum(appellations).optional(),
   /** Travels refrigerated and is stored in the cold zone: ships Monday to Wednesday only. */
   fresh: z.boolean(),
   /** Requires the 16+ confirmation. */

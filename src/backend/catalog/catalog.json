@@ -2,26 +2,46 @@
   {
     "id": "gruyere-aop-18-months",
     "category": "cheese",
-    "name": { "fr": "Gruyère AOP 18 mois", "de": "Gruyère AOP 18 Monate" },
-    "size": { "amount": 250, "unit": "g" },
+    "name": {
+      "fr": "Gruyère AOP 18 mois",
+      "de": "Gruyère AOP 18 Monate"
+    },
+    "size": {
+      "amount": 250,
+      "unit": "g"
+    },
     "priceCents": 1450,
+    "appellation": "AOP",
     "fresh": true,
     "alcohol": false
   },
   {
     "id": "vacherin-mont-d-or-aop",
     "category": "cheese",
-    "name": { "fr": "Vacherin Mont-d'Or AOP", "de": "Vacherin Mont-d'Or AOP" },
-    "size": { "amount": 500, "unit": "g" },
+    "name": {
+      "fr": "Vacherin Mont-d'Or AOP",
+      "de": "Vacherin Mont-d'Or AOP"
+    },
+    "size": {
+      "amount": 500,
+      "unit": "g"
+    },
     "priceCents": 2400,
+    "appellation": "AOP",
     "fresh": true,
     "alcohol": false
   },
   {
     "id": "vaud-tomme",
     "category": "cheese",
-    "name": { "fr": "Tomme vaudoise", "de": "Waadtländer Tomme" },
-    "size": { "amount": 100, "unit": "g" },
+    "name": {
+      "fr": "Tomme vaudoise",
+      "de": "Waadtländer Tomme"
+    },
+    "size": {
+      "amount": 100,
+      "unit": "g"
+    },
     "priceCents": 680,
     "fresh": true,
     "alcohol": false
@@ -29,18 +49,32 @@
   {
     "id": "etivaz-aop",
     "category": "cheese",
-    "name": { "fr": "L'Etivaz AOP", "de": "L'Etivaz AOP" },
-    "size": { "amount": 200, "unit": "g" },
+    "name": {
+      "fr": "L'Etivaz AOP",
+      "de": "L'Etivaz AOP"
+    },
+    "size": {
+      "amount": 200,
+      "unit": "g"
+    },
     "priceCents": 1390,
+    "appellation": "AOP",
     "fresh": true,
     "alcohol": false
   },
   {
     "id": "tete-de-moine-aop",
     "category": "cheese",
-    "name": { "fr": "Tête de Moine AOP", "de": "Tête de Moine AOP" },
-    "size": { "amount": 150, "unit": "g" },
+    "name": {
+      "fr": "Tête de Moine AOP",
+      "de": "Tête de Moine AOP"
+    },
+    "size": {
+      "amount": 150,
+      "unit": "g"
+    },
     "priceCents": 1120,
+    "appellation": "AOP",
     "fresh": true,
     "alcohol": false
   },
@@ -51,8 +85,12 @@
       "fr": "Vacherin fribourgeois AOP",
       "de": "Vacherin Fribourgeois AOP"
     },
-    "size": { "amount": 250, "unit": "g" },
+    "size": {
+      "amount": 250,
+      "unit": "g"
+    },
     "priceCents": 1260,
+    "appellation": "AOP",
     "fresh": true,
     "alcohol": false
   },
@@ -63,8 +101,12 @@
       "fr": "Saucisson vaudois IGP",
       "de": "Waadtländer Saucisson IGP"
     },
-    "size": { "amount": 1, "unit": "piece" },
+    "size": {
+      "amount": 1,
+      "unit": "piece"
+    },
     "priceCents": 2090,
+    "appellation": "IGP",
     "fresh": false,
     "alcohol": false
   },
@@ -75,17 +117,28 @@
       "fr": "Saucisse aux choux vaudoise IGP",
       "de": "Waadtländer Kohlwurst IGP"
     },
-    "size": { "amount": 1, "unit": "piece" },
+    "size": {
+      "amount": 1,
+      "unit": "piece"
+    },
     "priceCents": 1480,
+    "appellation": "IGP",
     "fresh": false,
     "alcohol": false
   },
   {
     "id": "boutefas-aop",
     "category": "charcuterie",
-    "name": { "fr": "Boutefas AOP", "de": "Boutefas AOP" },
-    "size": { "amount": 1, "unit": "piece" },
+    "name": {
+      "fr": "Boutefas AOP",
+      "de": "Boutefas AOP"
+    },
+    "size": {
+      "amount": 1,
+      "unit": "piece"
+    },
     "priceCents": 2450,
+    "appellation": "AOP",
     "fresh": false,
     "alcohol": false
   },
@@ -96,7 +149,10 @@
       "fr": "Jambon cru de la Broye",
       "de": "Rohschinken aus der Broye"
     },
-    "size": { "amount": 100, "unit": "g" },
+    "size": {
+      "amount": 100,
+      "unit": "g"
+    },
     "priceCents": 960,
     "fresh": true,
     "alcohol": false
@@ -108,16 +164,26 @@
       "fr": "Viande séchée du Valais IGP",
       "de": "Walliser Trockenfleisch IGP"
     },
-    "size": { "amount": 100, "unit": "g" },
+    "size": {
+      "amount": 100,
+      "unit": "g"
+    },
     "priceCents": 1290,
+    "appellation": "IGP",
     "fresh": true,
     "alcohol": false
   },
   {
     "id": "smoked-country-bacon",
     "category": "charcuterie",
-    "name": { "fr": "Lard fumé de campagne", "de": "Geräucherter Bauernspeck" },
-    "size": { "amount": 200, "unit": "g" },
+    "name": {
+      "fr": "Lard fumé de campagne",
+      "de": "Geräucherter Bauernspeck"
+    },
+    "size": {
+      "amount": 200,
+      "unit": "g"
+    },
     "priceCents": 840,
     "fresh": true,
     "alcohol": false
@@ -125,36 +191,64 @@
   {
     "id": "chasselas-lavaux-aoc",
     "category": "wine",
-    "name": { "fr": "Chasselas Lavaux AOC", "de": "Chasselas Lavaux AOC" },
-    "size": { "amount": 75, "unit": "cl" },
+    "name": {
+      "fr": "Chasselas Lavaux AOC",
+      "de": "Chasselas Lavaux AOC"
+    },
+    "size": {
+      "amount": 75,
+      "unit": "cl"
+    },
     "priceCents": 2450,
+    "appellation": "AOC",
     "fresh": false,
     "alcohol": true
   },
   {
     "id": "dezaley-grand-cru-aoc",
     "category": "wine",
-    "name": { "fr": "Dézaley Grand Cru AOC", "de": "Dézaley Grand Cru AOC" },
-    "size": { "amount": 75, "unit": "cl" },
+    "name": {
+      "fr": "Dézaley Grand Cru AOC",
+      "de": "Dézaley Grand Cru AOC"
+    },
+    "size": {
+      "amount": 75,
+      "unit": "cl"
+    },
     "priceCents": 3400,
+    "appellation": "AOC",
     "fresh": false,
     "alcohol": true
   },
   {
     "id": "saint-saphorin-aoc",
     "category": "wine",
-    "name": { "fr": "Saint-Saphorin AOC", "de": "Saint-Saphorin AOC" },
-    "size": { "amount": 75, "unit": "cl" },
+    "name": {
+      "fr": "Saint-Saphorin AOC",
+      "de": "Saint-Saphorin AOC"
+    },
+    "size": {
+      "amount": 75,
+      "unit": "cl"
+    },
     "priceCents": 2690,
+    "appellation": "AOC",
     "fresh": false,
     "alcohol": true
   },
   {
     "id": "gamay-la-cote-aoc",
     "category": "wine",
-    "name": { "fr": "Gamay La Côte AOC", "de": "Gamay La Côte AOC" },
-    "size": { "amount": 75, "unit": "cl" },
+    "name": {
+      "fr": "Gamay La Côte AOC",
+      "de": "Gamay La Côte AOC"
+    },
+    "size": {
+      "amount": 75,
+      "unit": "cl"
+    },
     "priceCents": 1890,
+    "appellation": "AOC",
     "fresh": false,
     "alcohol": true
   },
@@ -165,8 +259,12 @@
       "fr": "Pinot noir Chablais AOC",
       "de": "Pinot Noir Chablais AOC"
     },
-    "size": { "amount": 75, "unit": "cl" },
+    "size": {
+      "amount": 75,
+      "unit": "cl"
+    },
     "priceCents": 2650,
+    "appellation": "AOC",
     "fresh": false,
     "alcohol": true
   },
@@ -177,7 +275,10 @@
       "fr": "Mousseux brut vaudois",
       "de": "Waadtländer Schaumwein brut"
     },
-    "size": { "amount": 75, "unit": "cl" },
+    "size": {
+      "amount": 75,
+      "unit": "cl"
+    },
     "priceCents": 2980,
     "fresh": false,
     "alcohol": true
@@ -185,8 +286,14 @@
   {
     "id": "mountain-honey",
     "category": "grocery",
-    "name": { "fr": "Miel de montagne", "de": "Berghonig" },
-    "size": { "amount": 250, "unit": "g" },
+    "name": {
+      "fr": "Miel de montagne",
+      "de": "Berghonig"
+    },
+    "size": {
+      "amount": 250,
+      "unit": "g"
+    },
     "priceCents": 1350,
     "fresh": false,
     "alcohol": false
@@ -194,8 +301,14 @@
   {
     "id": "vaud-vin-cuit",
     "category": "grocery",
-    "name": { "fr": "Vin cuit vaudois", "de": "Waadtländer Birnendicksaft" },
-    "size": { "amount": 250, "unit": "g" },
+    "name": {
+      "fr": "Vin cuit vaudois",
+      "de": "Waadtländer Birnendicksaft"
+    },
+    "size": {
+      "amount": 250,
+      "unit": "g"
+    },
     "priceCents": 1150,
     "fresh": false,
     "alcohol": false
@@ -203,8 +316,14 @@
   {
     "id": "vaud-bricelets",
     "category": "grocery",
-    "name": { "fr": "Bricelets vaudois", "de": "Waadtländer Bricelets" },
-    "size": { "amount": 100, "unit": "g" },
+    "name": {
+      "fr": "Bricelets vaudois",
+      "de": "Waadtländer Bricelets"
+    },
+    "size": {
+      "amount": 100,
+      "unit": "g"
+    },
     "priceCents": 720,
     "fresh": false,
     "alcohol": false
@@ -212,8 +331,14 @@
   {
     "id": "benichon-mustard",
     "category": "grocery",
-    "name": { "fr": "Moutarde de Bénichon", "de": "Bénichon-Senf" },
-    "size": { "amount": 200, "unit": "g" },
+    "name": {
+      "fr": "Moutarde de Bénichon",
+      "de": "Bénichon-Senf"
+    },
+    "size": {
+      "amount": 200,
+      "unit": "g"
+    },
     "priceCents": 890,
     "fresh": false,
     "alcohol": false
@@ -221,8 +346,14 @@
   {
     "id": "plum-jam",
     "category": "grocery",
-    "name": { "fr": "Confiture de pruneaux", "de": "Zwetschgenkonfitüre" },
-    "size": { "amount": 250, "unit": "g" },
+    "name": {
+      "fr": "Confiture de pruneaux",
+      "de": "Zwetschgenkonfitüre"
+    },
+    "size": {
+      "amount": 250,
+      "unit": "g"
+    },
     "priceCents": 790,
     "fresh": false,
     "alcohol": false
@@ -230,8 +361,14 @@
   {
     "id": "dark-chocolate-70",
     "category": "grocery",
-    "name": { "fr": "Chocolat noir 70 %", "de": "Dunkle Schokolade 70 %" },
-    "size": { "amount": 100, "unit": "g" },
+    "name": {
+      "fr": "Chocolat noir 70 %",
+      "de": "Dunkle Schokolade 70 %"
+    },
+    "size": {
+      "amount": 100,
+      "unit": "g"
+    },
     "priceCents": 650,
     "fresh": false,
     "alcohol": false
