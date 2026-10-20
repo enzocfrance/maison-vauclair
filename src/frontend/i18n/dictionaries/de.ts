@@ -231,7 +231,6 @@ export const de: Dictionary = {
       },
     ],
     linksLabel: "Informationen",
-    team: "Teambereich",
   },
   credits: {
     title: "Bildnachweis",

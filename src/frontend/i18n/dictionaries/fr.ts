@@ -229,7 +229,6 @@ export const fr = {
       },
     ],
     linksLabel: "Informations",
-    team: "Espace équipe",
   },
   credits: {
     title: "Crédits photos",

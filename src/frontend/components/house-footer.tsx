@@ -2,7 +2,7 @@ import Link from "next/link";
 import { LogoVertical } from "@/frontend/components/brand";
 import { getDictionary } from "@/frontend/i18n";
 import type { Locale } from "@/shared/i18n/locales";
-import { localizedPath, teamPath } from "@/shared/i18n/routes";
+import { localizedPath } from "@/shared/i18n/routes";
 
 type HouseFooterProps = {
   locale: Locale;
@@ -18,7 +18,6 @@ export function HouseFooter({ locale }: HouseFooterProps) {
       href: localizedPath(locale, "photoCredits"),
       label: dictionary.credits.link,
     },
-    { href: teamPath("orders"), label: f.team },
   ];
 
   return (
