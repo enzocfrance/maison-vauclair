@@ -35,6 +35,19 @@ export const de: Dictionary = {
     heading: "Stellen Sie Ihre Box zusammen.",
     lead: "Wählen Sie eine Grösse. Wir stellen sie in der Käserei von Hand zusammen.",
   },
+  startDialog: {
+    eyebrow: "Geschenkbox",
+    heading: "Verschenken Sie eine Box nach Ihrer Wahl.",
+    before: "Frisch geliefert vor Weihnachten, wenn Sie bis {date} bestellen.",
+    passed:
+      "Zu spät für Weihnachten, nie zu spät für eine Freude: Lieferung ab {date}.",
+    always:
+      "Alpkäse, Charcuterie, Weine und Waadtländer Süssigkeiten, von Hand zusammengestellt.",
+    choose: "Wählen Sie eine Grösse",
+    from: "ab {price}",
+    later: "Später",
+    close: "Schliessen",
+  },
   christmas: {
     before: "Frisch geliefert vor Weihnachten: Bestellen Sie bis {date}.",
     passed:

@@ -71,7 +71,8 @@
   @media (prefers-reduced-motion: reduce) {
     *,
     ::before,
-    ::after {
+    ::after,
+    ::backdrop {
       animation: none !important;
       transition: none !important;
     }
@@ -117,6 +118,25 @@
   }
   to {
     clip-path: inset(0 0 0 0);
+  }
+}
+
+/* The start dialog unfolds from the top, like a card drawn out of its sleeve. */
+@keyframes dialog-unfold {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

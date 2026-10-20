@@ -33,6 +33,19 @@ export const fr = {
     heading: "Composez votre coffret.",
     lead: "Choisissez une taille. Nous l'assemblons à la main, à la fromagerie.",
   },
+  startDialog: {
+    eyebrow: "Coffret cadeau",
+    heading: "Offrez un coffret composé par vous.",
+    before: "Livré au frais avant Noël si vous commandez jusqu'au {date}.",
+    passed:
+      "Trop tard pour Noël, jamais pour faire plaisir : livraison dès le {date}.",
+    always:
+      "Fromages d'alpage, charcuterie, vins et douceurs vaudoises, assemblés à la main.",
+    choose: "Choisissez une taille pour commencer",
+    from: "dès {price}",
+    later: "Plus tard",
+    close: "Fermer",
+  },
   christmas: {
     before: "Livré au frais avant Noël : commandez jusqu'au {date}.",
     passed:

@@ -48,3 +48,9 @@ export function CheckIcon({ className }: IconProps) {
 export function PlusIcon({ className }: IconProps) {
   return <Icon className={className} strokeWidth={2} path="M12 5v14M5 12h14" />;
 }
+
+export function CloseIcon({ className }: IconProps) {
+  return (
+    <Icon className={className} strokeWidth={1.5} path="M6 6l12 12M18 6L6 18" />
+  );
+}

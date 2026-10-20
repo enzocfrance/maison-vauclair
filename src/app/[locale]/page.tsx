@@ -7,6 +7,8 @@ import {
 import { catalogRepository } from "@/backend/container";
 import { ChristmasNotice } from "@/frontend/box/christmas-notice";
 import { SizePicker, type SizeOption } from "@/frontend/box/size-picker";
+import { StartDialog } from "@/frontend/box/start-dialog";
+import { startDialogMessage } from "@/frontend/box/start-dialog-message";
 import { SiteHeader } from "@/frontend/components/site-header";
 import { StepIndicator } from "@/frontend/components/step-indicator";
 import { getDictionary, resolvePageLocale } from "@/frontend/i18n";
@@ -83,6 +85,12 @@ export default async function HomePage({
           nextHref={withDemoDate(localizedPath(locale, "boxFill"), demoDate)}
         />
       </main>
+      <StartDialog
+        locale={locale}
+        sizes={sizes}
+        message={startDialogMessage(locale, today)}
+        fillHref={withDemoDate(localizedPath(locale, "boxFill"), demoDate)}
+      />
     </>
   );
 }
