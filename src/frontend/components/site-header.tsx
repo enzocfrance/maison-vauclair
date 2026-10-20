@@ -4,6 +4,7 @@ import type { IsoDate } from "@/shared/delivery/calendar";
 import { withDemoDate } from "@/shared/demo";
 import { locales, type Locale } from "@/shared/i18n/locales";
 import { localizedPath } from "@/shared/i18n/routes";
+import { AnnouncementBand } from "./announcement-band";
 import { DemoBanner } from "./demo-banner";
 import { LanguageSwitch } from "./language-switch";
 
@@ -13,9 +14,16 @@ type SiteHeaderProps = {
   alternates: Record<Locale, string>;
   /** Kept in every link so the simulation lasts the whole journey. */
   demoDate: IsoDate | null;
+  /** Business date: drives the Christmas line of the announcement band. */
+  today: IsoDate;
 };
 
-export function SiteHeader({ locale, alternates, demoDate }: SiteHeaderProps) {
+export function SiteHeader({
+  locale,
+  alternates,
+  demoDate,
+  today,
+}: SiteHeaderProps) {
   const dictionary = getDictionary(locale);
   const languageLinks = Object.fromEntries(
     locales.map((candidate) => [
@@ -26,6 +34,7 @@ export function SiteHeader({ locale, alternates, demoDate }: SiteHeaderProps) {
 
   return (
     <>
+      <AnnouncementBand locale={locale} today={today} />
       {demoDate && (
         <DemoBanner
           locale={locale}

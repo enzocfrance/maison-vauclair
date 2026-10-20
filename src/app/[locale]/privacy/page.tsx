@@ -27,7 +27,10 @@ export default async function PrivacyPage({
   params,
   searchParams,
 }: PrivacyPageProps) {
-  const { locale, demoDate } = await getPageContext(params, searchParams);
+  const { locale, today, demoDate } = await getPageContext(
+    params,
+    searchParams,
+  );
   const t = getDictionary(locale).privacy;
 
   return (
@@ -36,6 +39,7 @@ export default async function PrivacyPage({
         locale={locale}
         alternates={alternatePaths("privacy")}
         demoDate={demoDate}
+        today={today}
       />
       <main
         id="content"

@@ -35,7 +35,10 @@ export default async function WelcomePage({
   params,
   searchParams,
 }: WelcomePageProps) {
-  const { locale, demoDate } = await getPageContext(params, searchParams);
+  const { locale, today, demoDate } = await getPageContext(
+    params,
+    searchParams,
+  );
   const { code } = await searchParams;
   const welcomeCode =
     typeof code === "string" && welcomeCodePattern.test(code) ? code : null;
@@ -49,7 +52,12 @@ export default async function WelcomePage({
 
   return (
     <>
-      <SiteHeader locale={locale} alternates={alternates} demoDate={demoDate} />
+      <SiteHeader
+        locale={locale}
+        alternates={alternates}
+        demoDate={demoDate}
+        today={today}
+      />
       <main
         id="content"
         className="mx-auto grid w-full max-w-6xl flex-1 content-start gap-10 px-5 pt-12 pb-16 lg:grid-cols-2 lg:gap-20 lg:pt-20"

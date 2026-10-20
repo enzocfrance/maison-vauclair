@@ -31,7 +31,10 @@ export default async function ConfirmationPage({
   params,
   searchParams,
 }: ConfirmationPageProps) {
-  const { locale, demoDate } = await getPageContext(params, searchParams);
+  const { locale, today, demoDate } = await getPageContext(
+    params,
+    searchParams,
+  );
   const { orderId } = await params;
   const { key } = await searchParams;
   const order = await getCustomerOrder(
@@ -51,7 +54,12 @@ export default async function ConfirmationPage({
 
   return (
     <>
-      <SiteHeader locale={locale} alternates={keyedPaths} demoDate={demoDate} />
+      <SiteHeader
+        locale={locale}
+        alternates={keyedPaths}
+        demoDate={demoDate}
+        today={today}
+      />
       <main
         id="content"
         className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-10 px-5 pt-10 pb-16 lg:pt-16"

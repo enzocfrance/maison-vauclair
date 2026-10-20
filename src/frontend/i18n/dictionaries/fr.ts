@@ -9,6 +9,11 @@ export const fr = {
     languageNav: "Langue",
     skipToContent: "Aller au contenu",
   },
+  band: {
+    fresh: "Livraison réfrigérée dans toute la Suisse",
+    christmas: "Commande pour Noël jusqu'au {date}",
+    passed: "Trop tard pour Noël : livraison le {date}",
+  },
   demo: {
     banner: "Mode démonstration · date simulée : {date}",
     exit: "Revenir à la date du jour",

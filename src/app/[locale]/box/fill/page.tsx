@@ -44,6 +44,7 @@ export default async function BoxFillPage({
         locale={locale}
         alternates={alternatePaths("boxFill")}
         demoDate={demoDate}
+        today={today}
       />
       <StepIndicator
         current={2}

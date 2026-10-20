@@ -11,6 +11,11 @@ export const de: Dictionary = {
     languageNav: "Sprache",
     skipToContent: "Zum Inhalt springen",
   },
+  band: {
+    fresh: "Gekühlte Lieferung in die ganze Schweiz",
+    christmas: "Bestellung für Weihnachten bis {date}",
+    passed: "Zu spät für Weihnachten: Lieferung am {date}",
+  },
   demo: {
     banner: "Demo-Modus · simuliertes Datum: {date}",
     exit: "Zum heutigen Datum zurück",

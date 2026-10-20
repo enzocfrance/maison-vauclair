@@ -54,6 +54,7 @@ export default async function HomePage({
         locale={locale}
         alternates={alternatePaths("home")}
         demoDate={demoDate}
+        today={today}
       />
       <StepIndicator
         current={1}

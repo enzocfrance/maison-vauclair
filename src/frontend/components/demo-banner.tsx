@@ -14,7 +14,7 @@ export function DemoBanner({ locale, date, exitHref }: DemoBannerProps) {
   const { demo } = getDictionary(locale);
 
   return (
-    <div className="bg-ink text-white">
+    <div className="border-b border-line bg-white text-ink">
       <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-1 px-5 py-2.5 text-[0.8125rem]">
         <p className="flex items-center gap-2.5">
           <span

@@ -43,6 +43,7 @@ export default async function BoxDeliveryPage({
         locale={locale}
         alternates={alternatePaths("boxDelivery")}
         demoDate={demoDate}
+        today={today}
       />
       <StepIndicator
         current={3}

@@ -32,7 +32,10 @@ export default async function PhotoCreditsPage({
   params,
   searchParams,
 }: PhotoCreditsPageProps) {
-  const { locale, demoDate } = await getPageContext(params, searchParams);
+  const { locale, today, demoDate } = await getPageContext(
+    params,
+    searchParams,
+  );
   const dictionary = getDictionary(locale);
   const t = dictionary.credits;
   const products = await catalogRepository.listProducts();
@@ -54,6 +57,7 @@ export default async function PhotoCreditsPage({
         locale={locale}
         alternates={alternatePaths("photoCredits")}
         demoDate={demoDate}
+        today={today}
       />
       <main
         id="content"
