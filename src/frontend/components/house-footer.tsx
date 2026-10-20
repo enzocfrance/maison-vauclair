@@ -4,6 +4,15 @@ import { getDictionary } from "@/frontend/i18n";
 import type { Locale } from "@/shared/i18n/locales";
 import { localizedPath } from "@/shared/i18n/routes";
 
+/** Google Maps search link: opens the app on phones. The addresses are fictitious. */
+function mapsUrl(street: string, city: string): string {
+  const query = new URLSearchParams({
+    api: "1",
+    query: `${street}, ${city}, Switzerland`,
+  });
+  return `https://www.google.com/maps/search/?${query.toString()}`;
+}
+
 type HouseFooterProps = {
   locale: Locale;
 };
@@ -35,9 +44,17 @@ export function HouseFooter({ locale }: HouseFooterProps) {
           <section key={shop.name} className="flex flex-col gap-3">
             <h3 className="text-lg font-light">{shop.name}</h3>
             <address className="text-sm leading-relaxed not-italic">
-              {shop.street}
-              <br />
-              {shop.city}
+              <a
+                href={mapsUrl(shop.street, shop.city)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-draw inline-block"
+              >
+                {shop.street}
+                <br />
+                {shop.city}
+                <span className="sr-only"> ({f.openInMaps})</span>
+              </a>
             </address>
             <p className="text-sm leading-relaxed text-muted">
               {shop.hours.map((line) => (

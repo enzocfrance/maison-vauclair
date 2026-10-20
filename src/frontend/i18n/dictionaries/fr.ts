@@ -241,6 +241,7 @@ export const fr = {
         hours: ["Mardi–samedi 9 h–18 h", "Dimanche et lundi fermé"],
       },
     ],
+    openInMaps: "Ouvrir dans Google Maps, nouvel onglet",
     linksLabel: "Informations",
   },
   credits: {

@@ -243,6 +243,7 @@ export const de: Dictionary = {
         hours: ["Dienstag–Samstag 9–18 Uhr", "Sonntag und Montag geschlossen"],
       },
     ],
+    openInMaps: "In Google Maps öffnen, neuer Tab",
     linksLabel: "Informationen",
   },
   credits: {
