@@ -7,6 +7,7 @@ import {
 import { catalogRepository } from "@/backend/container";
 import { BoxFiller } from "@/frontend/box/box-filler";
 import { SiteHeader } from "@/frontend/components/site-header";
+import { StepIndicator } from "@/frontend/components/step-indicator";
 import { getDictionary, resolvePageLocale } from "@/frontend/i18n";
 import { withDemoDate } from "@/shared/demo";
 import { alternatePaths, localizedPath } from "@/shared/i18n/routes";
@@ -34,6 +35,7 @@ export default async function BoxFillPage({
     params,
     searchParams,
   );
+  const { steps } = getDictionary(locale);
   const products = await catalogRepository.listProducts();
 
   return (
@@ -42,6 +44,11 @@ export default async function BoxFillPage({
         locale={locale}
         alternates={alternatePaths("boxFill")}
         demoDate={demoDate}
+      />
+      <StepIndicator
+        current={2}
+        labels={[steps.size, steps.fill, steps.delivery]}
+        label={steps.label}
       />
       <main id="content" className="flex flex-1 flex-col">
         <BoxFiller

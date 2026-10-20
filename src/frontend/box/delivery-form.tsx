@@ -109,16 +109,23 @@ export function DeliveryForm({
   const [sending, setSending] = useState(false);
 
   const fillHref = withDemoDate(localizedPath(locale, "boxFill"), demoDate);
+  const size = box.sizeId ? boxSizes[box.sizeId] : null;
   const header = (
     <StepHeader
       backHref={fillHref}
       backLabel={t.back}
-      eyebrow={t.eyebrow}
+      eyebrow={
+        size
+          ? format(t.summary, {
+              size: dictionary.sizes[size.id],
+              count: size.itemCount,
+            })
+          : t.eyebrow
+      }
       title={t.heading}
     />
   );
 
-  const size = box.sizeId ? boxSizes[box.sizeId] : null;
   const items = box.productIds.flatMap(
     (id) => products.find((product) => product.id === id) ?? [],
   );

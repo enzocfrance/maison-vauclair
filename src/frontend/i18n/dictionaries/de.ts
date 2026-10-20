@@ -18,9 +18,15 @@ export const de: Dictionary = {
   units: {
     piece: "Stück",
   },
+  steps: {
+    label: "Bestellschritte",
+    size: "Grösse",
+    fill: "Zusammenstellung",
+    delivery: "Lieferung",
+  },
   home: {
     title: "Stellen Sie Ihre Geschenkbox zusammen",
-    eyebrow: "Geschenkbox · 1 / 3",
+    eyebrow: "Geschenkbox",
     heading: "Stellen Sie Ihre Box zusammen.",
     lead: "Wählen Sie eine Grösse. Wir stellen sie in der Käserei von Hand zusammen.",
   },
@@ -40,8 +46,8 @@ export const de: Dictionary = {
   },
   fill: {
     title: "Füllen Sie Ihre Box",
-    eyebrow: "{size} · 2 / 3",
-    eyebrowPending: "Box · 2 / 3",
+    eyebrow: "{size}",
+    eyebrowPending: "Box",
     heading: "Füllen Sie sie.",
     back: "Zurück zur Grössenwahl",
     progress: "{count} von {total}",
@@ -91,7 +97,7 @@ export const de: Dictionary = {
   },
   delivery: {
     title: "Lieferung und Nachricht",
-    eyebrow: "Lieferung · 3 / 3",
+    eyebrow: "Box",
     heading: "Für wen und wann.",
     back: "Zurück zum Befüllen der Box",
     expected: "Voraussichtliche Lieferung",

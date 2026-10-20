@@ -8,6 +8,7 @@ import { catalogRepository } from "@/backend/container";
 import { ChristmasNotice } from "@/frontend/box/christmas-notice";
 import { SizePicker, type SizeOption } from "@/frontend/box/size-picker";
 import { SiteHeader } from "@/frontend/components/site-header";
+import { StepIndicator } from "@/frontend/components/step-indicator";
 import { getDictionary, resolvePageLocale } from "@/frontend/i18n";
 import { boxSizeIds, boxSizes } from "@/shared/catalog/box-sizes";
 import { withDemoDate } from "@/shared/demo";
@@ -38,7 +39,7 @@ export default async function HomePage({
     params,
     searchParams,
   );
-  const { home } = getDictionary(locale);
+  const { home, steps } = getDictionary(locale);
   const products = await catalogRepository.listProducts();
   const sizes: SizeOption[] = boxSizeIds.map((id) => ({
     id,
@@ -53,6 +54,11 @@ export default async function HomePage({
         locale={locale}
         alternates={alternatePaths("home")}
         demoDate={demoDate}
+      />
+      <StepIndicator
+        current={1}
+        labels={[steps.size, steps.fill, steps.delivery]}
+        label={steps.label}
       />
       <main
         id="content"

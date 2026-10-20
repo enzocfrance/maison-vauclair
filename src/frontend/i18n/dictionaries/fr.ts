@@ -16,9 +16,15 @@ export const fr = {
   units: {
     piece: "pièce",
   },
+  steps: {
+    label: "Étapes de la commande",
+    size: "Taille",
+    fill: "Composition",
+    delivery: "Livraison",
+  },
   home: {
     title: "Composez votre coffret",
-    eyebrow: "Coffret cadeau · 1 / 3",
+    eyebrow: "Coffret cadeau",
     heading: "Composez votre coffret.",
     lead: "Choisissez une taille. Nous l'assemblons à la main, à la fromagerie.",
   },
@@ -38,8 +44,8 @@ export const fr = {
   },
   fill: {
     title: "Remplissez votre coffret",
-    eyebrow: "{size} · 2 / 3",
-    eyebrowPending: "Coffret · 2 / 3",
+    eyebrow: "{size}",
+    eyebrowPending: "Coffret",
     heading: "Remplissez-le.",
     back: "Retour au choix de la taille",
     progress: "{count} sur {total}",
@@ -88,7 +94,7 @@ export const fr = {
   },
   delivery: {
     title: "Livraison et message",
-    eyebrow: "Livraison · 3 / 3",
+    eyebrow: "Coffret",
     heading: "Pour qui, et quand.",
     back: "Retour au remplissage du coffret",
     expected: "Livraison prévue",
