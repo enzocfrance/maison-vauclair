@@ -71,7 +71,7 @@ npm run format:check  # Prettier
 - The server always recomputes prices and dates: it never trusts the browser.
 - The delivery rule is isolated in a pure function, written test first.
 - Never read a `.env` file; never write a secret in the repository.
-- Environment variables: `TEAM_PASSWORD`, `DEMO_MODE`, `SITE_URL`, `ORDERS_DIR` (optional). Deployment secrets live in GitHub Actions: `DOKPLOY_URL`, `DOKPLOY_API_KEY`, `DOKPLOY_APPLICATION_ID`.
+- Environment variables: `TEAM_PASSWORD`, `DEMO_MODE`, `SITE_URL`, `ORDERS_DIR` (optional), set in Dokploy.
 
 ## Architecture
 
@@ -155,7 +155,7 @@ The catalogue and the orders sit behind interfaces (`CatalogRepository`, `OrderR
 - The order keeps its real creation date next to the simulated date, and the sheet flags the simulation.
 - Demo orders: when the server starts on an empty order store (`src/instrumentation.ts`), 12 fictitious orders for the presentation of 21 October 2026 are placed through `createOrder` (`src/backend/orders/demo-orders.ts`), in development and in production.
 
-**Deployment**: the CI deploys to Dokploy through its API, only after every check passed (Dokploy autodeploy is off).
+**Deployment**: by hand from Dokploy, once the CI is green. The CI checks the code and builds the image but never deploys (Dokploy autodeploy is off).
 
 ## Swiss rules and details
 

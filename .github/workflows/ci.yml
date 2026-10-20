@@ -47,26 +47,3 @@ jobs:
           done
           docker logs app
           exit 1
-
-  # Production only receives a version that passed every check above.
-  deploy:
-    name: Deploy to Dokploy
-    runs-on: ubuntu-latest
-    needs: docker
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    steps:
-      - name: Ask Dokploy to deploy main
-        env:
-          DOKPLOY_URL: ${{ secrets.DOKPLOY_URL }}
-          DOKPLOY_API_KEY: ${{ secrets.DOKPLOY_API_KEY }}
-          DOKPLOY_APPLICATION_ID: ${{ secrets.DOKPLOY_APPLICATION_ID }}
-        run: |
-          if [ -z "$DOKPLOY_URL" ] || [ -z "$DOKPLOY_API_KEY" ] || [ -z "$DOKPLOY_APPLICATION_ID" ]; then
-            echo "::error::Secrets DOKPLOY_URL, DOKPLOY_API_KEY and DOKPLOY_APPLICATION_ID are required."
-            exit 1
-          fi
-          curl --fail-with-body --silent --show-error --max-time 60 \
-            --request POST "${DOKPLOY_URL%/}/api/application.deploy" \
-            --header "Content-Type: application/json" \
-            --header "x-api-key: ${DOKPLOY_API_KEY}" \
-            --data "{\"applicationId\": \"${DOKPLOY_APPLICATION_ID}\"}"

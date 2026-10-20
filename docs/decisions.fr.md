@@ -56,5 +56,5 @@ Chaque décision ci-dessous a été prise pendant l'exercice ; le compromis, c'e
 | Next.js 15.5.28, TypeScript 5.9, ESLint 9 avec `@eslint/eslintrc` | La stack choisie ; TypeScript 7 et ESLint 10 ne sont pas pris en charge par Next 15 | ESLint 9 n'est plus maintenu |
 | PostCSS imposé en 8.5.30 par `overrides` | La version incluse dans Next 15 a des failles connues | Une contrainte à surveiller lors des mises à jour de Next |
 | Peu de dépendances : pas de bibliothèque d'i18n, de dates, d'interface ni de test d'interface | Intl et des dictionnaires typés suffisent ; les tests visent la logique métier | Le comportement de l'interface est vérifié à la main, pas par des tests automatisés |
-| Déploiement déclenché par la CI via l'API de Dokploy, seulement si tout est vert | Le webhook de Dokploy ne se déclenchait pas ; la production ne reçoit plus que des versions vérifiées | Trois secrets GitHub à gérer |
+| Déploiement à la main depuis Dokploy, une fois la CI au vert | Pour l'exercice, Enzo décide quand la production change ; aucun secret de déploiement gardé dans GitHub | Rien n'empêche de déployer une version dont la CI a échoué : vérifier la CI avant |
 | Image Docker : serveur autonome, non root, contrôle de santé, construite et sondée en CI | L'image testée est l'image déployée | — |

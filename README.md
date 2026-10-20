@@ -107,7 +107,7 @@ The reasons behind each choice are in [docs/decisions.md](docs/decisions.md).
 ## Deployment
 
 - Docker image built from `Dockerfile`: Next.js standalone server, non-root user, health check on `/api/health`.
-- On `main`, once every check has passed, the CI asks Dokploy to deploy through its API (GitHub secrets `DOKPLOY_URL`, `DOKPLOY_API_KEY`, `DOKPLOY_APPLICATION_ID`).
+- Deployed by hand from Dokploy, once the CI is green: the CI checks the code and builds the image, but never deploys.
 - Orders are written to `/app/data/orders`: mount a persistent volume there.
 - When the server starts on an empty order store, it adds 12 fictitious orders for the presentation of 21 October 2026, placed through the real order rules; a store that already holds orders is never touched.
 

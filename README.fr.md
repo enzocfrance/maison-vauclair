@@ -107,7 +107,7 @@ Les raisons de chaque choix sont dans [docs/decisions.fr.md](docs/decisions.fr.m
 ## Déploiement
 
 - Image Docker construite depuis le `Dockerfile` : serveur Next.js autonome, utilisateur non root, contrôle de santé sur `/api/health`.
-- Sur `main`, une fois toutes les vérifications passées, la CI demande à Dokploy de déployer par son API (secrets GitHub `DOKPLOY_URL`, `DOKPLOY_API_KEY`, `DOKPLOY_APPLICATION_ID`).
+- Déploiement à la main depuis Dokploy, une fois la CI au vert : la CI vérifie le code et construit l'image, mais ne déploie jamais.
 - Les commandes sont écrites dans `/app/data/orders` : y monter un volume persistant.
 - Quand le serveur démarre sur un stockage de commandes vide, il ajoute 12 commandes fictives pour la présentation du 21 octobre 2026, passées par les vraies règles de commande ; un stockage qui contient déjà des commandes n'est jamais touché.
 
