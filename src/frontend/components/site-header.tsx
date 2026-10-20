@@ -49,7 +49,7 @@ export function SiteHeader({
             href={withDemoDate(localizedPath(locale, "home"), demoDate)}
             className="flex min-h-11 items-center py-2.5"
           >
-            <LogoHorizontal className="h-8 w-auto lg:h-10" />
+            <LogoHorizontal className="h-10 w-auto lg:h-12" />
           </Link>
           <LanguageSwitch
             locale={locale}

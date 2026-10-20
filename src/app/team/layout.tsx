@@ -31,7 +31,7 @@ export default function TeamLayout({ children }: { children: ReactNode }) {
             href={teamPath("orders")}
             className="flex min-h-11 items-center py-2.5"
           >
-            <LogoHorizontal className="h-8 w-auto" />
+            <LogoHorizontal className="h-10 w-auto" />
           </Link>
           <p className="label-caps text-muted">{teamTexts.space}</p>
         </div>
