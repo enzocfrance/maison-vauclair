@@ -6,6 +6,10 @@
       "fr": "Gruyère AOP 18 mois",
       "de": "Gruyère AOP 18 Monate"
     },
+    "origin": {
+      "fr": "Affiné 18 mois · Gruyère",
+      "de": "18 Monate gereift · Greyerz"
+    },
     "size": {
       "amount": 250,
       "unit": "g"
@@ -21,6 +25,10 @@
     "name": {
       "fr": "Vacherin Mont-d'Or AOP",
       "de": "Vacherin Mont-d'Or AOP"
+    },
+    "origin": {
+      "fr": "Cerclé d'épicéa · Vallée de Joux",
+      "de": "In Fichtenrinde · Vallée de Joux"
     },
     "size": {
       "amount": 500,
@@ -38,6 +46,10 @@
       "fr": "Tomme vaudoise",
       "de": "Waadtländer Tomme"
     },
+    "origin": {
+      "fr": "Pâte molle · Gros-de-Vaud",
+      "de": "Weichkäse · Gros-de-Vaud"
+    },
     "size": {
       "amount": 100,
       "unit": "g"
@@ -52,6 +64,10 @@
     "name": {
       "fr": "L'Etivaz AOP",
       "de": "L'Etivaz AOP"
+    },
+    "origin": {
+      "fr": "Fabriqué au feu de bois · Pays-d'Enhaut",
+      "de": "Über dem Holzfeuer · Pays-d'Enhaut"
     },
     "size": {
       "amount": 200,
@@ -69,6 +85,10 @@
       "fr": "Tête de Moine AOP",
       "de": "Tête de Moine AOP"
     },
+    "origin": {
+      "fr": "Raclé en rosettes · Jura bernois",
+      "de": "Zu Rosetten geschabt · Berner Jura"
+    },
     "size": {
       "amount": 150,
       "unit": "g"
@@ -84,6 +104,10 @@
     "name": {
       "fr": "Vacherin fribourgeois AOP",
       "de": "Vacherin Fribourgeois AOP"
+    },
+    "origin": {
+      "fr": "Pâte mi-dure · Fribourg",
+      "de": "Halbhartkäse · Freiburg"
     },
     "size": {
       "amount": 250,
@@ -101,6 +125,10 @@
       "fr": "Saucisson vaudois IGP",
       "de": "Waadtländer Saucisson IGP"
     },
+    "origin": {
+      "fr": "Fumé au bois · Vaud",
+      "de": "Über Holz geräuchert · Waadt"
+    },
     "size": {
       "amount": 1,
       "unit": "piece"
@@ -116,6 +144,10 @@
     "name": {
       "fr": "Saucisse aux choux vaudoise IGP",
       "de": "Waadtländer Kohlwurst IGP"
+    },
+    "origin": {
+      "fr": "Au chou blanc · Vaud",
+      "de": "Mit Weisskohl · Waadt"
     },
     "size": {
       "amount": 1,
@@ -133,6 +165,10 @@
       "fr": "Boutefas AOP",
       "de": "Boutefas AOP"
     },
+    "origin": {
+      "fr": "Embossé à la main · Broye",
+      "de": "Von Hand gefüllt · Broye"
+    },
     "size": {
       "amount": 1,
       "unit": "piece"
@@ -149,6 +185,10 @@
       "fr": "Jambon cru de la Broye",
       "de": "Rohschinken aus der Broye"
     },
+    "origin": {
+      "fr": "Séché 12 mois · Broye",
+      "de": "12 Monate getrocknet · Broye"
+    },
     "size": {
       "amount": 100,
       "unit": "g"
@@ -163,6 +203,10 @@
     "name": {
       "fr": "Viande séchée du Valais IGP",
       "de": "Walliser Trockenfleisch IGP"
+    },
+    "origin": {
+      "fr": "Séchée à l'air des Alpes · Valais",
+      "de": "An der Alpenluft getrocknet · Wallis"
     },
     "size": {
       "amount": 100,
@@ -180,6 +224,10 @@
       "fr": "Lard fumé de campagne",
       "de": "Geräucherter Bauernspeck"
     },
+    "origin": {
+      "fr": "Fumé à froid · Jorat",
+      "de": "Kalt geräuchert · Jorat"
+    },
     "size": {
       "amount": 200,
       "unit": "g"
@@ -194,6 +242,10 @@
     "name": {
       "fr": "Chasselas Lavaux AOC",
       "de": "Chasselas Lavaux AOC"
+    },
+    "origin": {
+      "fr": "Chasselas · Lavaux",
+      "de": "Chasselas · Lavaux"
     },
     "size": {
       "amount": 75,
@@ -211,6 +263,10 @@
       "fr": "Dézaley Grand Cru AOC",
       "de": "Dézaley Grand Cru AOC"
     },
+    "origin": {
+      "fr": "Grand cru en terrasses · Lavaux",
+      "de": "Grand Cru in Terrassenlage · Lavaux"
+    },
     "size": {
       "amount": 75,
       "unit": "cl"
@@ -226,6 +282,10 @@
     "name": {
       "fr": "Saint-Saphorin AOC",
       "de": "Saint-Saphorin AOC"
+    },
+    "origin": {
+      "fr": "Chasselas des coteaux · Lavaux",
+      "de": "Chasselas aus Hanglagen · Lavaux"
     },
     "size": {
       "amount": 75,
@@ -243,6 +303,10 @@
       "fr": "Gamay La Côte AOC",
       "de": "Gamay La Côte AOC"
     },
+    "origin": {
+      "fr": "Gamay · La Côte",
+      "de": "Gamay · La Côte"
+    },
     "size": {
       "amount": 75,
       "unit": "cl"
@@ -258,6 +322,10 @@
     "name": {
       "fr": "Pinot noir Chablais AOC",
       "de": "Pinot Noir Chablais AOC"
+    },
+    "origin": {
+      "fr": "Pinot noir · Chablais",
+      "de": "Pinot Noir · Chablais"
     },
     "size": {
       "amount": 75,
@@ -275,6 +343,10 @@
       "fr": "Mousseux brut vaudois",
       "de": "Waadtländer Schaumwein brut"
     },
+    "origin": {
+      "fr": "Méthode traditionnelle · Vaud",
+      "de": "Traditionelle Methode · Waadt"
+    },
     "size": {
       "amount": 75,
       "unit": "cl"
@@ -289,6 +361,10 @@
     "name": {
       "fr": "Miel de montagne",
       "de": "Berghonig"
+    },
+    "origin": {
+      "fr": "Fleurs d'été · Alpes vaudoises",
+      "de": "Sommerblüten · Waadtländer Alpen"
     },
     "size": {
       "amount": 250,
@@ -305,6 +381,10 @@
       "fr": "Vin cuit vaudois",
       "de": "Waadtländer Birnendicksaft"
     },
+    "origin": {
+      "fr": "Jus de poire réduit · Vaud",
+      "de": "Eingekochter Birnensaft · Waadt"
+    },
     "size": {
       "amount": 250,
       "unit": "g"
@@ -319,6 +399,10 @@
     "name": {
       "fr": "Bricelets vaudois",
       "de": "Waadtländer Bricelets"
+    },
+    "origin": {
+      "fr": "Cuits au fer · Vaud",
+      "de": "Im Eisen gebacken · Waadt"
     },
     "size": {
       "amount": 100,
@@ -335,6 +419,10 @@
       "fr": "Moutarde de Bénichon",
       "de": "Bénichon-Senf"
     },
+    "origin": {
+      "fr": "Douce et épicée · Fribourg",
+      "de": "Mild und würzig · Freiburg"
+    },
     "size": {
       "amount": 200,
       "unit": "g"
@@ -350,6 +438,10 @@
       "fr": "Confiture de pruneaux",
       "de": "Zwetschgenkonfitüre"
     },
+    "origin": {
+      "fr": "Pruneaux de saison · Vaud",
+      "de": "Saisonzwetschgen · Waadt"
+    },
     "size": {
       "amount": 250,
       "unit": "g"
@@ -364,6 +456,10 @@
     "name": {
       "fr": "Chocolat noir 70 %",
       "de": "Dunkle Schokolade 70 %"
+    },
+    "origin": {
+      "fr": "70 % cacao · Suisse",
+      "de": "70 % Kakao · Schweiz"
     },
     "size": {
       "amount": 100,

@@ -40,6 +40,13 @@ describe("JSON catalog", () => {
     }
   });
 
+  it("tells where every product comes from, in French and German", () => {
+    for (const product of products) {
+      expect(product.origin?.fr, product.id).toMatch(/ · /);
+      expect(product.origin?.de, product.id).toMatch(/ · /);
+    }
+  });
+
   it("can fill the largest box", () => {
     expect(products.length).toBeGreaterThanOrEqual(boxSizes.large.itemCount);
     expect(() => startingPriceCents("large", products)).not.toThrow();

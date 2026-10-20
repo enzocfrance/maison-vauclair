@@ -370,6 +370,11 @@ function ProductRow({
             <AppellationStamp appellation={product.appellation} />
           )}
         </p>
+        {product.origin && (
+          <p className="text-[0.625rem] font-semibold tracking-label text-muted uppercase">
+            {product.origin[locale]}
+          </p>
+        )}
         <p className="text-[0.8125rem] text-muted tabular-nums">
           {formatSize(product.size, dictionary)} ·{" "}
           {formatChf(product.priceCents)}

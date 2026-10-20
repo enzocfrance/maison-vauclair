@@ -18,6 +18,8 @@ export const productSchema = z.strictObject({
   id: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
   category: z.enum(categories),
   name: localizedText,
+  /** « Affiné 18 mois · Gruyère ». Optional so that orders stored before it still read. */
+  origin: localizedText.optional(),
   size: z.strictObject({
     amount: z.number().int().positive(),
     unit: z.enum(sizeUnits),
