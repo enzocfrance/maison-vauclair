@@ -29,16 +29,16 @@ export default async function SheetPage({ params }: SheetPageProps) {
       <div className="mx-auto mb-6 flex w-full max-w-[210mm] flex-wrap items-center justify-between gap-4 print:hidden">
         <Link
           href={teamPath("orders")}
-          className="flex min-h-11 items-center gap-2 text-sm underline-offset-4 hover:underline"
+          className="flex min-h-11 items-center gap-2 text-sm"
         >
           <ArrowLeftIcon className="size-5" />
-          {teamTexts.sheet.back}
+          <span className="link-draw">{teamTexts.sheet.back}</span>
         </Link>
         <div className="flex flex-wrap items-center gap-6">
           {order.welcomeCode && (
             <Link
               href={teamPath("card", { orderId })}
-              className="text-sm underline underline-offset-4 hover:no-underline"
+              className="link-draw text-sm"
             >
               {teamTexts.sheet.welcomeCard}
             </Link>

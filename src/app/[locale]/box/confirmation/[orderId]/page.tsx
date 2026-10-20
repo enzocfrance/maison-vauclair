@@ -5,7 +5,10 @@ import { getPageContext, type PageSearchParams } from "@/app/_lib/page-context";
 import { getCustomerOrder } from "@/backend/container";
 import { BoxReset } from "@/frontend/box/box-reset";
 import { MessageCard } from "@/frontend/box/message-card";
-import { primaryAction } from "@/frontend/components/action-styles";
+import {
+  primaryAction,
+  primaryArrow,
+} from "@/frontend/components/action-styles";
 import { ArrowRightIcon } from "@/frontend/components/icons";
 import { SiteHeader } from "@/frontend/components/site-header";
 import { getDictionary, resolvePageLocale } from "@/frontend/i18n";
@@ -130,7 +133,7 @@ export default async function ConfirmationPage({
             className={`${primaryAction} self-start`}
           >
             <span>{t.another}</span>
-            <ArrowRightIcon className="size-5" />
+            <ArrowRightIcon className={primaryArrow} />
           </Link>
         </div>
 

@@ -5,7 +5,10 @@ import {
   type PageParams,
   type PageSearchParams,
 } from "@/app/_lib/page-context";
-import { primaryAction } from "@/frontend/components/action-styles";
+import {
+  primaryAction,
+  primaryArrow,
+} from "@/frontend/components/action-styles";
 import { ArrowRightIcon } from "@/frontend/components/icons";
 import { SiteHeader } from "@/frontend/components/site-header";
 import { getDictionary, resolvePageLocale } from "@/frontend/i18n";
@@ -86,7 +89,7 @@ export default async function WelcomePage({
             className={primaryAction}
           >
             <span>{t.cta}</span>
-            <ArrowRightIcon className="size-5" />
+            <ArrowRightIcon className={primaryArrow} />
           </Link>
         </div>
       </main>

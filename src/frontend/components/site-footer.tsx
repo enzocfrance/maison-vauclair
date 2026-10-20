@@ -15,7 +15,7 @@ export function SiteFooter({ demoNotice, links = [] }: SiteFooterProps) {
           <Link
             key={link.href}
             href={link.href}
-            className="underline underline-offset-4 hover:text-ink print:hidden"
+            className="link-draw hover:text-ink print:hidden"
           >
             {link.label}
           </Link>

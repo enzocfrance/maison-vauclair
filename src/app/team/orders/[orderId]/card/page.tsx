@@ -31,10 +31,10 @@ export default async function CardPage({ params }: CardPageProps) {
       <div className="mx-auto mb-6 flex w-full max-w-[105mm] flex-wrap items-center justify-between gap-4 print:hidden">
         <Link
           href={teamPath("order", { orderId })}
-          className="flex min-h-11 items-center gap-2 text-sm underline-offset-4 hover:underline"
+          className="flex min-h-11 items-center gap-2 text-sm"
         >
           <ArrowLeftIcon className="size-5" />
-          {teamTexts.cardPage.back}
+          <span className="link-draw">{teamTexts.cardPage.back}</span>
         </Link>
         <PrintButton label={teamTexts.cardPage.print} />
       </div>

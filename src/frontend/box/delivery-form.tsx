@@ -3,7 +3,10 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useId, useState, type FormEvent, type ReactNode } from "react";
-import { primaryAction } from "@/frontend/components/action-styles";
+import {
+  primaryAction,
+  primaryArrow,
+} from "@/frontend/components/action-styles";
 import { ArrowRightIcon } from "@/frontend/components/icons";
 import { StepHeader } from "@/frontend/components/step-header";
 import { getDictionary, languageNames, type Dictionary } from "@/frontend/i18n";
@@ -140,7 +143,7 @@ export function DeliveryForm({
           <p>{t.incomplete}</p>
           <Link href={fillHref} className={primaryAction}>
             <span>{t.backToFill}</span>
-            <ArrowRightIcon className="size-5" />
+            <ArrowRightIcon className={primaryArrow} />
           </Link>
         </div>
       </>
@@ -252,7 +255,7 @@ export function DeliveryForm({
         {errors.box ? (
           <>
             {t.errors.box}{" "}
-            <Link href={fillHref} className="underline underline-offset-4">
+            <Link href={fillHref} className="link-draw">
               {t.backToFill}
             </Link>
           </>
@@ -269,7 +272,7 @@ export function DeliveryForm({
       className={`${primaryAction} w-full disabled:cursor-wait disabled:opacity-70`}
     >
       <span>{sending ? t.sending : t.submit}</span>
-      <ArrowRightIcon className="size-5" />
+      <ArrowRightIcon className={primaryArrow} />
     </button>
   );
 

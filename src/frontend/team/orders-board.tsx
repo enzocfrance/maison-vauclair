@@ -102,7 +102,7 @@ export function OrdersBoard({ orders }: { orders: readonly Order[] }) {
                     <th scope="row" className={`${cell} text-left font-medium`}>
                       <Link
                         href={teamPath("order", { orderId: order.id })}
-                        className="tabular-nums underline underline-offset-4 hover:no-underline"
+                        className="link-draw tabular-nums"
                       >
                         {order.id}
                       </Link>

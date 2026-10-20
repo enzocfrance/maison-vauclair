@@ -25,10 +25,7 @@ export function DemoBanner({ locale, date, exitHref }: DemoBannerProps) {
             date: formatLongDate(date, locale, { year: true }),
           })}
         </p>
-        <a
-          href={exitHref}
-          className="underline underline-offset-4 hover:no-underline"
-        >
+        <a href={exitHref} className="link-draw">
           {demo.exit}
         </a>
       </div>

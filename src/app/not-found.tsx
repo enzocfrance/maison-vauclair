@@ -16,12 +16,16 @@ export default function NotFound() {
             Seite nicht gefunden
           </span>
         </h1>
-        <ul className="flex gap-6 text-sm underline underline-offset-4">
+        <ul className="flex gap-6 text-sm">
           <li>
-            <a href={localizedPath("fr", "home")}>Retour à l&apos;accueil</a>
+            <a href={localizedPath("fr", "home")} className="link-draw">
+              Retour à l&apos;accueil
+            </a>
           </li>
           <li lang="de">
-            <a href={localizedPath("de", "home")}>Zur Startseite</a>
+            <a href={localizedPath("de", "home")} className="link-draw">
+              Zur Startseite
+            </a>
           </li>
         </ul>
       </main>

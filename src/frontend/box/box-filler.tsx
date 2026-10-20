@@ -3,7 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { primaryAction } from "@/frontend/components/action-styles";
+import {
+  primaryAction,
+  primaryArrow,
+} from "@/frontend/components/action-styles";
 import {
   ArrowRightIcon,
   CheckIcon,
@@ -84,7 +87,7 @@ export function BoxFiller({
           <p>{t.noSize}</p>
           <Link href={backHref} className={primaryAction}>
             <span>{t.chooseSize}</span>
-            <ArrowRightIcon className="size-5" />
+            <ArrowRightIcon className={primaryArrow} />
           </Link>
         </div>
       </>
@@ -243,7 +246,7 @@ export function BoxFiller({
                 {formatChf(price?.totalCents ?? 0)}
               </span>
               {price && (
-                <span className="text-[0.6875rem] text-muted">
+                <span className="text-[0.6875rem] text-muted tabular-nums">
                   {format(t.packagingIncluded, {
                     price: formatChf(price.packagingCents),
                   })}
@@ -431,7 +434,7 @@ function ContinueAction({
   const content = (
     <>
       <span>{label}</span>
-      <ArrowRightIcon className="size-5" />
+      <ArrowRightIcon className={primaryArrow} />
     </>
   );
 

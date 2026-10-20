@@ -41,8 +41,27 @@
   }
 
   ::selection {
-    background-color: var(--color-ink);
+    background-color: var(--color-accent);
     color: var(--color-white);
+  }
+
+  /* Every motion stays under 250 ms, and none at all when the visitor asks for it. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+@keyframes link-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
   }
 }
 
@@ -50,6 +69,30 @@
 @page {
   size: A4;
   margin: 12mm;
+}
+
+/*
+ * Text links: a 1 px underline, always visible so links never rely on colour,
+ * drawn again from left to right on hover (of the link or of its parent).
+ */
+@utility link-draw {
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: -0.15em;
+    height: 1px;
+    background-color: currentColor;
+    transform-origin: left;
+  }
+
+  &:hover::after,
+  *:hover > &::after {
+    animation: link-draw 250ms ease-out;
+  }
 }
 
 /* Small spaced capitals used for eyebrows and field labels. */

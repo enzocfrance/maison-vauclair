@@ -1,7 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { primaryAction } from "@/frontend/components/action-styles";
+import {
+  primaryAction,
+  primaryArrow,
+} from "@/frontend/components/action-styles";
 import { ArrowRightIcon } from "@/frontend/components/icons";
 import { getDictionary } from "@/frontend/i18n";
 import { format } from "@/frontend/i18n/format";
@@ -60,7 +63,7 @@ export function SizePicker({ locale, sizes, nextHref }: SizePickerProps) {
                 </span>
               )}
               <span className="text-[1.0625rem] font-medium">{t[size.id]}</span>
-              <span className="text-[0.8125rem] text-muted">
+              <span className="text-[0.8125rem] text-muted tabular-nums">
                 {format(t.summary, {
                   count: size.itemCount,
                   price: formatChf(size.startingPriceCents),
@@ -80,7 +83,7 @@ export function SizePicker({ locale, sizes, nextHref }: SizePickerProps) {
       </fieldset>
       <button type="submit" className={primaryAction}>
         <span>{t.cta}</span>
-        <ArrowRightIcon className="size-5" />
+        <ArrowRightIcon className={primaryArrow} />
       </button>
     </form>
   );

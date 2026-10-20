@@ -88,20 +88,14 @@ export default async function PhotoCreditsPage({
                 <p className="text-muted">
                   {t.author} {credit.author} · {t.license}{" "}
                   {credit.licenseUrl ? (
-                    <a
-                      href={credit.licenseUrl}
-                      className="underline underline-offset-4 hover:no-underline"
-                    >
+                    <a href={credit.licenseUrl} className="link-draw">
                       {credit.license}
                     </a>
                   ) : (
                     credit.license
                   )}
                 </p>
-                <a
-                  href={credit.source}
-                  className="self-start underline underline-offset-4 hover:no-underline"
-                >
+                <a href={credit.source} className="link-draw self-start">
                   {t.source}
                   <span className="sr-only"> – {credit.title}</span>
                 </a>
