@@ -1,4 +1,5 @@
 .next/
+.next-*/
 out/
 coverage/
 node_modules/

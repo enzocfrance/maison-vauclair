@@ -15,7 +15,14 @@ const restrictImports = (...patterns) => ({
 
 const eslintConfig = [
   {
-    ignores: [".next/**", "out/**", "coverage/**", "next-env.d.ts", "docs/**"],
+    ignores: [
+      ".next/**",
+      ".next-*/**",
+      "out/**",
+      "coverage/**",
+      "next-env.d.ts",
+      "docs/**",
+    ],
   },
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
