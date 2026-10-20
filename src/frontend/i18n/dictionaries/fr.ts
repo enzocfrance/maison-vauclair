@@ -161,6 +161,8 @@ export const fr = {
     welcomeCard:
       "Une carte de bienvenue en {language} sera glissée dans le coffret.",
     noWelcomeCard: "Sans carte de bienvenue.",
+    cardTitle: "Votre carte",
+    noMessage: "Sans message",
     another: "Composer un autre coffret",
   },
   welcome: {

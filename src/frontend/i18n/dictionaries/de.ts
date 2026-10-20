@@ -163,6 +163,8 @@ export const de: Dictionary = {
     box: "{size} · {count} Produkte · {total}",
     welcomeCard: "Eine Willkommenskarte auf {language} liegt der Box bei.",
     noWelcomeCard: "Ohne Willkommenskarte.",
+    cardTitle: "Ihre Karte",
+    noMessage: "Ohne Nachricht",
     another: "Eine weitere Box zusammenstellen",
   },
   welcome: {
