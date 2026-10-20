@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { LogoHorizontal } from "@/frontend/components/brand";
+import { LogoHorizontal, SwissFlag } from "@/frontend/components/brand";
 import { SiteFooter } from "@/frontend/components/site-footer";
 import { getDictionary } from "@/frontend/i18n";
 import { teamTexts } from "@/frontend/team/team-texts";
@@ -32,6 +32,7 @@ export default function TeamLayout({ children }: { children: ReactNode }) {
             className="flex min-h-11 items-center py-2.5"
           >
             <LogoHorizontal className="h-10 w-auto" />
+            <SwissFlag className="ml-3 size-3.5 shrink-0" />
           </Link>
           <p className="label-caps text-muted">{teamTexts.space}</p>
         </div>

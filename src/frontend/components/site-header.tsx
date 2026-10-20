@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LogoHorizontal } from "@/frontend/components/brand";
+import { LogoHorizontal, SwissFlag } from "@/frontend/components/brand";
 import { getDictionary } from "@/frontend/i18n";
 import type { IsoDate } from "@/shared/delivery/calendar";
 import { withDemoDate } from "@/shared/demo";
@@ -51,6 +51,7 @@ export function SiteHeader({
             className="flex min-h-11 items-center py-2.5"
           >
             <LogoHorizontal className="h-10 w-auto lg:h-12" />
+            <SwissFlag className="ml-3 size-3.5 shrink-0" />
           </Link>
           <LanguageSwitch
             locale={locale}

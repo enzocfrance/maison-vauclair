@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LogoVertical } from "@/frontend/components/brand";
+import { LogoVertical, SwissFlag } from "@/frontend/components/brand";
 import { getDictionary } from "@/frontend/i18n";
 import type { Locale } from "@/shared/i18n/locales";
 import { localizedPath } from "@/shared/i18n/routes";
@@ -23,7 +23,11 @@ export function HouseFooter({ locale }: HouseFooterProps) {
   return (
     <footer className="mt-auto border-t border-ink">
       <div className="mx-auto w-full max-w-6xl px-5 pt-12">
-        <LogoVertical className="h-16 w-auto" />
+        {/* The flag follows the wordmark, the logo keeps its own alignment. */}
+        <div className="relative w-fit">
+          <LogoVertical className="h-16 w-auto" />
+          <SwissFlag className="absolute top-[2.45rem] left-[calc(100%+0.125rem)] size-2.5" />
+        </div>
       </div>
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-5 pt-10 pb-10 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_14rem] lg:gap-16">
         <h2 className="sr-only">{f.shopsLabel}</h2>

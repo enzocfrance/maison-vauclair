@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Seal } from "@/frontend/components/brand";
+import { Seal, SwissFlag } from "@/frontend/components/brand";
 import { getDictionary } from "@/frontend/i18n";
 import { format } from "@/frontend/i18n/format";
 import { welcomeDiscountPercent, type WelcomeCard } from "@/shared/welcome";
@@ -20,7 +20,10 @@ export function WelcomeCardView({ card }: { card: WelcomeCard }) {
       className="mx-auto flex h-[148mm] w-[105mm] flex-col justify-between gap-6 bg-white p-[9mm] shadow-sm print:mx-0 print:shadow-none print:outline-1 print:outline-line print:outline-dashed"
     >
       <div className="flex flex-col gap-6">
-        <Seal className="size-[22mm] text-ink" />
+        <div className="flex items-center gap-[3mm]">
+          <Seal className="size-[22mm] text-ink" />
+          <SwissFlag className="size-[4mm] shrink-0" />
+        </div>
         <div className="flex flex-col gap-2.5">
           <p className={label}>{t.eyebrow}</p>
           <h1
