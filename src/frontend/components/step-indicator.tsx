@@ -41,7 +41,7 @@ export function StepIndicator({ current, labels, label }: StepIndicatorProps) {
           })}
         </ol>
       </div>
-      <div aria-hidden="true" className="h-px bg-line">
+      <div aria-hidden="true" className="full-bleed h-px bg-line">
         <div
           className="h-px bg-ink [view-transition-name:step-progress]"
           style={{ width: `${(current / labels.length) * 100}%` }}

@@ -67,6 +67,21 @@
     background-color: var(--color-ink);
   }
 
+  /*
+   * Under a modal dialog the page stops scrolling and its scrollbar goes away.
+   * A padding the width of the bar (measured on opening) keeps the page still;
+   * full-bleed bands run under it, so no light notch shows on the right.
+   */
+  html:has(dialog:modal) {
+    overflow: hidden;
+    padding-right: var(--scrollbar-width, 0px);
+  }
+
+  html:has(dialog:modal) .full-bleed {
+    margin-right: calc(var(--scrollbar-width, 0px) * -1);
+    padding-right: var(--scrollbar-width, 0px);
+  }
+
   /* Every motion stays under 250 ms, and none at all when the visitor asks for it. */
   @media (prefers-reduced-motion: reduce) {
     *,

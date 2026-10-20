@@ -30,7 +30,7 @@ export function HouseFooter({ locale }: HouseFooterProps) {
   ];
 
   return (
-    <footer className="mt-auto border-t border-ink">
+    <footer className="full-bleed mt-auto border-t border-ink">
       <div className="mx-auto w-full max-w-6xl px-5 pt-12">
         {/* The flag follows the wordmark, the logo keeps its own alignment. */}
         <div className="relative w-fit">
@@ -81,7 +81,7 @@ export function HouseFooter({ locale }: HouseFooterProps) {
           </ul>
         </nav>
       </div>
-      <div className="border-t border-line">
+      <div className="full-bleed border-t border-line">
         <p className="mx-auto w-full max-w-6xl px-5 py-5 text-xs text-muted">
           {dictionary.site.demoNotice}
         </p>

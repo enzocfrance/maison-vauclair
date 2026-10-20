@@ -63,6 +63,12 @@ export function StartDialog({
     const timer = window.setTimeout(() => {
       if (!dialog.current || dialog.current.open) return;
       shownInThisDocument = true;
+      // The page scrollbar goes away under the dialog (globals.css): its width keeps the page still.
+      const root = document.documentElement;
+      root.style.setProperty(
+        "--scrollbar-width",
+        `${window.innerWidth - root.clientWidth}px`,
+      );
       dialog.current.showModal();
       featured.current?.focus();
     }, 400);

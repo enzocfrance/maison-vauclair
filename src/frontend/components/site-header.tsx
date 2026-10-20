@@ -44,7 +44,7 @@ export function SiteHeader({
           exitHref={alternates[locale]}
         />
       )}
-      <header className="border-b border-line">
+      <header className="full-bleed border-b border-line">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5">
           <Link
             href={withDemoDate(localizedPath(locale, "home"), demoDate)}

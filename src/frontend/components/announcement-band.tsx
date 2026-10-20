@@ -28,7 +28,7 @@ export function AnnouncementBand({ locale, today }: AnnouncementBandProps) {
         });
 
   return (
-    <div className="bg-ink text-white">
+    <div className="full-bleed bg-ink text-white">
       <p className="mx-auto w-full max-w-6xl px-5 py-2.5 text-center text-[0.625rem] leading-relaxed font-medium tracking-[0.1em] text-balance uppercase sm:text-[0.6875rem] sm:tracking-label">
         {christmas ? (
           <>
