@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
-import { SiteFooter } from "@/frontend/components/site-footer";
+import { HouseFooter } from "@/frontend/components/house-footer";
 import { getDictionary, resolvePageLocale } from "@/frontend/i18n";
-import { localizedPath } from "@/shared/i18n/routes";
 
 type LocaleLayoutProps = {
   children: ReactNode;
@@ -24,19 +23,7 @@ export default async function LocaleLayout({
         {dictionary.site.skipToContent}
       </a>
       {children}
-      <SiteFooter
-        demoNotice={dictionary.site.demoNotice}
-        links={[
-          {
-            href: localizedPath(locale, "privacy"),
-            label: dictionary.privacy.link,
-          },
-          {
-            href: localizedPath(locale, "photoCredits"),
-            label: dictionary.credits.link,
-          },
-        ]}
-      />
+      <HouseFooter locale={locale} />
     </div>
   );
 }

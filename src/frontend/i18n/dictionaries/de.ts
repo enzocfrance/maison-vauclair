@@ -213,6 +213,26 @@ export const de: Dictionary = {
       },
     ],
   },
+  footer: {
+    shopsLabel: "Unsere Läden",
+    fictional: "Fiktive Adresse",
+    shops: [
+      {
+        name: "Lausanne",
+        street: "Place de la Meule 1",
+        city: "1003 Lausanne",
+        hours: ["Dienstag–Freitag 8.30–18.30 Uhr", "Samstag 8–17 Uhr"],
+      },
+      {
+        name: "Vevey",
+        street: "Quai des Caves 3",
+        city: "1800 Vevey",
+        hours: ["Dienstag–Samstag 9–18 Uhr", "Sonntag und Montag geschlossen"],
+      },
+    ],
+    linksLabel: "Informationen",
+    team: "Teambereich",
+  },
   credits: {
     title: "Bildnachweis",
     link: "Bildnachweis",

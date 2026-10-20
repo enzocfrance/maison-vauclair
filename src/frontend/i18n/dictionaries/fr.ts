@@ -211,6 +211,26 @@ export const fr = {
       },
     ],
   },
+  footer: {
+    shopsLabel: "Nos boutiques",
+    fictional: "Adresse fictive",
+    shops: [
+      {
+        name: "Lausanne",
+        street: "Place de la Meule 1",
+        city: "1003 Lausanne",
+        hours: ["Mardi–vendredi 8 h 30–18 h 30", "Samedi 8 h–17 h"],
+      },
+      {
+        name: "Vevey",
+        street: "Quai des Caves 3",
+        city: "1800 Vevey",
+        hours: ["Mardi–samedi 9 h–18 h", "Dimanche et lundi fermé"],
+      },
+    ],
+    linksLabel: "Informations",
+    team: "Espace équipe",
+  },
   credits: {
     title: "Crédits photos",
     link: "Crédits photos",
