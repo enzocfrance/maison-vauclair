@@ -5,7 +5,7 @@ import { LogoHorizontal, SwissFlag } from "@/frontend/components/brand";
 import { SiteFooter } from "@/frontend/components/site-footer";
 import { getDictionary } from "@/frontend/i18n";
 import { teamTexts } from "@/frontend/team/team-texts";
-import { teamPath } from "@/shared/i18n/routes";
+import { localizedPath } from "@/shared/i18n/routes";
 
 export const metadata: Metadata = {
   title: {
@@ -27,8 +27,9 @@ export default function TeamLayout({ children }: { children: ReactNode }) {
       </a>
       <header className="border-b border-line bg-white print:hidden">
         <div className="mx-auto flex min-h-11 w-full max-w-6xl items-center justify-between px-5">
+          {/* The logo leads to the shop's home page; each order page links back to the list. */}
           <Link
-            href={teamPath("orders")}
+            href={localizedPath("fr", "home")}
             className="flex min-h-11 items-center py-2.5"
           >
             <LogoHorizontal className="h-10 w-auto" />
