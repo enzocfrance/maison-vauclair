@@ -1,0 +1,813 @@
+
+✻ Conversation compacted (ctrl+o for history)
+
+
+● La vérification vient de se terminer et tout passe, fenêtre d'accueil
+  comprise. Je regarde les captures avant de commiter.
+
+  Read 6 files (ctrl+o to expand)
+  ⎿  Read
+     ..\..\AppData\Local\Temp\claude\c--Users-chame-Documents-maisonvauclair-enz
+     o-chamanier\36a447e1-5e10-4da4-88ff-4032b4783b32\tasks\b6861y3tj.output (22
+     lines)
+  ⎿  Read
+     ..\..\AppData\Local\Temp\claude\c--Users-chame-Documents-maisonvauclair-enz
+     o-chamanier\36a447e1-5e10-4da4-88ff-4032b4783b32\scratchpad\og\make-og.mjs
+     (57 lines)
+  ⎿  Read src\frontend\components\brand\swiss-flag.tsx (18 lines)
+  ⎿  Read
+     ..\..\AppData\Local\Temp\claude\c--Users-chame-Documents-maisonvauclair-enz
+     o-chamanier\36a447e1-5e10-4da4-88ff-4032b4783b32\tasks\bx0ar0c1f.output (35
+     lines)
+  ⎿  Read ..\..\AppData\Local\Temp\claude\c--Users-chame-Documents-maisonvauclai
+     r-enzo-chamanier\36a447e1-5e10-4da4-88ff-4032b4783b32\scratchpad\cdp\cdp-sh
+     ot.mjs (192 lines)
+
+● Les captures sont bonnes (fenêtre FR/DE, drapeau dans l'en-tête, bandeau, pied
+  de page, poinçons). Je relis maintenant le diff pour découper les commits par
+  sujet.
+
+● Bash(git diff --stat && git diff -- src/frontend/styles/globals.css
+      src/frontend/components/site-header.tsx
+      src/frontend/components/house-footer.tsx src/frontend/com…)
+  ⎿  (No output)
+
+● Bash(git diff -- src/frontend/i18n/dictionaries/
+      src/frontend/components/announcement-band.tsx
+      src/frontend/welcome/welcome-card-view.tsx && cat package.json | sed -…)
+  ⎿  (No output)
+
+● Avant de découper les commits, je lance le lint, les types, les tests et le
+  formatage.
+
+● Bash(npm run lint 2>&1 | tail -5; NEXT_DIST_DIR=.next-verify npm run typecheck
+      2>&1 | tail -5; npm test 2>&1 | tail -6; npm run format:check 2>&1 | tail
+      -4; git stat…)
+  ⎿  Updated tsconfig.json (+26 -6)
+       1  {
+       2    "compilerOptions": {
+       3      "target": "ES2022",
+       4 -    "lib": ["dom", "dom.iterable", "es2022"],                  
+       4 +    "lib": [                                                   
+       5 +      "dom",                                                   
+       6 +      "dom.iterable",                                          
+       7 +      "es2022"                                                 
+       8 +    ],                                                         
+       9      "allowJs": false,
+      10      "skipLibCheck": true,
+      11      "strict": true,
+     ...
+      21      "isolatedModules": true,
+      22      "jsx": "preserve",
+      23      "incremental": true,
+      20 -    "plugins": [{ "name": "next" }],                           
+      21 -    "paths": { "@/*": ["./src/*"] }                            
+      24 +    "plugins": [                                               
+      25 +      {                                                        
+      26 +        "name": "next"                                         
+      27 +      }                                                        
+      28 +    ],                                                         
+      29 +    "paths": {                                                 
+      30 +      "@/*": [                                                 
+      31 +        "./src/*"                                              
+      32 +      ]                                                        
+      33 +    }                                                          
+      34    },
+      23 -  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/ty
+         -pes/**/*.ts"],                                                 
+      24 -  "exclude": ["node_modules"]                                  
+      25 -}                                                              
+      35 +  "include": [                                                 
+      36 +    "**/*.ts",                                                 
+      37 +    "**/*.tsx",                                                
+      38 +    ".next/types/**/*.ts",                                     
+      39 +    "next-env.d.ts",                                           
+      40 +    ".next-verify/types/**/*.ts"                               
+      41 +  ],                                                           
+      42 +  "exclude": [                                                 
+      43 +    "node_modules"                                             
+     … 2 more lines (ctrl+o to expand)
+  ⎿  (timeout 5m)
+
+● Bash(git checkout -- tsconfig.json && npm test 2>&1 | grep -E "Test
+      Files|Tests " ; npm run format:check 2>&1 | tail -2)
+  ⎿  Updated tsconfig.json (+6 -26)
+  ⎿  (a git step in this command can move the working tree, so these may be
+     its changes, not edits) (ctrl+o to expand)
+
+● Tout passe : lint, types, 99 tests et formatage. Je prépare maintenant les
+  états intermédiaires des fichiers qui touchent plusieurs sujets, pour avoir un
+  commit par sujet.
+
+● Bash(ls src/frontend/navigation/ && grep -n
+      "SwissFlag\|navigateWithTransition\|import"
+      src/frontend/box/start-dialog.tsx | head -20 && git diff --
+      "src/app/[locale]…)
+  ⎿  (No output)
+
+  Made 1 scratchpad edit +62 (ctrl+o to expand)
+
+● Bash(S="/c/Users/chame/AppData/Local/Temp/claude/c--Users-chame-Documents-mais
+      onvauclair-enzo-chamanier/36a447e1-5e10-4da4-88ff-4032b4783b32/scratchpad/
+      split"; cd /c…)
+  ⎿  Files differ
+
+● Les états intermédiaires sont corrects. Je vérifie le format des commits
+  précédents, puis j'enchaîne les cinq commits.
+
+● Bash(git log -3 --format='%B---')
+  ⎿  (No output)
+
+● Bash(S="/c/Users/chame/AppData/Local/Temp/claude/c--Users-chame-Documents-mais
+      onvauclair-enzo-chamanier/36a447e1-5e10-4da4-88ff-4032b4783b32/scratchpad/
+      split/stages"…)
+  ⎿  (No output)
+
+● Les cinq commits sont faits et l'arbre de travail est propre. Je pousse.
+
+● Bash(git push 2>&1 | tail -3)
+  ⎿  (No output)
+
+● La fenêtre d'accueil est terminée, testée et poussée sur main (commit
+  d06758b).
+
+  Comment elle fonctionne (start-dialog.tsx (src/frontend/box/start-dialog.tsx))
+  - Elle s'ouvre sur l'accueil, 400 ms après le chargement, et une seule fois
+    par visite : elle ne revient pas si le client navigue puis revient.
+  - Le style reste celui du site : cadre en filet noir, titre Archivo léger,
+    point rouge, aucune ombre ni coin arrondi. Elle se déplie depuis le haut en
+    220 ms, sans animation si le client a réduit les animations.
+  - Contenu :
+    - le titre « Offrez un coffret composé par vous. » ;
+    - le message de Noël, qui change avec la date ;
+    - les trois tailles (4, 6 et 9) avec leur prix « dès CHF … ».
+  - Choisir une taille l'enregistre et mène directement à la composition, avec
+    la transition de page.
+  - Elle se ferme par la croix, « Plus tard », la touche Échap ou un clic à
+    côté.
+  - Accessibilité : le focus arrive sur la taille Classique.
+  - Elle existe en FR et en DE (« Verschenken Sie eine Box nach Ihrer Wahl. »).
+
+  Tests faits dans Edge sans affichage : la fenêtre s'ouvre en FR et en DE et ne
+  s'ouvre pas une deuxième fois. Choisir 6 mène à /fr/coffret/composer avec la
+  taille Classique enregistrée. Le lint, les types, les 99 tests et le formatage
+  passent.
+
+  Captures à regarder :
+  - C:\Users\chame\AppData\Local\Temp\claude\c--Users-chame-Documents-maisonvauc
+    lair-enzo-chamanier\36a447e1-5e10-4da4-88ff-4032b4783b32\scratchpad\shots-po
+    lish\N-dialog-390.png (mobile)
+  - C:\Users\chame\AppData\Local\Temp\claude\c--Users-chame-Documents-maisonvauc
+    lair-enzo-chamanier\36a447e1-5e10-4da4-88ff-4032b4783b32\scratchpad\shots-po
+    lish\N-dialog-de-1440.png (ordinateur, en allemand)
+
+  Poussé avec, un commit par sujet
+  - Transitions de page : la nouvelle page apparaît de gauche à droite, comme un
+    trait qu'on tire, et l'en-tête ne bouge pas.
+  - Barre de défilement : fine, un trait noir sur un fond gris clair.
+  - Drapeau suisse : à côté du logo dans l'en-tête, le pied de page et l'espace
+    équipe, devant « Livraison réfrigérée dans toute la Suisse » dans le
+    bandeau, sur la carte de bienvenue et sur les images de partage. Aucune
+    mention « qualité suisse ».
+  - Adresses du pied de page : elles ouvrent Google Maps dans un nouvel onglet.
+
+  À savoir
+  - Les adresses sont fictives : Google Maps ne trouvera que la ville (Lausanne
+    ou Vevey), pas la rue.
+  - Le drapeau n'est pas sur l'icône d'onglet ni sur la fiche imprimée, qui est
+    en noir et blanc.
+  - Le site n'est toujours pas en ligne : il manque les secrets GitHub
+    DOKPLOY_URL, DOKPLOY_API_KEY et DOKPLOY_APPLICATION_ID, donc l'étape «
+    Deploy to Dokploy » échouera encore sur ce push.
+
+> je ne vois pas de fenetre call to action comme tu dis au demarrage du site
+
+● Je regarde d'abord les conditions d'ouverture dans le code, puis je teste ton
+  serveur de dev sur le port 3000 avec un navigateur vierge.
+
+● Bash(cat -n src/frontend/box/start-dialog.tsx | sed -n '1,90p'; (netstat -ano
+      | grep -E ":3000 .*LISTENING") || echo "nothing on 3000")
+  ⎿  (No output)
+
+● Le serveur de dev tourne bien sur le port 3000. Le code d'ouverture me fait
+  soupçonner un problème propre au mode dev. Je vérifie sur ton serveur avec un
+  profil de navigateur vierge.
+
+  Made 1 scratchpad edit +17 (ctrl+o to expand)
+● Bash(C="/c/Users/chame/AppData/Local/Temp/claude/c--Users-chame-Documents-mais
+      onvauclair-enzo-chamanier/36a447e1-5e10-4da4-88ff-4032b4783b32/scratchpad/
+      cdp"; node "$…)
+  ⎿  (No output)
+  ⎿  (timeout 2m)
+
+● Le blocage venait bien du sessionStorage, qui empêche le popup de réapparaître
+  après le premier affichage dans l'onglet. Je change la règle pour qu'il
+  s'affiche à chaque démarrage du site, en vérifiant d'abord la politique de
+  référent et le sélecteur de langue.
+
+  Searched for 1 pattern (ctrl+o to expand)
+
+● J'ai identifié que le sélecteur de langue recharge la page avec un référent
+  same-site, ce qui permet de le distinguer. Je vais appliquer la nouvelle règle
+  : la fenêtre s'ouvre à chaque arrivée sur l'accueil (URL tapée, lien externe,
+  QR code, rechargement), mais pas lors d'un retour à l'étape 1 depuis le site
+  ni d'un changement de langue.
+
+● Update(src\frontend\box\start-dialog.tsx)
+  ⎿  Added 20 lines, removed 2 lines
+      12  import { boxActions } from "./box-store";
+      13  import type { SizeOption } from "./size-picker";
+      14  
+      15 -/** Once per visit: sessionStorage belongs to the tab and is cl
+         -eared when it closes. */                                       
+      16 -const seenKey = "maison-vauclair:start-dialog";                
+      15 +/** Once per page load: coming back to step 1 inside the site k
+         +eeps it closed. */                                             
+      16 +let shownInThisDocument = false;                               
+      17  
+      18 +/**                                                            
+      19 + * A visit starts on the home page: address typed, outside link
+         +, QR code or                                                   
+      20 + * reload. Not when the visitor comes from another page of the 
+         +site, for                                                      
+      21 + * instance through the language switch, which reloads the page
+         +.                                                              
+      22 + */                                                            
+      23 +function visitStartsHere(): boolean {                          
+      24 +  const [entry] = performance.getEntriesByType(                
+      25 +    "navigation",                                              
+      26 +  ) as PerformanceNavigationTiming[];                          
+      27 +  if (!entry) return true;                                     
+      28 +  if (new URL(entry.name).pathname !== window.location.pathname
+         +) return false;                                                
+      29 +  if (entry.type === "reload") return true;                    
+      30 +  return (                                                     
+      31 +    !document.referrer ||                                      
+      32 +    new URL(document.referrer).origin !== window.location.origi
+         +n                                                              
+      33 +  );                                                           
+      34 +}                                                              
+      35 +                                                               
+      36  type StartDialogProps = {
+      37    locale: Locale;
+      38    sizes: readonly SizeOption[];
+
+● Update(src\frontend\box\start-dialog.tsx)
+  ⎿  Added 5 lines, removed 9 lines
+      58    const router = useRouter();
+      59  
+      60    useEffect(() => {
+      61 -    let seen = false;                                          
+      62 -    try {                                                      
+      63 -      seen = window.sessionStorage.getItem(seenKey) === "1";   
+      64 -      window.sessionStorage.setItem(seenKey, "1");             
+      65 -    } catch {                                                  
+      66 -      // Storage unavailable (private mode): show it, once per 
+         -page load.                                                     
+      67 -    }                                                          
+      68 -    if (seen) return;                                          
+      61 +    if (shownInThisDocument || !visitStartsHere()) return;     
+      62 +    // Marked when it opens, not before: the development double
+         + effect cancels the first timer.                               
+      63      const timer = window.setTimeout(() => {
+      70 -      dialog.current?.showModal();                             
+      64 +      if (!dialog.current || dialog.current.open) return;      
+      65 +      shownInThisDocument = true;                              
+      66 +      dialog.current.showModal();                              
+      67        featured.current?.focus();
+      68      }, 400);
+      69      return () => window.clearTimeout(timer);
+
+● Je vérifie maintenant sur ton serveur de dev, qui a déjà rechargé le code.
+  Pour simuler un changement de langue, j'ajoute à mon outil de capture la
+  possibilité de passer un référent.
+
+● Bash(C="/c/Users/chame/AppData/Local/Temp/claude/c--Users-chame-Documents-mais
+      onvauclair-enzo-chamanier/36a447e1-5e10-4da4-88ff-4032b4783b32/scratchpad/
+      cdp"; sed -i…)
+  ⎿  (No output)
+
+  Made 1 scratchpad edit +53 (ctrl+o to expand)
+
+● Bash(C="/c/Users/chame/AppData/Local/Temp/claude/c--Users-chame-Documents-mais
+      onvauclair-enzo-chamanier/36a447e1-5e10-4da4-88ff-4032b4783b32/scratchpad/
+      cdp"; node "$…)
+  ⎿  (No output)
+  ⎿  (timeout 3m)
+
+  Read 1 file (ctrl+o to expand)
+
+● La fenêtre reste absente après rechargement, donc je vais intégrer un vrai
+  rechargement dans mon outil pour mesurer précisément ce qui se passe.
+
+● Bash(C="/c/Users/chame/AppData/Local/Temp/claude/c--Users-chame-Documents-mais
+      onvauclair-enzo-chamanier/36a447e1-5e10-4da4-88ff-4032b4783b32/scratchpad/
+      cdp"; python…)
+  ⎿  (No output)
+  ⎿  (timeout 2m)
+
+● Le rechargement fonctionne aussi (type: "reload", open: true). Je lance les
+  contrôles et je cherche si la règle « une fois par session » est écrite dans
+  la documentation.
+
+● Bash(npm run lint 2>&1 | tail -3; NEXT_DIST_DIR=.next-verify npm run typecheck
+      2>&1 | grep -v "^$" | tail -3; git checkout -- tsconfig.json; npx
+      prettier --check src…)
+  ⎿  (No output)
+  ⎿  (timeout 5m)
+
+● L'erreur de types vient de .next/types, le dossier que ton npm run dev
+  régénère en ce moment, et non de mon fichier. Je relance le contrôle des types
+  sans ce dossier pour confirmer.
+
+● Bash(head -c 300 .next/types/routes.d.ts; echo; cat > tsconfig.verify.json
+      <<'EOF'
+      {…)
+  ⎿  (No output)
+  ⎿  (timeout 3m)
+
+● Les types sont bons hors de ce dossier, et le lint et le formatage passent
+  aussi. Je commite et je pousse.
+
+● Bash(git add src/frontend/box/start-dialog.tsx && git commit -q -m "fix: the
+      start dialog opens each time a visit starts on the home page, reloads
+      included, not once…)
+  ⎿  (No output)
+
+● Tu ne la voyais pas à cause de la règle que j'avais choisie : la fenêtre ne
+  s'affichait qu'une fois par onglet, et ce souvenir restait même après un
+  rechargement. Ton onglet sur localhost:3000 l'avait sans doute enregistré au
+  moment où ton serveur de dev a pris le nouveau code. Ensuite, recharger la
+  page ne la faisait plus apparaître. C'était trop restrictif par rapport à ta
+  demande, « à chaque fois que le client démarre le site ».
+
+  Nouvelle règle (start-dialog.tsx (src/frontend/box/start-dialog.tsx)) : la
+  fenêtre s'ouvre à chaque arrivée sur l'accueil, que ce soit par l'adresse
+  tapée, un lien externe, le QR code ou un rechargement de la page. Elle ne
+  s'ouvre pas quand le client revient à l'étape 1 depuis une autre page du site,
+  ni quand il change de langue, pour ne pas la lui remontrer en cours de
+  visite.
+
+  Testé sur ton serveur de dev (port 3000) :
+
+  ┌───────────────────────────────────────────────────────┬─────────┐
+  │                          Cas                          │ Fenêtre │
+  ├───────────────────────────────────────────────────────┼─────────┤
+  │ Adresse tapée, /fr                                    │ ouverte │
+  ├───────────────────────────────────────────────────────┼─────────┤
+  │ Même onglet, une deuxième fois                        │ ouverte │
+  ├───────────────────────────────────────────────────────┼─────────┤
+  │ Rechargement de la page                               │ ouverte │
+  ├───────────────────────────────────────────────────────┼─────────┤
+  │ Arrivée depuis Google sur /de                         │ ouverte │
+  ├───────────────────────────────────────────────────────┼─────────┤
+  │ Retour à l'accueil par le logo, depuis une autre page │ fermée  │
+  ├───────────────────────────────────────────────────────┼─────────┤
+  │ Passage de FR à DE                                    │ fermée  │
+  └───────────────────────────────────────────────────────┴─────────┘
+
+  Le lint, les types et le formatage passent. La correction est commitée
+  (7ec87b1) et poussée.
+
+  Tu n'as rien à faire : ton serveur de dev a déjà pris la correction, il suffit
+  de recharger http://localhost:3000/fr. Le site en ligne, lui, n'aura pas la
+  fenêtre tant que les secrets Dokploy manqueront dans GitHub, puisque le
+  déploiement échoue toujours.
+
+> quand le modal s'ouvre tu masqueras l'overflow du website à droite stp
+
+● Je regarde d'abord quels éléments vont jusqu'au bord droit de la page. En
+  masquant la barre, il faut éviter que la page se décale de la largeur de la
+  barre.
+
+● Bash(grep -rn "bg-ink\|bg-accent" src/frontend src/app --include=*.tsx | grep
+      -v "hover:\|focus\|before:\|after:\|rounded-full\|size-" | head -20; sed
+      -n '1,47p' src…)
+  ⎿  (No output)
+
+● Je vais corriger l'affichage : bloquer le défilement de la page quand la
+  fenêtre est ouverte, compenser la largeur de la barre par une marge pour
+  éviter le décalage, et faire passer le bandeau noir sous cet espace pour
+  supprimer l'encoche blanche.
+
+● Update(src\frontend\styles\globals.css)
+  ⎿  Added 15 lines
+      67      background-color: var(--color-ink);
+      68    }
+      69  
+      70 +  /*                                                           
+      71 +   * Under a modal dialog the page stops scrolling and its scro
+         +llbar goes away.                                               
+      72 +   * A padding the width of the bar (measured on opening) keeps
+         + the page still;                                               
+      73 +   * full-bleed bands run under it, so no light notch shows on 
+         +the right.                                                     
+      74 +   */                                                          
+      75 +  html:has(dialog:modal) {                                     
+      76 +    overflow: hidden;                                          
+      77 +    padding-right: var(--scrollbar-width, 0px);                
+      78 +  }                                                            
+      79 +                                                               
+      80 +  html:has(dialog:modal) .full-bleed {                         
+      81 +    margin-right: calc(var(--scrollbar-width, 0px) * -1);      
+      82 +    padding-right: var(--scrollbar-width, 0px);                
+      83 +  }                                                            
+      84 +                                                               
+      85    /* Every motion stays under 250 ms, and none at all when the 
+          visitor asks for it. */
+      86    @media (prefers-reduced-motion: reduce) {
+      87      *,
+
+● Update(src\frontend\components\announcement-band.tsx)
+  ⎿  Added 1 line, removed 1 line
+      28          });
+      29  
+      30    return (
+      31 -    <div className="bg-ink text-white">                        
+      31 +    <div className="full-bleed bg-ink text-white">             
+      32        <p className="mx-auto w-full max-w-6xl px-5 py-2.5 text-c
+          enter text-[0.625rem] leading-relaxed font-medium tracking-[0.1
+          em] text-balance uppercase sm:text-[0.6875rem] sm:tracking-labe
+          l">
+      33          {christmas ? (
+      34            <>
+
+● Update(src\frontend\box\start-dialog.tsx)
+  ⎿  Added 6 lines
+      63      const timer = window.setTimeout(() => {
+      64        if (!dialog.current || dialog.current.open) return;
+      65        shownInThisDocument = true;
+      66 +      // The page scrollbar goes away under the dialog (globals
+         +.css): its width keeps the page still.                         
+      67 +      const root = document.documentElement;                   
+      68 +      root.style.setProperty(                                  
+      69 +        "--scrollbar-width",                                   
+      70 +        `${window.innerWidth - root.clientWidth}px`,           
+      71 +      );                                                       
+      72        dialog.current.showModal();
+      73        featured.current?.focus();
+      74      }, 400);
+● Je teste sur ton serveur de dev, en 1440 px avec les barres de défilement
+  visibles. Je mesure la barre et la position du logo avec la fenêtre ouverte,
+  puis après sa fermeture.
+
+  Made 1 scratchpad edit +27 (ctrl+o to expand)
+
+● Bash(C="/c/Users/chame/AppData/Local/Temp/claude/c--Users-chame-Documents-mais
+      onvauclair-enzo-chamanier/36a447e1-5e10-4da4-88ff-4032b4783b32/scratchpad/
+      cdp"; node "$…)
+  ⎿  (No output)
+  ⎿  (timeout 2m)
+
+● Tout est conforme : fenêtre ouverte sans barre et bandeau au bord, fenêtre
+  fermée avec retour de la barre de 10 px et positions du logo/titre inchangées
+  (159 px). Je vérifie la capture d'écran.
+
+  Read 1 file (ctrl+o to expand)
+
+● Il n'y a plus de barre et le bandeau va jusqu'au bord. Je zoome sur le bord
+  droit pour vérifier les filets fins de l'en-tête et du pied de page.
+
+● Bash(D="C:/Users/chame/AppData/Local/Temp/claude/c--Users-chame-Documents-mais
+      onvauclair-enzo-chamanier/36a447e1-5e10-4da4-88ff-4032b4783b32/scratchpad/
+      shots-dev" no…)
+  ⎿  (No output)
+
+  Read 1 file (ctrl+o to expand)
+
+● Le zoom révèle que les filets de l'en-tête et le filet noir du pied de page
+  s'arrêtent 10 px avant le bord, à l'endroit de l'ancienne barre. Je liste
+  maintenant tous les éléments pleine largeur de l'accueil avec fond ou bordure
+  visible afin de les prolonger également.
+
+  Made 1 scratchpad edit +18 (ctrl+o to expand)
+
+● Bash(C="/c/Users/chame/AppData/Local/Temp/claude/c--Users-chame-Documents-mais
+      onvauclair-enzo-chamanier/36a447e1-5e10-4da4-88ff-4032b4783b32/scratchpad/
+      cdp"; node "$…)
+  ⎿  (No output)
+  ⎿  (timeout 2m)
+
+● Bash(C="/c/Users/chame/AppData/Local/Temp/claude/c--Users-chame-Documents-mais
+      onvauclair-enzo-chamanier/36a447e1-5e10-4da4-88ff-4032b4783b32/scratchpad/
+      cdp"; sed -i…)
+  ⎿  (No output)
+  ⎿  (timeout 2m)
+
+● Quatre filets (en-tête, piste des étapes, filet noir du pied de page et filet
+  du bas) s'arrêtent à 1430 px au lieu de 1440. Je vérifie aussi le bandeau du
+  mode démo, qui n'était pas actif durant ce test.
+
+  Searched for 1 pattern (ctrl+o to expand)
+
+● Je prolonge ces cinq éléments de l'accueil, bandeau démo compris, avec la même
+  classe que le bandeau noir.
+
+● Bash(sed -i '17s/className="border-b border-line bg-white
+      text-ink"/className="full-bleed border-b border-line bg-white text-ink"/'
+      src/frontend/components/demo-bann…)
+  ⎿  Updated src\frontend\components\demo-banner.tsx (+1 -1)
+      14    const { demo } = getDictionary(locale);
+      15  
+      16    return (
+      17 -    <div className="border-b border-line bg-white text-ink">   
+      17 +    <div className="full-bleed border-b border-line bg-white te
+         +xt-ink">                                                       
+      18        <div className="mx-auto flex w-full max-w-6xl flex-wrap i
+          tems-center justify-between gap-x-6 gap-y-1 px-5 py-2.5 text-[0
+          .8125rem]">
+      19          <p className="flex items-center gap-2.5">
+      20            <span
+  ⎿  Updated src\frontend\components\house-footer.tsx (+2 -2)
+      30    ];
+      31  
+      32    return (
+      33 -    <footer className="mt-auto border-t border-ink">           
+      33 +    <footer className="full-bleed mt-auto border-t border-ink">
+      34        <div className="mx-auto w-full max-w-6xl px-5 pt-12">
+      35          {/* The flag follows the wordmark, the logo keeps its o
+          wn alignment. */}
+      36          <div className="relative w-fit">
+     ...
+      81            </ul>
+      82          </nav>
+      83        </div>
+      84 -      <div className="border-t border-line">                   
+      84 +      <div className="full-bleed border-t border-line">        
+      85          <p className="mx-auto w-full max-w-6xl px-5 py-5 text-x
+          s text-muted">
+      86            {dictionary.site.demoNotice}
+      87          </p>
+  ⎿  Updated src\frontend\components\site-header.tsx (+1 -1)
+      44            exitHref={alternates[locale]}
+      45          />
+      46        )}
+      47 -      <header className="border-b border-line">                
+      47 +      <header className="full-bleed border-b border-line">     
+      48          <div className="mx-auto flex w-full max-w-6xl items-cen
+          ter justify-between px-5">
+      49            <Link
+      50              href={withDemoDate(localizedPath(locale, "home"), d
+          emoDate)}
+  ⎿  Updated src\frontend\components\step-indicator.tsx (+1 -1)
+      41            })}
+      42          </ol>
+      43        </div>
+      44 -      <div aria-hidden="true" className="h-px bg-line">        
+      44 +      <div aria-hidden="true" className="full-bleed h-px bg-lin
+         +e">                                                            
+      45          <div
+      46            className="h-px bg-ink [view-transition-name:step-pro
+          gress]"
+      47            style={{ width: `${(current / labels.length) * 100}%`
+           }}
+
+● Je refais les mesures : plus aucun filet ne doit s'arrêter à 1430 px, et le
+  contenu ainsi que la barre de progression doivent rester au même pixel.
+
+● Bash(C="/c/Users/chame/AppData/Local/Temp/claude/c--Users-chame-Documents-mais
+      onvauclair-enzo-chamanier/36a447e1-5e10-4da4-88ff-4032b4783b32/scratchpad/
+      cdp"; sed -i…)
+  ⎿  (No output)
+  ⎿  (timeout 3m)
+
+  Read 1 file (ctrl+o to expand)
+
+● Les filets vont maintenant jusqu'au bord, et le contenu comme la barre de
+  progression ne bougent pas d'un pixel. Je lance les contrôles, puis je
+  commite.
+
+● Bash(npm run lint 2>&1 | tail -2; cat > tsconfig.verify.json <<'EOF'
+      {…)
+  ⎿  (No output)
+  ⎿  (timeout 5m)
+
+● Bash(git add -A src && git commit -q -m "feat: the page stops scrolling and
+      hides its scrollbar under the start dialog, without moving" && git push
+      2>&1 | tail -1 &&…)
+  ⎿  (No output)
+
+● C'est fait. Quand la fenêtre est ouverte, la barre de défilement de droite
+  disparaît et la page ne défile plus. La barre revient dès que la fenêtre se
+  ferme, que ce soit par la croix, « Plus tard », Échap, un clic à côté ou le
+  choix d'une taille. La modification est commitée et poussée (28ebf3a).
+
+  Sans précaution, retirer la barre décale toute la page d'environ 5 px vers la
+  droite au moment de l'ouverture. Pour l'éviter, la largeur de la barre est
+  mesurée à l'ouverture et compensée par une marge. Le bandeau noir et les
+  filets de l'en-tête, des étapes, du bandeau démo et du pied de page vont
+  jusqu'au bord droit au lieu de s'arrêter là où était la barre.
+
+  Contrôlé sur ton serveur de dev, en 1440 px :
+
+  ┌─────────────────────────┬──────────────┬────────────────────────────────┐
+  │                         │   Fenêtre    │         Fenêtre fermée         │
+  │                         │   ouverte    │                                │
+  ├─────────────────────────┼──────────────┼────────────────────────────────┤
+  │ Barre de défilement     │ 0 px         │ 10 px (revenue)                │
+  │                         │ (masquée)    │                                │
+  ├─────────────────────────┼──────────────┼────────────────────────────────┤
+  │ Défilement de la page   │ bloqué       │ normal                         │
+  ├─────────────────────────┼──────────────┼────────────────────────────────┤
+  │ Bord gauche du logo et  │ 159 px       │ 159 px                         │
+  │ du titre                │              │                                │
+  ├─────────────────────────┼──────────────┼────────────────────────────────┤
+  │ Bandeau noir            │ jusqu'à 1440 │ jusqu'à 1430 px, la barre      │
+  │                         │  px          │ occupant le reste              │
+  └─────────────────────────┴──────────────┴────────────────────────────────┘
+
+  Plus aucun filet ne s'arrête avant le bord, et le zoom sur le bord droit le
+  confirme. Sur mobile, la barre se superpose à la page, donc rien n'est
+  compensé et ça fonctionne aussi. Le lint, les types, les 99 tests et le
+  formatage passent.
+
+  Recharge http://localhost:3000/fr pour voir le résultat.
+
+> si je suis sur /equipe le logo de la navbar en haut à gauche lorsque je
+  clique dessus doit rediriger vers le main de la webapp
+
+  Searched for 1 pattern, read 1 file (ctrl+o to expand)
+
+● La page de détail d'une commande ayant déjà son propre lien de retour, je peux
+  faire pointer le logo vers l'accueil public sans casser la navigation de
+  l'espace équipe. Comme l'espace est en français, je le pointe vers /fr.
+
+● Update(src\app\team\layout.tsx)
+  ⎿  Added 1 line, removed 1 line
+       5  import { SiteFooter } from "@/frontend/components/site-footer";
+       6  import { getDictionary } from "@/frontend/i18n";
+       7  import { teamTexts } from "@/frontend/team/team-texts";
+       8 -import { teamPath } from "@/shared/i18n/routes";               
+       8 +import { localizedPath } from "@/shared/i18n/routes";          
+       9  
+      10  export const metadata: Metadata = {
+      11    title: {
+
+● Update(src\app\team\layout.tsx)
+  ⎿  Added 2 lines, removed 1 line
+      27        </a>
+      28        <header className="border-b border-line bg-white print:hi
+          dden">
+      29          <div className="mx-auto flex min-h-11 w-full max-w-6xl 
+          items-center justify-between px-5">
+      30 +          {/* The logo leads to the shop's home page; each orde
+         +r page links back to the list. */}                             
+      31            <Link
+      31 -            href={teamPath("orders")}                          
+      32 +            href={localizedPath("fr", "home")}                 
+      33              className="flex min-h-11 items-center py-2.5"
+      34            >
+      35              <LogoHorizontal className="h-10 w-auto" />
+
+● Je vérifie le lien réel sur ton serveur de dev.
+
+● Bash(curl -s -o /dev/null -w "%{http_code}\n" http://localhost:3000/equipe)  ⎿  (No output)
+
+  Made 1 scratchpad edit +17 (ctrl+o to expand)
+
+● Bash(C="/c/Users/chame/AppData/Local/Temp/claude/c--Users-chame-Documents-mais
+      onvauclair-enzo-chamanier/36a447e1-5e10-4da4-88ff-4032b4783b32/scratchpad/
+      cdp"; node "$…)
+  ⎿  (No output)
+  ⎿  (timeout 2m)
+
+● Le logo mène bien à /fr, sur la page « Composez votre coffret ». Mon test n'a
+  pas trouvé de nom accessible pour ce lien, je vérifie le logo.
+
+● Bash(grep -n "aria\|role\|<title"
+      src/frontend/components/brand/logo-horizontal.tsx | head; sed -n '44,56p'
+      src/frontend/components/site-header.tsx)
+  ⎿  (No output)
+
+● Le logo porte role="img" et un aria-label, le lien a donc bien un nom («
+  Maison Vauclair »), comme sur le site public. Je lance les contrôles, puis je
+  commite.
+
+● Bash(npm run lint 2>&1 | tail -1; cat > tsconfig.verify.json <<'EOF'
+      {…)
+  ⎿  (No output)
+  ⎿  (timeout 5m)
+
+● Dans l'espace équipe, un clic sur le logo en haut à gauche mène maintenant à
+  l'accueil du site, sur /fr, puisque l'espace équipe est en français
+  (layout.tsx (src/app/team/layout.tsx)). C'est poussé (a3c1ade).
+
+  - Testé sur ton serveur de dev : depuis /equipe, le clic sur le logo arrive
+    sur /fr, à la page « Composez votre coffret ». Le lint, les types et le
+    formatage passent.
+  - Navigation dans l'espace équipe : rien n'est perdu. Avant, le logo renvoyait
+    à la liste des commandes. La page de détail d'une commande garde son propre
+    lien de retour vers cette liste.
+  - Fenêtre d'accueil : elle ne s'ouvre pas quand on arrive par ce logo. Comme
+    pour toute navigation à l'intérieur du site, elle n'apparaît qu'au démarrage
+    d'une visite.
+
+> en dev l'espace equipe fonctionne pas ??
+
+● Je regarde ce que ton serveur de dev renvoie réellement sur /equipe et comment
+  le middleware protège l'accès.
+
+● Bash(curl -s -i http://localhost:3000/equipe | head -15; echo ...; curl -s
+      http://localhost:3000/equipe | grep -o
+      "<h1[^>]*>[^<]*</h1>\|<title>[^<]*</title>" | head…)
+  ⎿  (No output)
+
+● Le serveur de dev renvoie bien 200 sur /equipe avec « Commandes à préparer »,
+  donc la page se charge côté serveur. Je l'ouvre maintenant dans un vrai
+  navigateur pour voir si une erreur apparaît côté client.
+
+● Bash(cat src/backend/team-access.ts; sed -n '1,60p' src/middleware.ts)
+  ⎿  (No output)
+
+● La page s'ouvre bien en dev sans mot de passe, donc le souci est ailleurs.
+  J'ajoute la capture des erreurs console à mon outil, puis je navigue dans
+  l'espace équipe comme toi : liste, commande, fiche et carte.
+
+● Bash(C="/c/Users/chame/AppData/Local/Temp/claude/c--Users-chame-Documents-mais
+      onvauclair-enzo-chamanier/36a447e1-5e10-4da4-88ff-4032b4783b32/scratchpad/
+      cdp"; python…)
+  ⎿  (No output)
+  ⎿  (timeout 2m)
+
+● Pas d'erreur dans le navigateur, mais la liste des commandes reste vide. Je
+  vais vérifier où les commandes sont enregistrées en dev et si une commande
+  passée y est bien enregistrée.
+
+  Listed 1 directory (ctrl+o to expand)
+
+● Le dossier data/orders/ est vide en dev, donc je ne sais pas encore si c'est
+  normal ou si l'enregistrement échoue. Je vais passer une commande complète sur
+  le serveur de dev et vérifier si elle apparaît bien dans l'espace équipe.
+
+● Bash(ls src/app/api/orders/ && sed -n '1,80p' src/app/api/orders/route.ts; ls
+      src/shared/order* src/shared/orders 2>/dev/null)
+  ⎿  Error: Exit code 2
+     route.ts
+     import { orderRateLimiter, placeOrder } from "@/backend/container";
+     import { clientAddress } from "@/backend/rate-limit";
+     import type { OrderErrors } from "@/shared/order/order-request";
+
+     /** A full order weighs about 1 KB: anything much larger is not one. */
+     const maxBodyLength = 16_384;
+
+     export async function POST(request: Request) {
+     … +34 lines (ctrl+o to expand)
+
+● Bash(sed -n '1,200p' src/shared/order/order-request.ts | grep -v "^\s*//" |
+      head -120)
+  ⎿  (No output)
+
+  Listed 1 directory (ctrl+o to expand)
+
+● Bash(node -e "
+      const c = require('./src/backend/catalog/catalog.json');…)
+  ⎿  (No output)
+
+● La commande de test est enregistrée (VC-2026-0001). Je vérifie maintenant
+  qu'elle apparaît dans l'espace équipe et que sa fiche et sa carte s'ouvrent.
+
+● Bash(C="/c/Users/chame/AppData/Local/Temp/claude/c--Users-chame-Documents-mais
+      onvauclair-enzo-chamanier/36a447e1-5e10-4da4-88ff-4032b4783b32/scratchpad/
+      cdp"; cat > "…)
+  ⎿  (No output)
+  ⎿  (timeout 2m 30s)
+
+● Tout fonctionne côté serveur : la liste, la fiche et la carte. Je regarde les
+  captures pour vérifier aussi le rendu visuel.
+
+  Read 2 files (ctrl+o to expand)
+
+● Bash(for p in /team /fr/equipe /equipe/ /Equipe; do printf "%s -> " "$p"; curl
+      -s -o /dev/null -w "%{http_code}\n" "http://localhost:3000$p"; done)
+  ⎿  (No output)
+
+● Je n'arrive pas à reproduire le problème : sur ton serveur de dev (port 3000),
+  l'espace équipe fonctionne de bout en bout.
+
+  Ce que j'ai testé dans un navigateur, sans aucune erreur dans la console :
+  - /equipe affiche la liste des commandes à préparer.
+  - J'ai passé une vraie commande de test par l'API. Elle a été enregistrée dans
+    data/orders/VC-2026-0001.json, puis :
+    - elle apparaît dans la liste (1 commande, CHF 68.20, à expédier le mercredi
+      21 octobre) ;
+    - sa fiche s'ouvre, avec le bouton « Imprimer la fiche » et le lien « Toutes
+      les commandes » ;
+    - sa carte de bienvenue s'ouvre, avec le QR code.
+
+  Trois choses en dev peuvent donner l'impression que ça ne marche pas :
+  1. La liste est vide tant qu'aucune commande n'a été passée en dev. Avant mon
+     test, data/orders/ était vide, donc la page affichait seulement « Aucune
+     commande pour l'instant ». J'ai laissé la commande de test (destinataire «
+     Test Diagnostic ») pour que tu voies la liste remplie. Supprime
+     data/orders/VC-2026-0001.json quand tu veux, ou dis-le-moi et je le fais.
+  2. Aucun mot de passe n'est demandé. Sans TEAM_PASSWORD, l'espace est ouvert
+     en dev et fermé en production. C'est voulu (team-access.ts
+     (src/backend/team-access.ts)). Pour tester le mot de passe en local, ajoute
+     TEAM_PASSWORD=... dans ton .env.local et relance npm run dev. Je ne lis
+     jamais ce fichier.
+  3. L'adresse. Seule /equipe fonctionne. /team y redirige, mais /fr/equipe et
+     /Equipe donnent une 404.
+
+  Si ce n'est aucun de ces trois cas, dis-moi ce que tu vois exactement :
+  l'adresse tapée, le message ou la page d'erreur, et une capture si possible.
+  Je corrigerai à partir de là.
