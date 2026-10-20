@@ -2,6 +2,7 @@ import type { CatalogRepository } from "./catalog/catalog-repository";
 import { JsonCatalogRepository } from "./catalog/json-catalog-repository";
 import { ordersDirectory } from "./config";
 import { createOrder } from "./orders/create-order";
+import { seedDemoOrders } from "./orders/demo-orders";
 import { findCustomerOrder } from "./orders/find-customer-order";
 import { JsonFileOrderRepository } from "./orders/json-file-order-repository";
 import type { OrderRepository } from "./orders/order-repository";
@@ -22,6 +23,14 @@ export function placeOrder(input: unknown) {
     catalog: catalogRepository,
     orders: orderRepository,
     now: () => new Date(),
+  });
+}
+
+/** The presentation's fictitious orders, added only to an empty store. */
+export function addDemoOrders() {
+  return seedDemoOrders({
+    catalog: catalogRepository,
+    orders: orderRepository,
   });
 }
 

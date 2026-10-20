@@ -37,6 +37,7 @@ Each decision below was taken during the exercise; the trade-off is what it cost
 | Translated URLs (`/fr/coffret/…`, `/de/geschenkbox/…`) served from internal English routes | German-speaking visitors read German URLs; the code stays in English | A middleware and a route table to maintain |
 | The box being built is kept in `sessionStorage` | Survives a reload, no cookie, nothing sent anywhere | Lost when the tab is closed |
 | Demo mode: a simulated date in the URL, accepted only when `DEMO_MODE=true`, with a banner | Shows the Christmas deadline in October, without anyone mistaking it for the real date | Must be switched off for real use |
+| 12 fictitious orders added through `createOrder` when the server starts on an empty order store | The team space is never empty during the presentation, in development as in production, and their prices and dates follow the real rules | Their dates are 20 and 21 October 2026; deleting every order brings them back at the next start |
 
 ## Security and privacy
 

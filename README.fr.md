@@ -91,12 +91,13 @@ src/
 | Contrat de commande partagé navigateur/serveur   | `src/shared/order/order-request.ts`                |
 | Création de commande (prix et dates recalculés)  | `src/backend/orders/create-order.ts`               |
 | Stockage et numérotation des commandes           | `src/backend/orders/json-file-order-repository.ts` |
+| Commandes de démonstration de la présentation    | `src/backend/orders/demo-orders.ts`                |
 
 Les raisons de chaque choix sont dans [docs/decisions.fr.md](docs/decisions.fr.md).
 
 ## Qualité
 
-- **93 tests** : règle de livraison (écrite avant le code), jours fériés, prix, format CHF, contrat de commande, stockage avec commandes simultanées, création de commande, accès équipe, limite de débit, routes.
+- **102 tests** : règle de livraison (écrite avant le code), jours fériés, prix, format CHF, contrat de commande, stockage avec commandes simultanées, création de commande, commandes de démonstration, accès équipe, limite de débit, routes.
 - **CI à chaque push** : format, lint, types, tests, `npm audit` des dépendances de production, build, puis l'image Docker est construite, démarrée et sondée.
 - **Sécurité** : le serveur recalcule prix et dates et refuse les champs inconnus ; la page de confirmation exige la clé secrète de la commande ; l'espace équipe a un mot de passe et reste fermé sans lui ; les numéros de commande sont vérifiés avant de toucher au disque ; la taille des requêtes et le nombre de commandes sont limités ; en-têtes de sécurité (CSP, `nosniff`, pas d'intégration en iframe, politique de référent, HSTS).
 - **Accessibilité** (objectif WCAG 2.2 AA) : contrôles natifs, focus visible, lien d'évitement, erreurs liées à leur champ avec le focus sur la première, annonces en direct du contenu du coffret, `autocomplete`, attributs `lang`, focus jamais masqué par les barres fixes, mode couleurs forcées.
@@ -108,6 +109,7 @@ Les raisons de chaque choix sont dans [docs/decisions.fr.md](docs/decisions.fr.m
 - Image Docker construite depuis le `Dockerfile` : serveur Next.js autonome, utilisateur non root, contrôle de santé sur `/api/health`.
 - Sur `main`, une fois toutes les vérifications passées, la CI demande à Dokploy de déployer par son API (secrets GitHub `DOKPLOY_URL`, `DOKPLOY_API_KEY`, `DOKPLOY_APPLICATION_ID`).
 - Les commandes sont écrites dans `/app/data/orders` : y monter un volume persistant.
+- Quand le serveur démarre sur un stockage de commandes vide, il ajoute 12 commandes fictives pour la présentation du 21 octobre 2026, passées par les vraies règles de commande ; un stockage qui contient déjà des commandes n'est jamais touché.
 
 ## Limites connues de la v1
 

@@ -153,6 +153,7 @@ The catalogue and the orders sit behind interfaces (`CatalogRepository`, `OrderR
 - A simulated date passed as a URL parameter (`?date=2026-12-23`), no cookie, accepted by the server only when `DEMO_MODE=true`.
 - It stays active through the whole journey, with a visible banner « Mode démonstration · date simulée : … ».
 - The order keeps its real creation date next to the simulated date, and the sheet flags the simulation.
+- Demo orders: when the server starts on an empty order store (`src/instrumentation.ts`), 12 fictitious orders for the presentation of 21 October 2026 are placed through `createOrder` (`src/backend/orders/demo-orders.ts`), in development and in production.
 
 **Deployment**: the CI deploys to Dokploy through its API, only after every check passed (Dokploy autodeploy is off).
 

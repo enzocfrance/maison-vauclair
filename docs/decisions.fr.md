@@ -37,6 +37,7 @@ Chaque décision ci-dessous a été prise pendant l'exercice ; le compromis, c'e
 | URL traduites (`/fr/coffret/…`, `/de/geschenkbox/…`) servies depuis des routes internes en anglais | Les germanophones lisent des URL en allemand ; le code reste en anglais | Un middleware et une table de routes à entretenir |
 | Le coffret en cours est gardé dans le `sessionStorage` | Il survit au rechargement, sans cookie, sans rien envoyer | Il disparaît à la fermeture de l'onglet |
 | Mode démo : une date simulée dans l'URL, acceptée seulement si `DEMO_MODE=true`, avec un bandeau | Montre la date limite de Noël en octobre, sans que personne ne la prenne pour la vraie date | À désactiver pour un usage réel |
+| 12 commandes fictives ajoutées par `createOrder` quand le serveur démarre sur un stockage de commandes vide | L'espace équipe n'est jamais vide pendant la présentation, en dev comme en prod, et leurs prix et dates suivent les vraies règles | Leurs dates sont les 20 et 21 octobre 2026 ; supprimer toutes les commandes les fait revenir au démarrage suivant |
 
 ## Sécurité et données personnelles
 

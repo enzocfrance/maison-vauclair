@@ -91,12 +91,13 @@ src/
 | Order contract shared by browser and server      | `src/shared/order/order-request.ts`                |
 | Order creation (prices and dates recomputed)     | `src/backend/orders/create-order.ts`               |
 | Order storage and numbering                      | `src/backend/orders/json-file-order-repository.ts` |
+| Demo orders of the presentation                  | `src/backend/orders/demo-orders.ts`                |
 
 The reasons behind each choice are in [docs/decisions.md](docs/decisions.md).
 
 ## Quality
 
-- **93 tests**: delivery rule (written before the code), holidays, prices, CHF format, order contract, storage with simultaneous orders, order creation, team access, rate limit, routes.
+- **102 tests**: delivery rule (written before the code), holidays, prices, CHF format, order contract, storage with simultaneous orders, order creation, demo orders, team access, rate limit, routes.
 - **CI on every push**: format, lint, types, tests, `npm audit` of production dependencies, build, then the Docker image is built, started and probed.
 - **Security**: the server recomputes prices and dates and rejects unknown fields; the confirmation page needs the order's secret key; the team space has a password and stays closed without one; order numbers are checked before touching the file system; request size and order rate are limited; security headers (CSP, `nosniff`, no framing, referrer policy, HSTS).
 - **Accessibility** (WCAG 2.2 AA target): native controls, visible focus, skip link, errors tied to their field with focus on the first one, live announcements of the box contents, `autocomplete`, `lang` attributes, focus never hidden by sticky bars, forced colours mode.
@@ -108,6 +109,7 @@ The reasons behind each choice are in [docs/decisions.md](docs/decisions.md).
 - Docker image built from `Dockerfile`: Next.js standalone server, non-root user, health check on `/api/health`.
 - On `main`, once every check has passed, the CI asks Dokploy to deploy through its API (GitHub secrets `DOKPLOY_URL`, `DOKPLOY_API_KEY`, `DOKPLOY_APPLICATION_ID`).
 - Orders are written to `/app/data/orders`: mount a persistent volume there.
+- When the server starts on an empty order store, it adds 12 fictitious orders for the presentation of 21 October 2026, placed through the real order rules; a store that already holds orders is never touched.
 
 ## Known limits of v1
 
