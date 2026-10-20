@@ -10,6 +10,7 @@ import {
 import { ArrowRightIcon } from "@/frontend/components/icons";
 import { StepHeader } from "@/frontend/components/step-header";
 import { getDictionary, languageNames, type Dictionary } from "@/frontend/i18n";
+import { navigateWithTransition } from "@/frontend/navigation/view-transitions";
 import { capitalize, format, formatLongDate } from "@/frontend/i18n/format";
 import { formatRich } from "@/frontend/i18n/rich-text";
 import { boxSizes } from "@/shared/catalog/box-sizes";
@@ -221,10 +222,12 @@ export function DeliveryForm({
         const confirmation = localizedPath(locale, "boxConfirmation", {
           orderId: created.data.orderId,
         });
-        router.push(
-          withDemoDate(
-            `${confirmation}?key=${created.data.accessToken}`,
-            demoDate,
+        navigateWithTransition(() =>
+          router.push(
+            withDemoDate(
+              `${confirmation}?key=${created.data.accessToken}`,
+              demoDate,
+            ),
           ),
         );
         return;

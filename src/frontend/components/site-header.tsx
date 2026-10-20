@@ -34,7 +34,8 @@ export function SiteHeader({
   ) as Record<Locale, string>;
 
   return (
-    <>
+    // Named for the page transitions: the header stays still while the page changes.
+    <div className="[view-transition-name:site-header]">
       <AnnouncementBand locale={locale} today={today} />
       {demoDate && (
         <DemoBanner
@@ -58,6 +59,6 @@ export function SiteHeader({
           />
         </div>
       </header>
-    </>
+    </div>
   );
 }

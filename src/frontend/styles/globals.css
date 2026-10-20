@@ -53,6 +53,48 @@
       animation: none !important;
       transition: none !important;
     }
+
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+      animation: none !important;
+    }
+  }
+}
+
+/*
+ * Page transitions (View Transitions API). The new page is revealed from left
+ * to right, like a rule being drawn; the header stays still; the steps rule
+ * grows from one step to the next. Full reloads (language switch) too.
+ */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-group(*) {
+  animation-duration: 240ms;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+::view-transition-old(root) {
+  animation: none;
+}
+
+::view-transition-new(root) {
+  animation: page-reveal 240ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+::view-transition-old(site-header),
+::view-transition-new(site-header) {
+  animation: none;
+}
+
+@keyframes page-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
   }
 }
 

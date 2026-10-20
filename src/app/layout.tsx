@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
+import { ViewTransitions } from "@/frontend/navigation/view-transitions";
 import { archivo } from "@/frontend/styles/fonts";
 import { defaultLocale, isLocale, localeHeader } from "@/shared/i18n/locales";
 import "@/frontend/styles/globals.css";
@@ -21,7 +22,12 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} className={archivo.variable}>
-      <body>{children}</body>
+      <body>
+        <Suspense fallback={null}>
+          <ViewTransitions />
+        </Suspense>
+        {children}
+      </body>
     </html>
   );
 }

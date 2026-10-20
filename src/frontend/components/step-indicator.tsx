@@ -43,7 +43,7 @@ export function StepIndicator({ current, labels, label }: StepIndicatorProps) {
       </div>
       <div aria-hidden="true" className="h-px bg-line">
         <div
-          className="h-px bg-ink"
+          className="h-px bg-ink [view-transition-name:step-progress]"
           style={{ width: `${(current / labels.length) * 100}%` }}
         />
       </div>

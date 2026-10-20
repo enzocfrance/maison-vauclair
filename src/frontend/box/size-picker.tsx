@@ -7,6 +7,7 @@ import {
 } from "@/frontend/components/action-styles";
 import { ArrowRightIcon } from "@/frontend/components/icons";
 import { getDictionary } from "@/frontend/i18n";
+import { navigateWithTransition } from "@/frontend/navigation/view-transitions";
 import { format } from "@/frontend/i18n/format";
 import type { BoxSizeId } from "@/shared/catalog/box-sizes";
 import type { Locale } from "@/shared/i18n/locales";
@@ -40,7 +41,7 @@ export function SizePicker({ locale, sizes, nextHref }: SizePickerProps) {
       onSubmit={(event) => {
         event.preventDefault();
         boxActions.selectSize(selected);
-        router.push(nextHref);
+        navigateWithTransition(() => router.push(nextHref));
       }}
     >
       <fieldset>
