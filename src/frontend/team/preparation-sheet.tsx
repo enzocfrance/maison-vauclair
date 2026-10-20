@@ -1,3 +1,4 @@
+import { LogoHorizontal } from "@/frontend/components/brand";
 import { getDictionary } from "@/frontend/i18n";
 import {
   capitalize,
@@ -29,12 +30,8 @@ export function PreparationSheet({ order }: { order: Order }) {
     >
       <header className="flex items-end justify-between gap-4 border-b border-ink pb-3.5">
         <div className="flex flex-col gap-2">
-          <p className="flex items-center gap-2.5">
-            <span aria-hidden="true" className="size-3 rounded-full bg-ink" />
-            <span className="text-[0.8125rem] font-semibold tracking-brand uppercase">
-              {fr.site.brand}
-            </span>
-          </p>
+          {/* Black only: the sheet is printed in black and white. */}
+          <LogoHorizontal monochrome className="h-[11mm] w-auto" />
           <h1
             id="sheet-title"
             className="text-[1.625rem] font-light tracking-[-0.02em]"

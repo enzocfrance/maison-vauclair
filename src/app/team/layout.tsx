@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { LogoHorizontal } from "@/frontend/components/brand";
 import { SiteFooter } from "@/frontend/components/site-footer";
 import { getDictionary } from "@/frontend/i18n";
 import { teamTexts } from "@/frontend/team/team-texts";
@@ -28,12 +29,9 @@ export default function TeamLayout({ children }: { children: ReactNode }) {
         <div className="mx-auto flex min-h-11 w-full max-w-6xl items-center justify-between px-5">
           <Link
             href={teamPath("orders")}
-            className="flex min-h-11 items-center gap-2.5"
+            className="flex min-h-11 items-center py-2.5"
           >
-            <span aria-hidden="true" className="size-3 rounded-full bg-ink" />
-            <span className="text-[0.8125rem] font-semibold tracking-brand uppercase">
-              {site.brand}
-            </span>
+            <LogoHorizontal className="h-8 w-auto" />
           </Link>
           <p className="label-caps text-muted">{teamTexts.space}</p>
         </div>

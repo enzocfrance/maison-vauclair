@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LogoHorizontal } from "@/frontend/components/brand";
 import { getDictionary } from "@/frontend/i18n";
 import type { IsoDate } from "@/shared/delivery/calendar";
 import { withDemoDate } from "@/shared/demo";
@@ -46,12 +47,9 @@ export function SiteHeader({
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5">
           <Link
             href={withDemoDate(localizedPath(locale, "home"), demoDate)}
-            className="flex min-h-11 items-center gap-2.5"
+            className="flex min-h-11 items-center py-2.5"
           >
-            <span aria-hidden="true" className="size-3 rounded-full bg-ink" />
-            <span className="text-[0.8125rem] font-semibold tracking-brand uppercase">
-              {dictionary.site.brand}
-            </span>
+            <LogoHorizontal className="h-8 w-auto lg:h-10" />
           </Link>
           <LanguageSwitch
             locale={locale}

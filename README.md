@@ -60,6 +60,12 @@ npm run dev   # http://localhost:3000
 | `npm run lint`         | ESLint, including the rules between layers      |
 | `npm run format:check` | Prettier                                        |
 
+## Design choices
+
+- **Luxury from precision, not decoration**: black, white and a single red accent, Archivo, fine rules and circles; no gradients, shadows or rounded cards.
+- **Logo**: designed with Claude during the preparation. A watch dial, which also recalls a cheese wheel and its hallmark, with the V of Vauclair drawn in thick and thin strokes at its centre, and a single red dot at noon: the exact hour, like the delivery date.
+- **Details**: the box counter is a watch dial, AOP, AOC and IGP products carry a round hallmark, prices use tabular figures, and every motion lasts under 250 ms and stops when the visitor prefers reduced motion.
+
 ## Architecture
 
 One Next.js 15 application (App Router, strict TypeScript, Tailwind CSS v4, Zod), split into layers that ESLint keeps apart:

@@ -1,3 +1,5 @@
+import { Seal } from "@/frontend/components/brand";
+
 type MessageCardProps = {
   message: string;
   /** Shown when the buyer left no message. */
@@ -19,12 +21,7 @@ export function MessageCard({ message, emptyLabel, lang }: MessageCardProps) {
       >
         {message || emptyLabel}
       </p>
-      <span
-        aria-hidden="true"
-        className="flex size-9 items-center justify-center rounded-full border border-ink text-[0.5625rem] font-semibold tracking-[0.12em]"
-      >
-        MV
-      </span>
+      <Seal decorative className="size-12 text-ink" />
     </div>
   );
 }

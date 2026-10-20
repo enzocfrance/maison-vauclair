@@ -60,6 +60,12 @@ npm run dev   # http://localhost:3000
 | `npm run lint`         | ESLint, y compris les règles entre couches        |
 | `npm run format:check` | Prettier                                          |
 
+## Choix de design
+
+- **Le luxe par la précision, pas par la décoration** : noir, blanc et un seul accent rouge, Archivo, filets fins et cercles ; ni dégradés, ni ombres, ni cartes arrondies.
+- **Logo** : conçu avec Claude pendant la préparation. Un cadran de montre, qui rappelle aussi la meule et son poinçon, avec au centre le V de Vauclair en plein et délié, et un seul point rouge à midi : l'heure juste, comme la date de livraison.
+- **Détails** : le compteur du coffret est un cadran, les produits AOP, AOC et IGP portent un poinçon rond, les prix sont en chiffres tabulaires, et chaque mouvement dure moins de 250 ms et s'arrête si le visiteur préfère réduire les animations.
+
 ## Architecture
 
 Une seule application Next.js 15 (App Router, TypeScript strict, Tailwind CSS v4, Zod), découpée en couches qu'ESLint garde séparées :

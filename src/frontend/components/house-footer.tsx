@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LogoVertical } from "@/frontend/components/brand";
 import { getDictionary } from "@/frontend/i18n";
 import type { Locale } from "@/shared/i18n/locales";
 import { localizedPath, teamPath } from "@/shared/i18n/routes";
@@ -22,7 +23,10 @@ export function HouseFooter({ locale }: HouseFooterProps) {
 
   return (
     <footer className="mt-auto border-t border-ink">
-      <div className="mx-auto grid w-full max-w-6xl gap-10 px-5 pt-12 pb-10 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_14rem] lg:gap-16">
+      <div className="mx-auto w-full max-w-6xl px-5 pt-12">
+        <LogoVertical className="h-16 w-auto" />
+      </div>
+      <div className="mx-auto grid w-full max-w-6xl gap-10 px-5 pt-10 pb-10 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_14rem] lg:gap-16">
         <h2 className="sr-only">{f.shopsLabel}</h2>
         {f.shops.map((shop) => (
           <section key={shop.name} className="flex flex-col gap-3">
