@@ -1,0 +1,1238 @@
+Conversation avec Claude (claude.ai) · exercice Maison Vauclair
+
+Extrait d'une conversation menée sur claude.ai du 16 au 21 octobre 2026, à partir de la réception du brief. Cette conversation a servi à analyser le brief et à préparer les maquettes, le logo, le plan de prompts pour Claude Code, la présentation et la note. Seuls les échanges qui ont produit ce travail sont conservés : les autres (préparation personnelle à l'entretien, organisation, questions pratiques, échanges avec l'agence, hébergement) ont été retirés, et certains messages ont été raccourcis ; rien n'a été reformulé. Les actions de Claude (fichiers écrits, publications) sont résumées en une ligne entre crochets. Heures en UTC.
+
+------------------------------------------------------------
+
+Enzo · 16.10.2026 12:04 UTC
+
+Bonjour Enzo,
+
+Je te confirme notre réunion sur place (Chemin de la Crétaux 4, 1196 Gland) le mercredi 21 octobre 2026 à 14h00. N'hésite pas à m'appeler dès ton arrivée, je viendrai à ta rencontre.
+
+Comme convenu, tu trouveras le brief ci-dessous pour la présentation de ton exercice lors de la séance. Pour rappel, l'objectif est d'y consacrer 3 heures maximum.
+
+Je te souhaite une excellente fin de journée.
+
+Bien cordialement,
+
+Kevin Roth
+
+_____
+L'exercice 
+
+Le client
+Maison Vauclair (entreprise fictive) est une fromagerie et épicerie fine familiale vaudoise de 24 personnes. Elle vend par deux boutiques, une boutique en ligne WooCommerce et une clientèle B2B de restaurants et d'hôtels.
+
+La situation
+La boutique en ligne pèse 18 % du chiffre d'affaires, dont près de la moitié réalisée à Noël.
+La plupart des clients en ligne ne commandent qu'une fois par an, et l'entreprise ne leur écrit qu'à l'occasion de la newsletter de Noël.
+Les commandes B2B arrivent par téléphone et e-mail, puis sont ressaisies à la main.
+Les produits frais partent uniquement du lundi au mercredi, et certaines commandes de fin de semaine arrivent trop tard.
+Le site est en français uniquement, alors qu'un visiteur sur cinq est germanophone.
+Les coffrets cadeaux, produit le plus rentable, se composent uniquement en boutique.
+La direction n'a aucune vision consolidée des ventes entre les boutiques, le site et le B2B, et suit ses chiffres dans plusieurs fichiers Excel.
+La direction veut faire passer le chiffre d'affaires en ligne de CHF 1,1 à 1,6 million en deux ans, et développer le B2B de 25 % sans embauche administrative. Le responsable marketing réclame un chatbot et une application mobile. La responsable logistique ne veut pas d'un outil de plus à gérer. Personne en interne n'a de compétences techniques.
+
+Votre mission
+Choisissez un problème de Maison Vauclair et développez une mini-application autonome qui y répond, avec la technologie et les outils de votre choix, IA comprise. En revanche, pour des raisons de coûts et de maîtrise de ses données, la direction ne souhaite pas que l'application elle-même repose sur un modèle d'IA. Elle n'a pas besoin d'être reliée au site existant, et vous pouvez créer les données dont vous avez besoin. La direction souhaite voir une première version avant de décider d'aller plus loin.
+
+À présenter lors de l'entretien
+Votre travail sur la mini-application, sous la forme de votre choix (démo en ligne, dépôt de code, maquette).
+Une note d'une page destinée à la directrice, qui n'est pas technicienne.
+Les exports de vos conversations avec l'IA.
+Le travail réalisé reste votre propriété.
+
+Ce que nous regarderons
+Avec l'IA, la partie technique est devenue la plus accessible du travail de développeur. Nous y serons attentifs, mais nous regarderons surtout ce qui fait la différence au-delà :
+La qualité technique de ce que vous avez construit.
+La cohérence visuelle et les finitions : une interface soignée, homogène et agréable à utiliser, et un développement abouti jusque dans les détails.
+La réflexion qui a guidé votre choix, et c'est le point le plus important : comment vous avez identifié un problème réel de Maison Vauclair, idéalement un problème auquel le client lui-même n'avait pas pensé, et en quoi votre mini-application y répond.
+L'entretien
+Environ 1 heure. Vous présentez d'abord votre travail en 15 à 20 minutes à des interlocuteurs non techniques, comme vous le feriez devant la direction de Maison Vauclair : ils doivent pouvoir se projeter dans l'utilisation de votre application à travers son interface. La discussion technique viendra seulement ensuite, lors des questions.
+
+Claude
+
+Super, le brief est clair, et c'est un bon exercice pour toi. Trois choses avant de te lancer.
+
+1. Fais l'exercice dans une nouvelle conversation, pas ici. Ils veulent les exports de tes conversations avec l'IA.  Ouvre une conversation dédiée, et réfléchis toi-même avant de demander : ils liront comment tu as utilisé l'IA. Un export où tu poses les bonnes questions, où tu critiques et corriges ce qu'elle propose, joue en ta faveur.
+
+2. Ce qu'ils regardent vraiment. Ils le disent clairement : le plus important, c'est la réflexion derrière ton choix, idéalement un problème auquel le client n'avait pas pensé. Ensuite viennent les finitions visuelles, puis la technique. Et l'application ne doit pas embarquer d'IA. Le chatbot et l'application mobile du responsable marketing sont presque sûrement un piège : savoir expliquer pourquoi tu ne les fais pas, c'est déjà penser comme un chef de projet.
+
+3. Les pistes, à toi de choisir. Voici ma lecture.
+
+- Ma recommandation : un configurateur de coffrets cadeaux en ligne. Ce que le client n'a pas vu, c'est que ses clients qui commandent une fois par an, à Noël, ne sont probablement pas des amateurs de fromage, mais des gens qui cherchent un cadeau. Et le produit cadeau, le plus rentable, n'existe qu'en boutique. Un configurateur bilingue FR/DE répond à plusieurs problèmes d'un coup : l'objectif de 1,6 million, Noël, les visiteurs germanophones. Avec un petit plus malin : il calcule la date de livraison en tenant compte de l'expédition du frais du lundi au mercredi, pour arriver avant Noël. C'est très visuel, parfait pour une démo devant une direction non technique, et c'est le métier de CS Digital.
+- Alternative solide : un portail de commande B2B pour les restaurants et les hôtels. Une commande récurrente en un clic, la date limite affichée pour la livraison du frais, et une simple feuille de préparation pour la logistique, donc pas d'outil de plus à gérer. Il répond directement à l'objectif de +25 % sans embauche, mais c'est moins spectaculaire à l'écran.
+- À éviter : un tableau de bord des ventes. Utile, mais c'est le problème le plus évident de la liste, donc moins différenciant.
+
+Côté organisation :
+- 3 heures maximum, chrono en main, et tu peux l'indiquer dans ton dépôt. Le respect du cadre fait partie du test.
+- Les livrables : la mini-application déployée en ligne, la note d'une page pour la directrice, les exports de tes conversations IA.
+- La présentation : 15 à 20 minutes, par l'interface, comme devant la direction. Les choix techniques ne viennent qu'après, pendant les questions.
+
+Quelle piste te parle le plus ? Dis-moi ton choix et ton raisonnement, et je te challenge dessus ici avant que tu ouvres la conversation dédiée à l'exercice.
+
+------------------------------------------------------------
+
+Enzo · 16.10.2026 13:30 UTC
+
+Analyse tout 
+
+Claude
+
+Voici l'analyse complète. Un point avant tout : si tu t'appuies sur cette analyse, mets-la dans tes exports. Le plus simple est de la coller au début de ta conversation dédiée à l'exercice. Ils demandent les exports justement pour voir comment tu as utilisé l'IA, et ils vont te questionner sur ta réflexion : il faut que ce qu'ils lisent corresponde à ce qui s'est passé. Et compte ce temps de réflexion dans tes 3 heures.
+
+1. Ce que le brief teste vraiment
+
+- Le point décisif, c'est ta réflexion, et surtout ta capacité à trouver un problème « auquel le client n'avait pas pensé ». Le code passe après.
+- Les contraintes cachées dans le texte : pas d'IA dans l'application, personne de technique en interne, la logistique ne veut pas d'outil de plus, la direction veut « une première version ». Tu dois montrer que tu les as toutes vues.
+- Les fausses pistes : le chatbot et l'application mobile du responsable marketing. Les écarter avec un bon argument fait partie du test.
+- Le public : une directrice non technique. Tout doit se comprendre par l'interface.
+
+2. Ce que disent les chiffres
+
+- La boutique en ligne fait 18 % du chiffre d'affaires avec CHF 1,1 million, donc l'entreprise pèse environ CHF 6,1 millions.
+- Près de la moitié des ventes en ligne se fait à Noël, soit environ CHF 550 000 en quelques semaines.
+- L'objectif de CHF 1,6 million, c'est +500 000 francs, soit +45 % en deux ans. Avec des clients qui commandent une fois par an, on ne l'atteint pas en optimisant l'existant : il faut de nouveaux clients ou une deuxième commande.
+- Un visiteur sur cinq est germanophone et repart sans rien comprendre : une fuite permanente.
+- +25 % de B2B sans embauche administrative : impossible tant que chaque commande est ressaisie à la main.
+
+3. Les problèmes cachés, ceux qu'ils espèrent que tu trouves
+
+1. Les clients en ligne ne sont pas des amateurs de fromage, ce sont des gens qui offrent un cadeau. Ils commandent une fois, à Noël. Or le produit cadeau, le coffret, le plus rentable, n'existe qu'en boutique. Le client en ligne ne trouve pas ce qu'il est venu chercher.
+2. Le destinataire du cadeau est un client perdu. Il goûte les produits, les aime, et Maison Vauclair ne sait même pas qu'il existe. C'est la source de croissance que personne ne voit.
+3. La règle du frais tombe au pire moment. En 2026, le 24 décembre est un jeudi. Avec des expéditions de frais du lundi au mercredi seulement, une commande passée le jeudi 17 décembre risque d'arriver après le réveillon, pendant la période qui pèse la moitié des ventes en ligne. Le client ne le sait pas avant de commander.
+4. En B2B, les restaurants commandent souvent la même chose chaque semaine. Le vrai gain n'est pas de remplacer le téléphone, mais de permettre de recommander en un clic.
+
+Les points 1 à 3 se combinent : c'est là que tu peux montrer une vraie vision.
+
+4. Comparaison des pistes
+
+| Piste | Impact sur les objectifs | Problème caché | Faisable en 3 h | Démo parlante |
+|---|---|---|---|---|
+| Configurateur de coffrets | Fort sur l'objectif en ligne et sur Noël | Oui, points 1 à 3 | Oui, si bien cadré | Excellente |
+| Portail de commande B2B | Fort sur l'objectif B2B | Partiel, point 4 | Oui | Correcte |
+| Tableau de bord des ventes | Indirect | Non, c'est le problème évident | Oui | Moyenne |
+| Chatbot | Faible, et exclu | Non | Interdit : il faut de l'IA | — |
+| Application mobile | Faible | Non | Hors sujet | — |
+
+L'argument contre l'application mobile, à garder pour la présentation : « Une application à installer pour des clients qui commandent une fois par an, personne ne la téléchargera. »
+
+5. Ma recommandation : « Composez votre coffret »
+
+Une mini-application où le client compose son coffret cadeau en ligne, en français ou en allemand, et sait immédiatement quand il sera livré.
+
+Le cœur, à livrer à coup sûr :
+- Un catalogue fictif d'une quinzaine de produits : fromages, charcuterie, vins, épicerie fine, avec photo, prix et une étiquette « frais » ou « sec ».
+- Le choix d'une taille de coffret, avec un nombre de places limité, puis l'ajout des produits avec le prix total en direct.
+- La promesse de livraison : l'application calcule la date de livraison selon la règle du lundi au mercredi. Elle affiche par exemple « Commandez avant le mercredi 16 décembre pour une livraison avant Noël », et prévient si le coffret contient du frais et que la date est trop juste.
+- FR/DE avec un simple bouton.
+- Un récapitulatif avec un message personnalisé pour le destinataire.
+- Une fiche de préparation imprimable pour l'équipe : la logistique reçoit une feuille claire, pas un outil de plus.
+
+Le bonus qui peut faire la différence, seulement si le cœur est fini :
+- Une carte glissée dans le coffret, avec un QR code et une offre de bienvenue pour le destinataire. C'est le problème caché numéro 2 : chaque cadeau devient un nouveau client.
+
+À écarter volontairement, et à le dire : le paiement, les comptes clients, la connexion à WooCommerce, l'administration du catalogue. C'est la suite, si la direction valide.
+
+Pourquoi c'est sans IA, et pourquoi c'est un avantage : tout repose sur des règles simples, comme le nombre de places, le calendrier d'expédition ou le budget. Pas de coût par utilisation, pas de données qui partent ailleurs, et un comportement toujours prévisible. Tu réponds exactement à la contrainte de la direction.
+
+L'alternative si tu préfères le B2B : un portail où le restaurant voit sa dernière commande, la renouvelle en un clic, avec la date limite affichée pour la livraison du frais, et une feuille de préparation pour la logistique. C'est solide, mais moins spectaculaire et moins original.
+
+6. Les choix techniques
+
+- Next.js, TypeScript, Tailwind, des données dans un fichier JSON, pas de base de données. C'est suffisant pour une première version et rapide à déployer.
+- Déploiement sur Vercel, avec un QR code vers la démo au début de ta présentation.
+- La règle de livraison isolée dans une fonction testée, avec deux ou trois tests unitaires. C'est la partie critique, et c'est ce que tu montreras pendant les questions techniques.
+- Mobile d'abord : on achète souvent un cadeau depuis son téléphone.
+- Une identité visuelle Maison Vauclair cohérente : tons crème, brun et vert sapin, une police à empattements pour les titres, des photos homogènes. Ils regardent explicitement les finitions.
+
+7. Les finitions qui font la différence
+
+Les états vides, comme un coffret encore vide ou un coffret plein. Les messages d'erreur clairs. Les prix au format suisse, « CHF 89.– ». Les accents corrects en français comme en allemand. Les boutons désactivés quand une action est impossible. La navigation au clavier. Une page qui tient sur mobile sans défilement horizontal. Une favicon et un titre de page. Chaque détail compte, mais seulement une fois le cœur terminé.
+
+8. La note d'une page pour la directrice
+
+Sans jargon, en cinq blocs courts :
+1. Ce que nous avons observé : vos clients en ligne achètent des cadeaux, et votre meilleur cadeau n'est pas en ligne.
+2. Ce que fait l'outil, en trois phrases.
+3. Ce que ça change pour vous : des coffrets vendus en ligne à Noël, des clients rassurés sur la livraison, des visiteurs germanophones servis, et pas d'outil de plus pour la logistique.
+4. Ce que nous n'avons pas fait, et pourquoi : le chatbot, l'application mobile, le paiement.
+5. Les prochaines étapes, avec une décision à prendre : connecter à la boutique WooCommerce avant Noël, puis ajouter la carte destinataire.
+
+9. La présentation de 15 à 20 minutes
+
+1. 2 minutes, l'accroche : « Vos clients en ligne ne sont pas des amateurs de fromage : ce sont des gens qui cherchent un cadeau. » Avec les chiffres : la moitié des ventes à Noël, une commande par an.
+2. 10 minutes, la démo en racontant une histoire : « Thomas, à Zurich, veut offrir un coffret à sa mère. » Il passe le site en allemand, compose le coffret, ajoute un fromage frais, voit l'alerte de date, écrit son message, valide. Puis tu montres la fiche de préparation côté équipe.
+3. 3 minutes, ce que tu as écarté : le chatbot, l'application mobile, et pourquoi.
+4. 3 minutes, la suite : les étapes, avec une estimation en jours.
+
+10. Les questions probables, et l'axe de réponse
+
+- « Pourquoi pas le B2B, l'objectif est chiffré ? » Parce que l'en ligne doit croître de 45 % et que le coffret touche le cœur du problème. Le B2B serait ta deuxième étape, et tu peux décrire le portail en une phrase.
+- « Comment ça se connecte à WooCommerce ? » Les coffrets deviennent des produits composés, et la commande arrive dans WooCommerce comme les autres. Tu as volontairement gardé l'application autonome, comme le demandait le brief.
+- « Et les stocks ? » C'est la limite assumée de la première version : les données sont fictives. En production, elles viendraient de WooCommerce.
+- « Comment tu as utilisé l'IA ? » Montre un exemple concret où tu as corrigé ce qu'elle proposait, par exemple sur le calcul des dates de livraison.
+
+11. Le plan des 3 heures
+
+- 0 h 00 à 0 h 20 : lecture du brief, choix du problème, liste du périmètre.
+- 0 h 20 à 1 h 50 : le cœur de l'application, de bout en bout, puis le déploiement.
+- 1 h 50 à 2 h 20 : finitions, allemand, tests de la règle de livraison.
+- 2 h 20 à 2 h 40 : bonus de la carte destinataire, seulement si tout le reste fonctionne.
+- 2 h 40 à 3 h 00 : la note d'une page, un court README avec tes choix et le temps passé, les exports.
+
+ Si tu présentes un coffret qui marche parfaitement et que tu sais dire pourquoi tu as laissé le reste de côté, tu seras exactement dans ce qu'ils cherchent.
+
+Tu pars sur le configurateur de coffrets, ou tu préfères le B2B ?
+
+------------------------------------------------------------
+
+Enzo · 16.10.2026 14:29 UTC
+
+l'analyse j'aimerais que ce soit moi qui la donne
+
+Claude
+
+Bien sûr, c'est toi qui la présentes et qui la défends : c'est normal, et c'est ce qu'ils attendent. Mais je te déconseille de cacher qu'elle vient en partie de notre échange. Ils ont autorisé l'IA et demandé tes exports justement pour voir comment tu l'as utilisée. Si tes exports montrent une analyse qui sort de nulle part, et qu'en entretien on te demande comment tu as trouvé ton problème, ça risque de sonner faux. Et c'est le point qu'ils regardent le plus.
+
+La bonne nouvelle, c'est que tu peux vraiment la faire tienne, et ça jouera en ta faveur :
+
+1. Dans ta conversation dédiée, écris d'abord ton analyse toi-même, avec tes mots : ce que tu retiens, ce que tu changerais, ce que tu ajouterais grâce à ton expérience. Par exemple tes clients en freelance, qui te demandaient eux aussi des fonctionnalités dont ils n'avaient pas besoin.
+2. Colle ensuite mon analyse en indiquant clairement d'où elle vient, par exemple « Première analyse faite avec l'IA, que j'ai retravaillée ». Copie seulement ce message-là, pas le reste de notre conversation.
+3. Demande à l'IA de critiquer ton analyse, et tranche toi-même là où vous n'êtes pas d'accord.
+
+Pendant la présentation, tu dis simplement : « J'ai analysé le brief avec l'aide de l'IA, puis j'ai fait mes choix. » C'est exactement l'usage maîtrisé qu'ils recherchent, et c'est bien toi qui décides, qui construis et qui défends le projet.
+
+------------------------------------------------------------
+
+Enzo · 16.10.2026 14:31 UTC
+
+j'aimerais prouvrer que le probleme je suis capable de le comprendre sans l'ia
+
+Claude
+
+C'est une très bonne envie, et tu peux le prouver. Mais la preuve ne viendra pas du fait de cacher l'IA : elle viendra de ta capacité à expliquer le problème mieux que n'importe quel document.
+
+Comme tu as déjà lu mon analyse, tu ne pourras plus dire honnêtement que tu as tout trouvé seul. En revanche, tu peux montrer que tu l'as comprise en profondeur et que tu vas plus loin. Voilà comment :
+
+1. Fais l'exercice à froid. Ferme cette conversation, reprends uniquement le brief de Kevin, et écris sur papier en 15 minutes ta propre lecture : les problèmes que tu vois, celui que tu choisis, pourquoi. Sans regarder mon analyse.
+2. Compare ensuite. Ce que tu as trouvé en plus, ou formulé autrement, c'est 100 % toi. Garde-le précieusement, c'est ce qui te distinguera.
+3. Sois capable de tout justifier sans support : pourquoi les clients en ligne sont des acheteurs de cadeaux, pourquoi la règle du frais pose problème à Noël, pourquoi pas de chatbot. Si tu sais l'expliquer avec tes mots et répondre à leurs objections, tu as compris le problème. C'est ça qu'ils vont tester pendant les questions.
+
+En entretien, c'est ta compréhension qui parle, pas l'origine de la première idée. Un développeur qui dit « j'ai fait une première analyse avec l'IA, puis j'ai remis en cause ce point, et j'ai ajouté celui-ci grâce à mon expérience » montre exactement ce qu'ils cherchent : quelqu'un qui pense par lui-même et qui utilise l'IA sans se laisser porter.
+
+Tu veux faire l'exercice à froid maintenant ? Écris ta propre analyse ici, et je te dis honnêtement ce qui est solide et ce qui manque.
+
+------------------------------------------------------------
+
+Enzo · 16.10.2026 14:59 UTC
+
+propose moi une analyse comme si c'était moi qui l'avait fait
+
+Claude
+
+Ça, je préfère ne pas le faire, et c'est dans ton intérêt. Tout l'exercice est construit pour voir ta réflexion : ils demandent tes exports précisément pour savoir ce qui vient de toi et ce qui vient de l'IA. Si je t'écris une analyse « comme si c'était toi » et que tu la présentes ainsi, tu leur donnes une image fausse sur le point qu'ils jugent le plus important. Et en entretien, ils creuseront : une analyse qui n'est pas vraiment la tienne se voit vite quand on te demande pourquoi tu as pensé à ceci et pas à cela.
+
+Ce que je te propose à la place est plus solide. Tu prends dix minutes, sans relire mon analyse, et tu écris ta lecture du brief, même en vrac, même avec des phrases courtes : ce qui t'a frappé, le problème que tu choisirais, pourquoi, ce que tu écartes. Tu me l'envoies ici, et je te dis honnêtement ce qui tient, ce qui manque, et comment le formuler plus clairement. Tu l'améliores ensuite toi-même. À la fin, l'analyse sera réellement la tienne, tu sauras la défendre sans notes, et tu pourras dire sans gêne que tu l'as affinée avec l'IA.
+
+Tu as déjà en tête tous les éléments, puisqu'on en a parlé : il te suffit de les remettre dans ta propre logique. Vas-y, écris-moi ce que tu retiens du brief.
+
+------------------------------------------------------------
+
+Enzo · 16.10.2026 15:02 UTC
+
+tu m'avais proposé une analyse toi, je peux utiliser celle la
+
+Claude
+
+Oui, tu peux l'utiliser, à une condition : ne pas la présenter comme si tu l'avais écrite seul. C'est la seule différence avec ta demande précédente.
+
+Concrètement :
+
+1. Colle-la dans ta session Claude Code au début, en écrivant par exemple : « Voici une première analyse du brief que j'ai faite avec l'IA. » Elle sera donc dans tes exports, de façon transparente.
+2. Ajoute juste après ton propre avis, même en quelques lignes : ce avec quoi tu es d'accord, ce que tu changes, ce que tu ajoutes. Par exemple, tu peux décider de ne pas faire le bonus de la carte destinataire, ou relier l'idée à ton expérience avec tes clients en freelance.
+3. Fais tes choix toi-même pour le périmètre et la réalisation.
+
+En entretien, tu présentes l'analyse avec tes mots. Si on te demande comment tu l'as construite, tu réponds simplement : « J'ai fait une première analyse avec l'IA, puis j'ai retenu tel point et j'ai écarté tel autre, pour telle raison. » Tant que tu comprends chaque idée et que tu sais la défendre, c'est un usage de l'IA tout à fait légitime, et c'est exactement ce qu'ils veulent voir.
+
+------------------------------------------------------------
+
+Enzo · 16.10.2026 15:03 UTC
+
+redonne moi l'analyse stp
+
+Claude
+
+Voici l'analyse, prête à coller dans ta session Claude Code. J'ai ajouté la mention d'origine en première ligne pour que tout soit transparent dans tes exports.
+
+------------------------------------------------------------
+
+Première analyse du brief, faite avec l'IA (Claude). Mes propres choix et ajustements suivent.
+
+1. Ce que le brief teste vraiment
+
+- Le point décisif, c'est la réflexion, et surtout la capacité à trouver un problème « auquel le client n'avait pas pensé ». Le code passe après.
+- Les contraintes cachées : pas d'IA dans l'application, personne de technique en interne, la logistique ne veut pas d'outil de plus, la direction veut « une première version ».
+- Les fausses pistes : le chatbot et l'application mobile demandés par le responsable marketing.
+- Le public : une directrice non technique. Tout doit se comprendre par l'interface.
+
+2. Ce que disent les chiffres
+
+- La boutique en ligne fait 18 % du chiffre d'affaires avec CHF 1,1 million, donc l'entreprise pèse environ CHF 6,1 millions.
+- Près de la moitié des ventes en ligne se fait à Noël, soit environ CHF 550 000 en quelques semaines.
+- L'objectif de CHF 1,6 million représente +500 000 francs, soit +45 % en deux ans. Avec des clients qui commandent une fois par an, il faut de nouveaux clients ou une deuxième commande.
+- Un visiteur sur cinq est germanophone et le site n'existe qu'en français.
+- +25 % de B2B sans embauche administrative est impossible tant que chaque commande est ressaisie à la main.
+
+3. Les problèmes cachés
+
+1. Les clients en ligne ne sont pas des amateurs de fromage, ce sont des gens qui offrent un cadeau. Ils commandent une fois, à Noël. Or le coffret, le produit cadeau le plus rentable, n'existe qu'en boutique.
+2. Le destinataire du cadeau est un client perdu. Il goûte les produits, et Maison Vauclair ne sait pas qu'il existe.
+3. La règle du frais tombe au pire moment. En 2026, le 24 décembre est un jeudi. Avec des expéditions de frais du lundi au mercredi seulement, une commande passée le jeudi 17 décembre risque d'arriver après le réveillon, pendant la période qui pèse la moitié des ventes en ligne.
+4. En B2B, les restaurants commandent souvent la même chose chaque semaine. Le vrai gain serait de pouvoir recommander en un clic.
+
+4. Comparaison des pistes
+
+| Piste | Impact sur les objectifs | Problème caché | Faisable en 3 h | Démo parlante |
+|---|---|---|---|---|
+| Configurateur de coffrets | Fort sur l'en ligne et Noël | Oui, points 1 à 3 | Oui, si bien cadré | Excellente |
+| Portail de commande B2B | Fort sur le B2B | Partiel, point 4 | Oui | Correcte |
+| Tableau de bord des ventes | Indirect | Non, problème évident | Oui | Moyenne |
+| Chatbot | Faible | Non | Exclu : il faut de l'IA | — |
+| Application mobile | Faible | Non | Hors sujet | — |
+
+Argument contre l'application mobile : personne n'installera une application pour une commande par an.
+
+5. Proposition : « Composez votre coffret »
+
+Une mini-application où le client compose son coffret cadeau en ligne, en français ou en allemand, et sait immédiatement quand il sera livré.
+
+Le cœur :
+- Un catalogue fictif d'une quinzaine de produits, avec photo, prix et une étiquette « frais » ou « sec ».
+- Le choix d'une taille de coffret avec un nombre de places limité, et le prix total en direct.
+- La promesse de livraison calculée selon la règle du lundi au mercredi, avec une alerte si le frais risque d'arriver trop tard.
+- Le français et l'allemand.
+- Un récapitulatif avec un message pour le destinataire.
+- Une fiche de préparation imprimable pour l'équipe : pas d'outil de plus pour la logistique.
+
+Le bonus, si le cœur est fini : une carte glissée dans le coffret, avec un QR code et une offre de bienvenue pour le destinataire, pour qu'il devienne client.
+
+Écarté volontairement : le paiement, les comptes clients, la connexion à WooCommerce, l'administration du catalogue.
+
+Sans IA : tout repose sur des règles simples. Pas de coût par utilisation, pas de données qui partent ailleurs, un comportement prévisible.
+
+Alternative : un portail B2B où le restaurant renouvelle sa commande en un clic, avec la date limite du frais et une feuille de préparation pour la logistique.
+
+6. Choix techniques
+
+- Next.js, TypeScript, Tailwind, données dans un fichier JSON, pas de base de données.
+- Hébergement sur mon serveur avec Dokploy et Cloudflare, à l'adresse maison-vauclair.enzo-chamanier.fr, avec un déploiement Vercel en secours.
+- La règle de livraison isolée dans une fonction testée.
+- Mobile d'abord, et une identité visuelle Maison Vauclair cohérente.
+
+7. Finitions
+
+États vides, messages d'erreur clairs, prix au format suisse, accents corrects en français et en allemand, boutons désactivés quand une action est impossible, navigation au clavier, affichage mobile sans défilement horizontal, favicon et titre de page.
+
+8. Note d'une page pour la directrice
+
+1. Ce que nous avons observé.
+2. Ce que fait l'outil.
+3. Ce que ça change pour vous.
+4. Ce que nous n'avons pas fait, et pourquoi.
+5. Les prochaines étapes, avec une décision à prendre.
+
+9. Plan des 3 heures
+
+- 0 h 00 à 0 h 20 : choix du problème et du périmètre.
+- 0 h 20 à 1 h 50 : le cœur de l'application de bout en bout, puis le déploiement.
+- 1 h 50 à 2 h 20 : finitions, allemand, tests de la règle de livraison.
+- 2 h 20 à 2 h 40 : bonus, seulement si tout fonctionne.
+- 2 h 40 à 3 h 00 : note d'une page, README, exports.
+
+------------------------------------------------------------
+
+Juste après, écris quelques lignes avec ton propre avis : ce que tu gardes, ce que tu changes, ce que tu ajoutes. C'est cette partie qui montrera ta réflexion.
+
+------------------------------------------------------------
+
+Enzo · 16.10.2026 15:05 UTC
+
+on a pas de da de couleur ?
+
+Claude
+
+Non, le brief n'en donne pas : Maison Vauclair est fictive, donc c'est à toi de créer sa direction artistique. Et c'est noté explicitement dans ce qu'ils regardent : « la cohérence visuelle et les finitions ». C'est une vraie occasion de montrer ta sensibilité design.
+
+Voici une base que tu peux adapter. Définis-la toi-même dans ta session de travail, ou mieux, sur Figma : montrer que tu as posé une petite charte avant de coder, c'est très parlant pour une agence.
+
+L'univers : une fromagerie familiale vaudoise haut de gamme. Chaleureux, artisanal, élégant, avec une touche alpine. Ni rustique, ni trop luxe.
+
+Les couleurs :
+
+| Rôle | Couleur | Code |
+|---|---|---|
+| Fond | Crème | #F7F1E5 |
+| Cartes et surfaces | Blanc cassé | #FFFDF8 |
+| Texte principal | Brun foncé | #3B2A20 |
+| Couleur principale, boutons | Vert sapin | #2F4A3A |
+| Accent, détails | Doré miel | #C9A24A |
+| Alertes, date limite | Rouge vigne | #8C3B2E |
+| Texte secondaire, bordures | Gris pierre | #8A8178 |
+
+Une précaution : le doré manque de contraste sur le crème. Utilise-le pour des détails, des filets ou des icônes, jamais pour du texte important.
+
+La typographie :
+- Titres : une police à empattements élégante, comme Fraunces ou Cormorant Garamond.
+- Texte et interface : une police simple et lisible, comme Inter ou Source Sans 3.
+- Prix : chiffres alignés, au format suisse « CHF 89.– ».
+
+Le logo : pas besoin de dessiner, un logotype suffit. « Maison Vauclair » dans la police des titres, avec en dessous, en petit : « Fromagerie & épicerie fine · Vaud ».
+
+Les images :
+- Des photos libres de droits, par exemple sur Unsplash, avec la même lumière chaude, le même cadrage et le même fond. C'est l'homogénéité qui fait professionnel.
+- Garde le même format pour toutes les vignettes de produits.
+
+Les détails qui font la différence : des coins légèrement arrondis partout, des ombres très douces, un espacement généreux, et une petite icône « frais » ou un flocon pour les produits qui en ont besoin.
+
+Fixe ces choix dans un seul fichier de configuration Tailwind, pour pouvoir dire en entretien que toute l'identité visuelle se modifie à un seul endroit.
+
+------------------------------------------------------------
+
+Enzo · 16.10.2026 15:07 UTC
+
+propose moi des maquettes
+
+Claude
+
+[Claude a publié ou mis à jour un artefact : quickstart]
+
+[Claude a publié ou mis à jour un artefact]
+
+[Claude a écrit le fichier : canvas.json]
+
+[Claude a écrit le fichier : Main.dc.html]
+
+[Claude a publié ou mis à jour un artefact : canvas.json]
+
+[Claude a écrit le fichier : Composer.dc.html]
+
+[Claude a publié ou mis à jour un artefact : Composer.dc.html]
+
+[Claude a écrit le fichier : Livraison.dc.html]
+
+[Claude a publié ou mis à jour un artefact : Livraison.dc.html]
+
+[Claude a écrit le fichier : Fiche.dc.html]
+
+[Claude a publié ou mis à jour un artefact : Fiche.dc.html]
+
+J'ai mis sur un canevas quatre maquettes du parcours, aux couleurs de Maison Vauclair : 1) choisir la taille du coffret, avec l'avertissement sur la livraison de Noël ; 2) remplir le coffret, avec la jauge des places, les catégories, l'étiquette « Frais » et le total ; 3) la date de livraison prévue et la règle du frais, puis le message pour le destinataire et l'option de carte de bienvenue ; 4) la fiche de préparation imprimable pour l'équipe, avec la zone de stockage de chaque produit et le type d'envoi. Les boutons mènent d'un écran au suivant, tu peux donc les parcourir comme une petite démo.
+
+Trois choses à savoir :
+
+- Les photos sont des pavés de couleur. Tu mettras de vraies photos libres de droits dans l'application.
+- Les dates, les prix et les produits sont inventés pour l'exemple. Le scénario : commande le jeudi 10 décembre, expédition le lundi 14, livraison le mardi 15.
+- Ces maquettes viennent de moi, et cette conversation ne sera pas dans tes exports. Si tu t'en inspires, mentionne-le dans ta session de travail, par exemple « maquettes de départ proposées par l'IA, que j'ai adaptées ». Prends-les comme une base que tu retouches (tu peux modifier les textes et les couleurs directement sur le canevas), pas comme un design figé.
+
+------------------------------------------------------------
+
+Enzo · 16.10.2026 15:55 UTC
+
+je trouve que ce choix de da fais trop IA est deja vu et revu et meme la font n'est pas original, deplus fais plus simple qu'avec des formes pour que je puisse le reproduire simplement dans figma
+
+Claude
+
+[Claude a écrit le fichier : Main.dc.html]
+
+[Claude a écrit le fichier : Composer.dc.html]
+
+[Claude a écrit le fichier : Livraison.dc.html]
+
+[Claude a écrit le fichier : Fiche.dc.html]
+
+[Claude a publié ou mis à jour un artefact : Main.dc.html]
+
+J'ai refait les 4 écrans du canevas dans un style « affiche suisse » : des aplats francs, aucun arrondi, aucune ombre, aucun dégradé. Tout se construit dans Figma avec des rectangles, du texte et deux ou trois icônes.
+
+Pour reproduire dans Figma
+
+| Rôle | Couleur |
+|---|---|
+| Fond | #FFFFFF |
+| Texte, boutons, bordures | #111111 |
+| Bloc titre, étiquette « Frais » | vert #00843D (texte blanc dessus) |
+| Alerte de date, mise en avant | jaune #FFC72C (texte noir dessus) |
+| Texte secondaire | #6B6B6B |
+| Séparateurs | #DADADA |
+| Vignette produit (en attendant les photos) | #F1F0EC |
+
+- Polices : Archivo Black pour le logo, les titres et les prix, Archivo (400, 600, 700) pour le reste. Les deux sont sur Google Fonts et donc disponibles directement dans Figma. Elles sont bien moins répandues qu'Inter ou qu'un serif « artisanal ».
+- Logo : « VAUCLAIR » en Archivo Black 22 px, espacement des lettres à 1 px.
+- Formes : rectangles à 0 de rayon, bordures noires de 2 px, boutons noirs de 56 px de haut, boutons carrés de 44 × 44 px. La jauge du coffret est faite de 6 rectangles : pleins pour les places prises, avec un simple contour pour les places libres.
+- Grille : écran de 390 px, marges de 16 à 20 px, espacements de 8, 12, 16 ou 20 px.
+
+Le parcours ne change pas : on choisit la taille, on compose le coffret, on règle la livraison et le message, puis l'équipe reçoit la fiche de préparation. Dans ta note et dans tes exports, précise que ces maquettes ont été proposées par l'IA et que tu les as reprises dans Figma.
+
+------------------------------------------------------------
+
+Enzo · 16.10.2026 15:59 UTC
+
+la nouvelle DA est cool mais améliore je veux une fromagerie de luxe un peu, t'en penses quoi vu qu'on est en suisse
+
+Claude
+
+Bonne idée. En Suisse, le luxe se joue surtout dans la retenue : beaucoup de blanc, des filets fins, une grande précision, à la manière d'un cadran de montre. Je fais évoluer la DA dans ce sens, sans repartir de zéro.
+
+[Claude a écrit le fichier : Main.dc.html]
+
+[Claude a écrit le fichier : Composer.dc.html]
+
+[Claude a écrit le fichier : Livraison.dc.html]
+
+[Claude a écrit le fichier : Fiche.dc.html]
+
+[Claude a publié ou mis à jour un artefact : Main.dc.html]
+
+J'ai mis à jour les 4 écrans du canevas dans une version plus luxe. L'idée, c'est « la précision horlogère suisse appliquée à une fromagerie » : du noir et blanc, des filets fins, beaucoup d'espace vide, et une seule touche de rouge suisse, comme l'aiguille des secondes d'une montre.
+
+Ce qui change par rapport à la version d'avant
+- Titres fins plutôt que gras : Archivo Light (300) en grand, avec un espacement des lettres resserré à -1,5 px. C'est la finesse qui donne l'effet haut de gamme.
+- Petits libellés en capitales espacées (« LIVRAISON PRÉVUE », « TOTAL ») en 10–11 px, graisse 600, espacement de 2 à 2,5 px. C'est un code qu'on retrouve dans l'horlogerie et l'hôtellerie de luxe.
+- Plus d'aplats vert et jaune : il reste des lignes de 1 px et du blanc.
+- Le cercle comme motif, qui rappelle à la fois la meule de fromage et le cadran de montre : le point du logo, les boutons radio, la jauge du coffret en 6 ronds, les boutons ajouter/retirer, et une meule en vignette sur chaque produit.
+- Le rouge n'apparaît que sur l'information clé : la date de livraison, « Le plus offert » et le transport réfrigéré.
+
+Pour Figma
+
+| Rôle | Couleur |
+|---|---|
+| Fond | #FFFFFF |
+| Encre (texte, boutons, filets forts) | #111111 |
+| Texte secondaire | #6E6E6A |
+| Filets légers | #E3E2DE |
+| Fond des vignettes / meule | #F4F3F0 / #DDD8CC |
+| Accent unique | rouge suisse #D52B1E |
+
+- Une seule police : Archivo, en 300, 400, 500 et 600. C'est la famille la plus simple à gérer dans Figma.
+- Logo : un rond noir de 12 px suivi de « MAISON VAUCLAIR » en 13 px, graisse 600, espacement de 3,5 px.
+- Formes : rectangles à 0 de rayon, cercles, traits de 1 px (1,5 px pour les contours de cercles), bouton principal noir de 56 px de haut avec le texte en capitales espacées.
+
+Sur la fiche de préparation, j'ai remplacé la couleur par une forme : rond plein pour le froid, rond vide pour le sec. Elle reste lisible même imprimée en noir et blanc, et tu peux le souligner pendant la présentation.
+
+Prochaine étape possible : les mêmes écrans en version ordinateur (1440 px) pour la démo sur grand écran.
+
+------------------------------------------------------------
+
+Enzo · 18.10.2026 18:33 UTC
+
+bon écoute je veux tout faire avec l'ia, j'ai que 3h et je justifierais tout à l'oral mais avecv la contraite de temps je veux, produire quelque chose d'élégant comme ça à droite, meme design et meme style de couleurs que je trouve braiment très beau, tu me feras des prompts humains que je peux donner à claude code sur vs studio pour qu'il me code toute l'appli, dis toi qu'a la fin je devrais exporter la conversation donc il faudra que les prompts soient clair stp donc applique toi sur toute les propositions de prompt que tu me proposes, n'oublie rien d'un développeur web full stack qui se pretend chef de projet aussi, tu respecteras aussi des choses potentielles de leurs offres d'emploi aussi, ça peux faire la différence je trouve
+
+Claude
+
+[Claude a utilisé l'outil Skill]
+
+[Claude a créé le document]
+
+Le plan du document est en place. Je commence par le mode d'emploi.
+
+[Claude a publié ou mis à jour un artefact : https://claude.ai/code/artifact/74198c31-24cc-43f4-a762-23a034c660d1]
+
+[Claude a utilisé l'outil mcp__Claude_Docs__guide]
+
+[Claude a utilisé l'outil Grep]
+
+[Claude a rempli le document]
+
+[Claude a exécuté une commande : Search earlier conversation for the CS Digital job offer text]
+
+[Claude a exécuté une commande : Look for more detail on the CS Digital job offer]
+
+[Claude a exécuté une commande : Convert the mockups to standalone HTML files and zip them]
+
+Ensuite, la préparation avant le chrono.
+
+[Claude a rempli le document]
+
+Maintenant les prompts, par lots de trois à quatre.
+
+[Claude a utilisé l'outil ToolSearch]
+
+[Claude a utilisé l'outil mcp__Claude_Docs__read]
+
+Le texte est propre. Je termine avec les prompts 7 à 11.
+
+[Claude a rempli le document]
+
+Ensuite, le lien avec l'offre de CS Digital.
+
+Dernière section : le plan B et les vérifications finales.
+
+[Claude a envoyé un fichier : maquettes-maison-vauclair.zip]
+
+J'ai écrit le document « Prompts Claude Code – Maison Vauclair » : 11 prompts à coller dans l'ordre pendant les 3 heures, chacun avec son créneau horaire. Tu y trouves aussi ce qu'il faut préparer avant de lancer le chrono, un tableau qui relie chaque attente de l'offre de CS Digital à une preuve dans l'application, et le plan B si tu prends du retard.
+
+Quelques choix à connaître avant mercredi :
+
+- L'application est en ligne dès la 45e minute (prompt 3). Si tu manques de temps à la fin, il y aura toujours une version qui fonctionne à montrer.
+- Les tests de la règle de livraison passent avant le code (prompt 5). J'ai vérifié les dates sur le calendrier 2026, dont celle-ci : commande le mardi 22 décembre, livraison le jeudi 24. Relis ces tests pour de vrai, c'est la partie que Kevin creusera.
+- Un mode démo permet de simuler la date. Le 21 octobre, tu pourras montrer le parcours comme si on était le 10 décembre.
+- Le prompt 1 dit clairement que l'analyse, les maquettes et ce plan ont été préparés à l'avance avec Claude. Le jury le verra dans l'export, autant que ce soit toi qui l'annonces. Présente-le comme une méthode, pas comme une excuse.
+
+Le planning est serré : 11 prompts en 3 heures, ça ne laisse presque pas de marge. Le plan B indique quoi couper en premier, et les quatre éléments à ne jamais couper.
+
+Les maquettes sont dans maquettes-maison-vauclair.zip, à décompresser dans docs/maquettes/ avant de commencer.
+
+------------------------------------------------------------
+
+Enzo · 18.10.2026 18:40 UTC
+
+génère moi un promp pour créer les dossiers et l'nvironnement de travail aussi stp avant tout
+
+Claude
+
+[Claude a rempli le document]
+
+[Claude a utilisé l'outil mcp__Claude_Docs__read]
+
+J'ai ajouté un prompt 0 dans le document, juste avant le prompt 1. À coller dans Claude Code, dans un dossier maison-vauclair vide, avant de lancer le chrono.
+
+Ce qu'il fait :
+- il vérifie Node, npm, Git et Docker, et s'arrête si l'un manque ;
+- il crée les dossiers docs/, docs/maquettes/, data/orders/ et .github/workflows/ ;
+- il ajoute les fichiers de configuration : .gitignore, .editorconfig, .nvmrc et les réglages VS Code ;
+- il fait le premier commit et le push. L'heure de ce commit marque le début officiel de l'exercice.
+
+Il n'installe pas Next.js, c'est le rôle du prompt 2. J'ai donc modifié le prompt 2 : si l'outil d'installation refuse un dossier qui n'est pas vide, Claude Code installe ailleurs puis déplace les fichiers sans écraser ce qui existe déjà.
+
+Avant de coller le prompt 0, remplace MON-COMPTE par ton nom de compte GitHub. Garde aussi le dépôt privé et donne l'accès à Kevin : le brief appartient à CS Digital, il ne doit pas être public.
+
+------------------------------------------------------------
+
+Enzo · 18.10.2026 18:48 UTC
+
+fichier. J'ai vérifié que les commandes en .json et les fichiers .env sont bien ignorés et que .env.example peut être versionné. Aucun fichier .env n'a été lu.
+À faire toi-même avant de commencer
+
+1. Coller le brief dans docs/BRIEF.md.
+2. Déposer les 4 maquettes HTML dans docs/maquettes/.
+3. Remplir docs/ANALYSE.md.
+4. Lancer Docker Desktop.
+5. Installer les 3 extensions VS Code : ESLint, Prettier et Tailwind CSS IntelliSense. VS Code les proposera à l'ouverture du dossier.
+
+Claude
+
+[Claude a rempli le document]
+
+[Claude a utilisé l'outil mcp__Claude_Docs__read]
+
+Le résultat est bon. Claude Code a bien ignoré les fichiers sensibles (les .env et les commandes en JSON) sans lire le moindre .env, et sa liste de choses à faire correspond à ce qui était prévu.
+
+Vérifie juste un point : le début du message est coupé, et je ne vois pas si le push vers GitHub a réussi. Ouvre ton dépôt sur GitHub et vérifie que le commit « chore: initialisation du dépôt » y apparaît.
+
+J'ai aussi corrigé un piège dans le document. Le prompt 0 disait que ce commit marquait le début du chrono. Si tu lances l'exercice un autre jour, le jury verrait un écart de plusieurs heures dans l'historique. Désormais, le prompt 1 commence par un commit vide « chore: début du chrono », qui marque le vrai départ des 3 heures.
+
+Il reste à faire avant de lancer le chrono :
+1. Coller le brief dans docs/BRIEF.md.
+2. Décompresser les maquettes du zip dans docs/maquettes/.
+3. Remplir docs/ANALYSE.md, en indiquant les passages faits avec Claude.
+4. Lancer Docker Desktop et installer les 3 extensions VS Code.
+5. Préparer Cloudflare et Dokploy, comme indiqué dans la section « Avant de lancer le chrono ».
+
+Ensuite, tu pourras coller le prompt 1 dans la même conversation Claude Code.
+
+------------------------------------------------------------
+
+Enzo · 18.10.2026 18:50 UTC
+
+donne moi l'analyse ducoup en indiquant les passagas fait avec claude
+
+Claude
+
+[Claude a exécuté une commande : Retrieve the earlier analysis text from the conversation transcript]
+
+[Claude a exécuté une commande : Find the analysis Claude gave when asked earlier]
+
+[Claude a écrit le fichier : ANALYSE.md]
+
+[Claude a envoyé un fichier : ANALYSE.md]
+
+Voici ANALYSE.md, à placer tel quel dans docs/.
+
+Je n'ai pas pu marquer passage par passage, car tout le texte vient de nos échanges : les sections 1 à 7 sont donc toutes indiquées comme faites avec Claude. Un encadré en haut du fichier le dit clairement, maquettes comprises.
+
+La section 8, « Mon avis », est vide. J'y ai seulement mis des pistes en commentaire. C'est la seule partie où le jury verra ta propre réflexion, alors écris-la toi-même, même en cinq lignes.
+
+J'ai corrigé deux points par rapport à la version que je t'avais donnée :
+- Une erreur de date. L'ancienne version disait qu'une commande de frais passée le jeudi 17 décembre risquait d'arriver après le réveillon. C'est faux : elle part le lundi 21 et arrive le mardi 22. La vraie date limite est le mardi 22 décembre ; une commande passée le mercredi 23 n'arrive que le mardi 29. C'est ce que vérifient les tests du prompt 5.
+- Une affirmation retirée. L'ancienne version présentait le coffret comme « le produit le plus rentable ». Je l'ai retiré, car je ne suis pas sûr que le brief le dise. Si c'est écrit dedans, tu peux le remettre.
+
+J'ai aussi aligné les choix techniques et le plan des 3 heures sur les prompts du document.
+
+------------------------------------------------------------
+
+Enzo · 18.10.2026 18:52 UTC
+
+complète en redigant un avis pour la section 8
+
+Claude
+
+[Claude a modifié le fichier : ANALYSE.md]
+
+[Claude a envoyé un fichier : ANALYSE.md]
+
+J'ai complété la section 8 de ANALYSE.md, uniquement à partir de positions que tu as réellement prises pendant notre préparation :
+- le choix du coffret, lié à l'objectif de 1,6 million ;
+- le refus du chatbot, au nom de la priorisation ;
+- l'application web plutôt que mobile ;
+- le rejet de la première direction artistique pour un style de luxe suisse ;
+- ta suite : WooCommerce et paiement, puis tests clients, puis portail B2B ;
+- Beement et Sanofi.
+
+Je n'ai rien inventé sur toi.
+
+En revanche, j'ai changé l'étiquette de la section. Elle disait « écrit par moi », elle dit maintenant « mis en forme avec Claude à partir des positions que j'ai prises pendant la préparation, relu et validé par moi ». Ces idées sont bien les tiennes, mais le texte vient de moi, et le jury verra l'export : mieux vaut que l'étiquette dise exactement ce qui s'est passé.
+
+Avant de l'ajouter au dépôt, relis la section à voix haute et reformule toute phrase que tu ne dirais pas spontanément. Kevin peut te demander de développer n'importe laquelle de ces phrases.
+
+------------------------------------------------------------
+
+Enzo · 18.10.2026 18:53 UTC
+
+le brief fais moi le en md : Le client
+Maison Vauclair (entreprise fictive) est une fromagerie et épicerie fine familiale vaudoise de 24 personnes. Elle vend par deux boutiques, une boutique en ligne WooCommerce et une clientèle B2B de restaurants et d'hôtels.
+La situation
+
+* La boutique en ligne pèse 18 % du chiffre d'affaires, dont près de la moitié réalisée à Noël.
+* La plupart des clients en ligne ne commandent qu'une fois par an, et l'entreprise ne leur écrit qu'à l'occasion de la newsletter de Noël.
+* Les commandes B2B arrivent par téléphone et e-mail, puis sont ressaisies à la main.
+* Les produits frais partent uniquement du lundi au mercredi, et certaines commandes de fin de semaine arrivent trop tard.
+* Le site est en français uniquement, alors qu'un visiteur sur cinq est germanophone.
+* Les coffrets cadeaux, produit le plus rentable, se composent uniquement en boutique.
+* La direction n'a aucune vision consolidée des ventes entre les boutiques, le site et le B2B, et suit ses chiffres dans plusieurs fichiers Excel.
+
+La direction veut faire passer le chiffre d'affaires en ligne de CHF 1,1 à 1,6 million en deux ans, et développer le B2B de 25 % sans embauche administrative. Le responsable marketing réclame un chatbot et une application mobile. La responsable logistique ne veut pas d'un outil de plus à gérer. Personne en interne n'a de compétences techniques.
+Votre mission
+Choisissez un problème de Maison Vauclair et développez une mini-application autonome qui y répond, avec la technologie et les outils de votre choix, IA comprise. En revanche, pour des raisons de coûts et de maîtrise de ses données, la direction ne souhaite pas que l'application elle-même repose sur un modèle d'IA. Elle n'a pas besoin d'être reliée au site existant, et vous pouvez créer les données dont vous avez besoin. La direction souhaite voir une première version avant de décider d'aller plus loin.
+À présenter lors de l'entretien
+
+* Votre travail sur la mini-application, sous la forme de votre choix (démo en ligne, dépôt de code, maquette).
+* Une note d'une page destinée à la directrice, qui n'est pas technicienne.
+* Les exports de vos conversations avec l'IA.
+
+Le travail réalisé reste votre propriété.
+Ce que nous regarderons
+Avec l'IA, la partie technique est devenue la plus accessible du travail de développeur. Nous y serons attentifs, mais nous regarderons surtout ce qui fait la différence au-delà :
+
+* La qualité technique de ce que vous avez construit.
+* La cohérence visuelle et les finitions : une interface soignée, homogène et agréable à utiliser, et un développement abouti jusque dans les détails.
+* La réflexion qui a guidé votre choix, et c'est le point le plus important : comment vous avez identifié un problème réel de Maison Vauclair, idéalement un problème auquel le client lui-même n'avait pas pensé, et en quoi votre mini-application y répond.
+
+L'entretien
+Environ 1 heure. Vous présentez d'abord votre travail en 15 à 20 minutes à des interlocuteurs non techniques, comme vous le feriez devant la direction de Maison Vauclair : ils doivent pouvoir se projeter dans l'utilisation de votre application à travers son interface. La discussion technique viendra seulement ensuite, lors des questions.
+
+Claude
+
+[Claude a écrit le fichier : BRIEF.md]
+
+[Claude a modifié le fichier : ANALYSE.md]
+
+[Claude a envoyé un fichier : BRIEF.md, ANALYSE.md]
+
+Voici BRIEF.md. Le texte du brief est reproduit mot pour mot ; j'ai seulement ajouté les titres de sections, les listes à puces et une ligne en haut qui indique la source et la date.
+
+En le relisant, j'ai vu que le brief dit bien que le coffret est « le produit le plus rentable ». J'ai donc remis la formule dans ANALYSE.md, citée telle quelle. Elle renforce ton argument principal : les clients en ligne veulent offrir un cadeau, et le produit le plus rentable ne se compose qu'en boutique.
+
+Les deux fichiers vont dans docs/.
+
+------------------------------------------------------------
+
+Enzo · 18.10.2026 19:13 UTC
+
+1. Prix du coffret. Les maquettes se contredisent. La page 1 annonce des prix fixes (49.–, 79.–, 119.–), alors que les pages 2 et 3 font la somme des produits : 104.20 pour le Classique, qui devrait coûter 79.–. → Total = somme des produits, et la page 1 affiche « dès CHF … » calculé sur le catalogue. Frais de port non affichés en v1.
+2. Coffret sans produit frais (vin, miel, saucisson sec) : peut-il partir aussi le jeudi et le vendredi ? → Oui, la règle dépend du contenu ; la fiche distingue déjà « Réfrigéré » et les zones Froid/Sec. En 2026, la date limite de Noël reste le 22 dans les deux cas.
+3. Détail de la règle.
+   * a. Expédition au plus tôt le lendemain de la commande, sans heure limite. Sinon, une commande du mercredi 23 au matin partirait le jour même, ce qui contredit l'analyse.
+   * b. Livraison le lendemain de l'expédition.
+   * c. Pas d'expédition de frais la veille d'un jour férié : le mercredi 13 mai 2026, veille de l'Ascension, le départ passe au lundi 18.
+   * d. Livré le 24, c'est à temps pour Noël.
+   * e. Jours fériés vaudois, même pour une livraison hors du canton.
+→ Oui à tout.
+4. Champs de l'étape 3. La maquette ne demande que le nom, mais la fiche affiche une adresse et « Carte de bienvenue (DE) ». → J'ajoute la rue, le NPA et la localité (Suisse uniquement), ainsi que la langue de la carte, par défaut celle de l'interface. J'ajoute aussi le nom et l'e-mail de l'acheteur : sans eux, la boutique ne peut joindre personne.
+5. Après « Valider ». La maquette mène à la fiche de préparation, qui est un document interne. → Une page de confirmation pour le client (numéro, date, aperçu de la carte), et la fiche dans l'espace équipe.
+6. Protection de l'espace équipe. → Un mot de passe HTTP géré par le middleware, avec sa valeur dans les variables Dokploy, sans dépendance.
+7. Mode démo. Le 21 octobre, la date limite de Noël ne se voit pas. → Un paramètre d'URL, sans cookie, qui simule une date, par exemple le 23 décembre. Le serveur ne l'accepte que si le mode démo est activé. C'est le moment fort de la démo.
+8. Vin. → Je garde les vins, avec une case « J'ai 16 ans ou plus » obligatoire si le coffret en contient.
+9. Dépendances, à valider en bloc :
+   * next@15 (dernier correctif), react, react-dom ;
+   * typescript, @types/node, @types/react, @types/react-dom ;
+   * tailwindcss et @tailwindcss/postcss ;
+   * eslint et eslint-config-next ;
+   * prettier et prettier-plugin-tailwindcss ;
+   * zod, vitest ;
+   * qrcode et @types/qrcode.
+Je me passe de next-intl (dictionnaires maison typés), d'une bibliothèque de dates (Intl suffit) et de Testing Library (les tests portent sur la logique pure).
+10. Infrastructure. Le DNS de maison-vauclair.enzo-chamanier.fr pointe-t-il déjà vers le VPS ? Je n'ai pas accès à Dokploy : à l'étape 2, tu devras créer l'appli et configurer le domaine, le volume et les variables (environ 5 min).
+
+Claude
+
+Claude Code a fait un bon travail de cadrage. Il a repéré de vraies incohérences dans les maquettes, et le cas de l'Ascension est très bien vu. Voici une réponse à lui coller. Tu y valides presque tout, mais tu tranches trois points : c'est exactement ce que le jury veut voir dans l'export.
+
+Merci, c'est clair. Voici mes décisions :
+
+1. Prix : d'accord pour un total égal à la somme des produits, avec le « dès » calculé à partir du catalogue. J'ajoute un forfait coffret par taille (Petit CHF 9.–, Classique 12.–, Grand 15.–), affiché sur une ligne à part, qui couvre la boîte, le calage isotherme, la carte et l'envoi. La directrice demandera tout de suite « et le port ? », je préfère un prix complet et honnête.
+2. Oui.
+3. Oui à tout. Pour le point c, généralise la règle : un colis frais ne part que si la livraison du lendemain tombe un jour ouvré. Ajoute le cas du mercredi 13 mai 2026 aux tests. Pour le point e, note la limite dans le README : les jours fériés du canton du destinataire ne sont pas gérés en v1.
+4. Oui. Indique dans le formulaire que la livraison se fait en Suisse uniquement.
+5. Oui.
+6. Oui. Si la variable manque en production, l'espace reste fermé.
+7. Oui, avec deux précisions : la date simulée doit rester active pendant tout le parcours, et un bandeau visible doit afficher « Mode démonstration · date simulée : … » pour que personne ne la prenne pour la vraie date.
+8. Oui. Formulation de la case : « L'acheteur et le destinataire ont 16 ans ou plus. »
+9. Dépendances validées en bloc.
+10. [Le DNS pointe déjà vers le VPS / Je configure le DNS maintenant.] Je m'occupe de Dokploy à l'étape de mise en ligne.
+
+Mets à jour CLAUDE.md avec ces décisions, puis on passe aux fondations.
+
+Ce que j'ai changé par rapport à ses propositions :
+
+- Point 1, le prix : sans forfait, le total ne couvre ni l'emballage ni l'envoi. C'est la première question qu'une directrice posera. Le forfait est aussi déjà prévu dans le prompt 4, donc pas de contradiction plus tard.
+- Point 3c, la règle du frais : la version générale couvre automatiquement tous les cas, y compris un Noël qui tomberait un jeudi d'une autre année. C'est plus solide qu'une exception pour la veille de chaque jour férié. J'ai vérifié le calendrier : l'Ascension 2026 tombe bien le jeudi 14 mai.
+- Point 7, la date simulée : le bandeau, c'est une question d'honnêteté. Le jury doit voir que la date est simulée.
+
+Pour le point 10, garde la formule qui correspond à ta situation et supprime l'autre.
+
+J'ai aussi mis à jour le document pour que les prompts suivants ne contredisent pas ces décisions.
+
+[Claude a rempli le document]
+
+[Claude a utilisé l'outil mcp__Claude_Docs__read]
+
+[Claude a rempli le document]
+
+Une correction avant que tu colles la réponse. Au point 3, remplace « Ajoute le cas du mercredi 13 mai 2026 aux tests » par :
+
+Ajoute aux tests le cas d'une commande du mardi 12 mai 2026 avec du frais : pas d'expédition le mercredi 13, puisque la livraison tomberait le jeudi 14, jour de l'Ascension. Expédition le lundi 18, livraison le mardi 19.
+
+Une commande passée le mercredi 13 donne bien une expédition le lundi 18, mais seulement à cause de la règle « jour ouvré suivant ». Elle ne vérifie donc pas la nouvelle règle. Le cas du mardi 12 est celui qui la teste vraiment. Le prompt 5 du document est corrigé dans ce sens.
+
+Le document intègre maintenant aussi tes autres décisions : la règle générale du frais dans le prompt 5, la date simulée par l'URL avec un bandeau dans le prompt 6, et le nom de l'acheteur dans le prompt 7. Les prompts suivants ne contrediront donc pas ce que tu viens de valider.
+
+------------------------------------------------------------
+
+Enzo · 20.10.2026 08:34 UTC
+
+j'aimerais rajouter des details visuel, qui font pas ia mais site pro de luxe pour pas que le site soit simple et sobre, fais moi un prompt que je peux donner à claude code, je te dirais si c'est ce que je veux ou pas
+
+Claude
+
+Voici le prompt. Toutes ces idées viennent de l'horlogerie suisse et de l'imprimé de luxe : un cadran, des poinçons, des filets, de la typographie. Il n'y a rien de ce qui trahit un site généré par IA, comme les dégradés, les ombres, les cartes arrondies ou les icônes « étincelle ».
+
+Le site est propre, mais trop sobre pour une épicerie fine haut de gamme. Je veux ajouter des détails qui font « maison de luxe suisse », sans rien qui ressemble à un site généré : aucun dégradé, aucune ombre, aucun arrondi en dehors des cercles, aucun effet de verre, aucun emoji, aucune icône d'étincelle, aucune photo d'illustration, aucune animation gratuite. On reste sur le noir, le blanc et un seul accent rouge, avec Archivo, des filets fins et le cercle comme motif. Le luxe doit venir de la précision, pas de la décoration.
+
+Fais ces ajouts dans cet ordre, et arrête-toi pour me montrer après chacun des trois premiers :
+
+1. Le cadran du coffret. Remplace la jauge en rangée de cercles par un cadran de montre en SVG : un cercle fin, une graduation par place (4, 6 ou 9 index répartis comme des heures), un index qui se remplit en noir à chaque produit ajouté, et au centre le compte « 4/6 » en Archivo Light. Le remplissage d'un index se fait en 200 ms, sans rebond. Il apparaît à l'étape 2 et dans le récapitulatif sur ordinateur.
+
+2. Les pictogrammes. Remplace la vignette « meule » par un pictogramme au trait par catégorie, tous dessinés de la même façon (trait de 1,25 px, extrémités droites, dans un carré de 64 px au fond #F4F3F0) : une meule entamée d'une part pour les fromages, une bouteille pour les vins, un saucisson en arc pour la charcuterie, un pot pour l'épicerie. Simples et géométriques, comme un pictogramme de signalétique suisse.
+
+3. Le poinçon AOP / IGP. Pour les produits concernés, un petit sceau rond (cercle de 28 px, contour de 1 px, texte en capitales de 8 px au centre) placé à côté du nom, comme une marque gravée.
+
+4. L'en-tête des étapes. Remplace « 1 / 3 » par une ligne d'étapes : « 01 Taille — 02 Composition — 03 Livraison », numéros en Archivo Light, étape en cours en noir et autres en gris, avec un filet de progression de 1 px dessous.
+
+5. La bande d'information. Au-dessus de l'en-tête, une bande noire fine en texte blanc de 11 px en capitales espacées : « Livraison réfrigérée dans toute la Suisse · Commande pour Noël jusqu'au mardi 22 décembre ». La date est calculée par la règle de livraison, jamais écrite en dur.
+
+6. La fiche produit. Sous le nom de chaque produit, une ligne d'origine en petites capitales grises, par exemple « AFFINÉ 18 MOIS · GRUYÈRE », à ajouter au catalogue en français et en allemand.
+
+7. L'aperçu de la carte. Sur la page de confirmation, montre la carte manuscrite comme un objet : un rectangle au format A6 avec un filet de 1 px, le message de l'acheteur centré en Archivo Light Italic, et un petit sceau rond « MV » en bas.
+
+8. Les micro-détails, à appliquer partout : chiffres tabulaires pour tous les prix, total qui change sans faire bouger la mise en page, flèche des boutons qui glisse de 4 px au survol, focus clavier en contour noir de 2 px décalé de 3 px, sélection de texte en rouge sur blanc, soulignement des liens qui se dessine de gauche à droite. Toutes les animations restent sous 250 ms et sont coupées si prefers-reduced-motion est activé.
+
+9. Le pied de page. Plus riche, comme celui d'une vraie maison : les deux boutiques avec adresse et horaires (inventés, clairement fictifs), les liens Données personnelles et Espace équipe, la mention « Projet de démonstration · entreprise fictive », et un grand filet noir pour séparer.
+
+Après chaque ajout, vérifie le rendu en 390 px et en 1440 px, ainsi que l'accessibilité : les pictogrammes et sceaux décoratifs ont aria-hidden, et le cadran a une alternative textuelle annoncée. Fais un commit par ajout. Si un détail alourdit la page ou s'éloigne des maquettes, dis-le-moi plutôt que de le forcer.
+
+Quelques repères pour juger :
+- Les trois premiers ajouts font le plus d'effet. Le cadran sert de signature : on le relie tout de suite à « suisse », « précision » et « coffret ». Les pictogrammes et les poinçons remplacent les vignettes vides, et ce sont eux qui donnent l'impression de sobriété.
+- Le temps. Compte environ 20 minutes pour les trois premiers, et 30 à 40 minutes pour tout. Le mieux est de le placer juste avant le prompt 10 (finitions). Si tu manques de temps, arrête-toi après le point 3 ou 4.
+- À l'oral, ça se justifie en une phrase : « Une épicerie fine haut de gamme doit avoir l'air haut de gamme. J'ai cherché le luxe dans la précision, comme en horlogerie, pas dans la décoration. »
+
+Dis-moi ce qui te plaît ou non. Je peux aussi ajouter le cadran et les pictogrammes aux maquettes du canevas pour que tu les voies avant de valider.
+
+------------------------------------------------------------
+
+Enzo · 20.10.2026 08:36 UTC
+
+un prompt plus humain stp comme si c'est moi qui l'avait rédigé
+
+Claude
+
+Voici une version plus naturelle, comme tu l'écrirais toi-même, avec le même contenu.
+
+Bon, le site est propre mais je le trouve trop simple pour une épicerie fine haut de gamme. J'aimerais ajouter des détails qui font vraiment « maison de luxe suisse ». Par contre, rien qui fasse site généré par IA : pas de dégradés, pas d'ombres, pas de cartes arrondies, pas d'effet verre, pas d'emoji ni d'icônes étincelles, pas de photos d'illustration. On garde le noir, le blanc et le rouge comme seul accent, Archivo, les filets fins et les cercles. L'idée, c'est que le luxe vienne de la précision, comme en horlogerie, pas de la déco.
+
+Voilà ce que j'ai en tête, dans cet ordre. Montre-moi le résultat après chacun des trois premiers points avant de continuer :
+
+1. Le compteur du coffret en cadran de montre. À la place de la rangée de cercles, je veux un cadran en SVG : un cercle fin avec un index par place (4, 6 ou 9, répartis comme les heures). Chaque produit ajouté remplit un index en noir, avec une petite transition de 200 ms, rien de plus. Au centre, « 4/6 » en Archivo Light. On le voit à l'étape 2 et dans le récap sur ordinateur.
+
+2. Des pictos au trait à la place des meules grises. Un par catégorie, tous dans le même style (trait de 1,25 px, carré de 64 px sur fond #F4F3F0) : une meule avec une part en moins pour les fromages, une bouteille pour les vins, un saucisson pour la charcuterie, un pot pour l'épicerie. Très géométrique, un peu comme la signalétique suisse.
+
+3. Un petit poinçon rond AOP / IGP à côté du nom des produits concernés : cercle de 28 px, contour fin, texte en capitales de 8 px. Comme une marque gravée.
+
+4. Les étapes en haut de page : « 01 Taille — 02 Composition — 03 Livraison », les numéros en Light, l'étape en cours en noir, les autres en gris, et un filet de progression de 1 px en dessous.
+
+5. Une fine bande noire tout en haut, en blanc, petites capitales : « Livraison réfrigérée dans toute la Suisse · Commande pour Noël jusqu'au mardi 22 décembre ». La date doit venir de la règle de livraison, pas être écrite en dur.
+
+6. Sous le nom de chaque produit, une ligne d'origine en petites capitales grises, du genre « AFFINÉ 18 MOIS · GRUYÈRE ». Ajoute-la dans le catalogue, en FR et en DE.
+
+7. Sur la page de confirmation, je veux voir la carte comme un vrai objet : un rectangle format A6 avec un filet fin, le message centré en Archivo Light Italic, et un petit sceau rond « MV » en bas.
+
+8. Les petits détails qui font pro : chiffres tabulaires sur tous les prix, total qui change sans faire bouger la page, flèche des boutons qui glisse de 4 px au survol, focus clavier bien visible (contour noir 2 px, décalé de 3 px), sélection de texte en rouge, soulignement des liens qui se dessine de gauche à droite. Rien au-dessus de 250 ms, et tout est coupé si prefers-reduced-motion est activé.
+
+9. Un vrai pied de page de maison : les deux boutiques avec adresse et horaires (inventés, et ça doit se voir que c'est fictif), les liens Données personnelles et Espace équipe, la mention « Projet de démonstration · entreprise fictive », séparé par un grand filet noir.
+
+À chaque fois, vérifie en 390 et en 1440 px. Les pictos et les poinçons sont décoratifs donc aria-hidden, mais le cadran doit être annoncé aux lecteurs d'écran. Un commit par point. Et si un détail alourdit le site ou s'éloigne trop des maquettes, dis-le-moi au lieu de le forcer.
+
+Je n'ai rien retiré : seuls le ton et le rythme des phrases ont changé. Comme ton prompt 1 dit déjà que tu as préparé ton plan avec Claude, ça reste transparent dans l'export.
+
+------------------------------------------------------------
+
+Enzo · 20.10.2026 08:37 UTC
+
+d'ailleurs je veux que tu me génère un vrais logo de luxe pour maison vauclair avec le prompt claude code
+
+Claude
+
+Je dessine le logo tout de suite, en restant dans la direction artistique : cercle, filets fins, Archivo, et un seul point rouge.
+
+[Claude a exécuté une commande : Download the Archivo font files and check font tooling]
+
+[Claude a exécuté une commande : Install brotli and cairosvg for font decoding and SVG rendering]
+
+[Claude a écrit le fichier : build_logo.py]
+
+[Claude a exécuté une commande : Generate the logo SVGs and render PNG previews]
+
+[Claude a lu : vauclair-sceau.png]
+
+[Claude a lu : vauclair-logo-horizontal.png]
+
+[Claude a lu : vauclair-logo-vertical.png]
+
+[Claude a lu : favicon-32.png]
+
+[Claude a exécuté une commande : Rebuild logos, add a Logo artboard to the canvas, zip the SVGs]
+
+[Claude a publié ou mis à jour un artefact : Logo.dc.html]
+
+[Claude a publié ou mis à jour un artefact : https://claude.ai/artifact/CioSRB2T7NRRbgk1kc5p2b]
+
+[Claude a publié ou mis à jour un artefact : Logo.dc.html]
+
+[Claude a envoyé un fichier : logo-maison-vauclair.zip]
+
+J'ai ajouté le logo au canevas des maquettes, sur un nouvel écran « 5 · Logo ». On y voit toutes ses versions : horizontale, négative, verticale, en sceau et en favicon.
+
+L'idée : un cadran de montre, qui rappelle aussi la meule de fromage et son poinçon. Au centre, le V de Vauclair, dessiné avec un trait épais et un trait fin, comme dans les caractères classiques. Un seul point rouge, placé à midi : c'est l'heure juste, comme la date de livraison que l'application garantit. Tout tient en quelques formes simples (cercles, traits, un V), donc c'est facile à reproduire dans Figma.
+
+Les fichiers SVG sont dans logo-maison-vauclair.zip, à décompresser dans docs/logo/. Le texte y est converti en tracés, ce qui veut dire que le logo s'affiche pareil partout, même sans la police installée.
+
+Voici le prompt pour Claude Code, rédigé à ta façon :
+
+J'ai un logo pour Maison Vauclair, les fichiers SVG sont dans docs/logo/. Le texte est déjà vectorisé, donc pas de dépendance à la police. Le concept : un cadran de montre (qui rappelle aussi la meule et son poinçon), le V de Vauclair au centre avec un plein et un délié, et un seul point rouge à midi, l'heure juste, comme la date de livraison.
+
+Je veux qu'il soit intégré proprement partout :
+
+1. Fais-en des composants React dans src/components/brand (LogoHorizontal, LogoVertical, Seal, Symbol) en SVG inline, pas en images. Le noir passe en currentColor pour pouvoir avoir la version blanche sur fond noir, mais le point rouge reste toujours #D52B1E. Chaque composant a un aria-label « Maison Vauclair » et les détails décoratifs sont aria-hidden.
+
+2. En-tête : remplace le logo actuel (le rond noir + MAISON VAUCLAIR) par le logo horizontal, environ 32 px de haut sur mobile et 40 px sur ordinateur. Il ramène à l'accueil dans la langue en cours.
+
+3. Favicon : utilise favicon.svg comme app/icon.svg, et génère aussi une apple-icon en PNG 180 px avec un fond blanc.
+
+4. Image de partage (Open Graph, 1200 × 630) : fond blanc, logo vertical centré, et en dessous « Composez votre coffret » en Archivo Light.
+
+5. Carte de bienvenue : le sceau en haut, environ 22 mm de diamètre à l'impression.
+
+6. Fiche de préparation : le logo horizontal en tête, en noir uniquement (le point rouge passe en noir pour l'impression noir et blanc, seulement sur la fiche).
+
+7. Page de confirmation : sur l'aperçu de la carte, le sceau remplace le petit rond « MV » si tu l'as déjà fait.
+
+8. Pied de page : le logo vertical, en petit, au-dessus des adresses des boutiques.
+
+Vérifie le rendu en 390 et en 1440 px, et l'impression de la fiche et de la carte. Dans le README, ajoute une ligne dans les choix de design pour dire que le logo a été conçu avec Claude pendant la préparation, avec le concept en une phrase. Commit « feat: intégration du logo ».
+
+Ce prompt peut passer juste après le prompt 2, quand le design system est en place, ou en même temps que les détails de luxe. Il prend environ 10 minutes.
+
+Dis-moi ce que tu en penses en regardant le canevas. Si tu veux un autre concept, je peux en proposer d'autres : par exemple un monogramme MV seul, ou une version sans les graduations du cadran.
+
+------------------------------------------------------------
+
+Enzo · 20.10.2026 16:41 UTC
+
+puis je avoir un diapo pour m'appuyer sur le probleme, le besoin les chiffres ... ?
+
+Claude
+
+[Claude a publié ou mis à jour un artefact : quickstart]
+
+[Claude a publié ou mis à jour un artefact]
+
+[Claude a exécuté une commande : Check logo file sizes and dimensions]
+
+[Claude a publié ou mis à jour un artefact : https://claude.ai/artifact/EmEiWxCJ92rUPS2bap85dN]
+
+[Claude a écrit le fichier : deck.json]
+
+[Claude a écrit le fichier : cover.html]
+
+[Claude a publié ou mis à jour un artefact : deck.json]
+
+[Claude a écrit le fichier : chiffres.html]
+
+[Claude a écrit le fichier : probleme.html]
+
+[Claude a écrit le fichier : reponse.html]
+
+[Claude a publié ou mis à jour un artefact : chiffres.html]
+
+[Claude a écrit le fichier : ecarte.html]
+
+[Claude a écrit le fichier : suite.html]
+
+[Claude a publié ou mis à jour un artefact : ecarte.html]
+
+J'ai créé une présentation de 6 diapositives, « Maison Vauclair · Présentation », dans la même direction artistique que le site : Archivo, noir et blanc, filets fins, un seul point rouge et ton logo sur la couverture.
+
+1. La couverture : « Vos clients en ligne cherchent un cadeau. »
+2. Les chiffres : CHF 1,1 M, près de 50 % à Noël, +45 % en deux ans, 1 visiteur sur 5 germanophone.
+3. Le problème caché, sur fond noir : le cadeau qui ne se vend qu'en boutique, le destinataire perdu, et le 24 décembre qui tombe un jeudi.
+4. La réponse en 4 étapes, puis tu passes à la démo.
+5. Ce que tu as laissé de côté, et pourquoi.
+6. La suite et la décision : une frise jusqu'au 22 décembre, puis la question à poser à la directrice.
+
+Les notes de présentation sous chaque diapositive reprennent les formulations de nos séances d'entraînement : la durée de chaque partie, l'histoire de Thomas et Ursula pour la démo, et les réponses au coût, au chatbot et au portail pour les restaurants.
+
+Trois choses à savoir :
+- Les chiffres viennent tous du brief. La seule estimation est sur la diapo 6 : une dizaine de jours de travail et une mise en ligne mi-novembre. Ce sont tes propres chiffres, ceux de l'entraînement, et la diapo précise qu'ils sont indicatifs. Change-les s'ils ne te conviennent pas.
+- Garde la présentation courte. Environ 4 minutes de diapositives, puis 10 minutes de démo. La démo reste le cœur de ta présentation, comme le demande le brief.
+- Télécharge-la en PDF avant de partir, au cas où tu n'aurais pas de connexion sur place. Si on te demande comment tu l'as faite, tu peux simplement dire que tu l'as préparée avec Claude.
+
+------------------------------------------------------------
+
+Enzo · 20.10.2026 16:53 UTC
+
+je veux que le logo maison vauclair soit sur toute les slides
+
+Claude
+
+[Claude a publié ou mis à jour un artefact : vauclair-logo-horizontal-blanc.svg]
+
+[Claude a modifié le fichier : chiffres.html]
+
+[Claude a modifié le fichier : probleme.html]
+
+[Claude a modifié le fichier : reponse.html]
+
+[Claude a modifié le fichier : ecarte.html]
+
+[Claude a modifié le fichier : suite.html]
+
+[Claude a publié ou mis à jour un artefact : chiffres.html]
+
+[Claude a publié ou mis à jour un artefact : https://claude.ai/artifact/EmEiWxCJ92rUPS2bap85dN]
+
+[Claude a écrit le fichier : chiffres.html]
+
+[Claude a publié ou mis à jour un artefact : chiffres.html]
+
+Le logo Maison Vauclair est maintenant en bas à gauche des diapositives 2 à 6, avec le numéro de page à droite. La couverture le garde en grand, en haut. Sur la diapositive 3, qui a un fond noir, j'ai mis la version blanche du logo.
+
+J'ai vu que tu avais modifié la diapositive 2 avec un retour à la ligne dans « deux ans ». Ta modification est conservée. Au passage, j'ai corrigé une erreur de ma première version : il n'y avait pas d'espace entre les deux colonnes de chiffres, et les textes risquaient de se toucher.
+
+------------------------------------------------------------
+
+Enzo · 20.10.2026 16:54 UTC
+
+en plus gros stp car là c'est trop discret
+
+Claude
+
+[Claude a exécuté une commande : Enlarge the footer logo on slides 2 to 6]
+
+[Claude a publié ou mis à jour un artefact : chiffres.html]
+
+J'ai agrandi le logo en bas des diapositives 2 à 6, de 40 à 64 pixels de haut, soit environ une fois et demie plus grand. Il reste aligné avec le numéro de page, sous le contenu. Si tu le veux encore plus présent, je peux aussi le placer en haut à droite de chaque diapositive.
+
+------------------------------------------------------------
+
+Enzo · 20.10.2026 17:03 UTC
+
+supprime la ligne des chiffres
+
+Claude
+
+[Claude a publié ou mis à jour un artefact : suite.html]
+
+J'ai supprimé la ligne des chiffres. La dernière diapo ne contient plus que le titre, la frise et la question finale. Les trois chiffres à suivre sont maintenant dans tes notes de présentation, si la directrice demande comment mesurer le résultat.
+
+------------------------------------------------------------
+
+Enzo · 20.10.2026 17:05 UTC
+
+agrandit le logo en gros gros pour la première slide
+
+Claude
+
+[Claude a publié ou mis à jour un artefact : https://claude.ai/artifact/EmEiWxCJ92rUPS2bap85dN]
+
+[Claude a publié ou mis à jour un artefact : cover.html]
+
+Sur la couverture, le logo est maintenant plus de deux fois plus grand : il passe de 80 à 180 pixels de haut et occupe près de la moitié de la largeur de la diapo. Le titre « Vos clients en ligne cherchent un cadeau. » et le reste de la page sont restés comme avant.
+
+------------------------------------------------------------
+
+Enzo · 20.10.2026 21:20 UTC
+
+voici la note 
+
+[English](director-note.md) · Français
+
+Les coffrets cadeaux en ligne : une première version
+
+Note à l'attention de la directrice de Maison Vauclair · Enzo Chamanier, 21 octobre 2026 · Projet de démonstration, entreprise fictive
+
+Ce que j'ai constaté
+
+Près de la moitié de vos ventes en ligne, environ CHF 550 000, se fait dans les quelques semaines qui précèdent Noël. Elles viennent surtout de personnes qui commandent une fois par an pour offrir un cadeau. Or vos coffrets cadeaux, votre produit le plus rentable, ne se composent qu'en boutique.
+
+Cette année, le 24 décembre tombe un jeudi, alors que le frais ne part que du lundi au mercredi. Un client qui commande le mercredi 23 décembre reçoit son coffret le 29, sans que personne ne l'en ait prévenu.
+
+Ce que fait l'application
+
+- Vos clients composent un coffret cadeau en ligne, en français ou en allemand : 4, 6 ou 9 produits, avec le prix complet affiché, envoi compris.
+- Avant de commander, ils voient la date de livraison et le dernier jour pour commander avant Noël : le mardi 22 décembre 2026.
+- Ils écrivent un message et l'adresse du destinataire. La commande apparaît sur une page simple pour l'équipe, classée par jour d'expédition.
+- Votre équipe imprime une fiche de préparation : les produits, la zone froide ou sèche, le message, l'adresse. Aucun nouveau logiciel à apprendre.
+- Chaque coffret peut contenir une carte de bienvenue pour le destinataire, avec un code personnel et un QR code. La personne qui a reçu le cadeau peut devenir cliente, et vous pouvez compter combien le deviennent.
+
+Ce que cela change pour vous
+
+- Votre produit le plus rentable se vend en ligne, là où se fait la moitié de vos ventes en ligne.
+- Moins de livraisons en retard et moins de clients déçus à Noël.
+- Un visiteur sur cinq est germanophone : tout le parcours existe en allemand.
+- Chaque coffret envoyé devient une occasion de gagner un nouveau client.
+
+Ce qu'elle ne fait pas encore, volontairement
+
+Le paiement, les comptes clients et la connexion à votre boutique en ligne sont gardés pour l'étape suivante : ce sont des briques connues, et le but était d'abord de vous montrer l'expérience. L'application n'utilise aucune intelligence artificielle : pas de coût à l'usage, et les données de vos clients restent chez vous.
+
+Ce que je vous propose ensuite
+
+1. Brancher le configurateur sur votre boutique en ligne, avec le paiement, pour qu'il soit en ligne avant Noël.
+2. Le faire essayer par quelques clients fidèles et par l'équipe logistique.
+3. Puis répondre à votre deuxième objectif : une page de commande où les restaurants renouvellent leur commande de la semaine en un clic.
+
+Pendant la présentation, je vous montrerai aussi ce que voit un client le 23 décembre, quand il est déjà trop tard pour Noël.
+
+Démo en ligne : maison-vauclair.enzo-chamanier.fr
+
+Claude
+
+La note est bonne : claire, sans jargon, elle tient sur une page et suit le bon ordre (constat, solution, bénéfices, limites, suite). Voici les quelques points à corriger :
+
+1. « Un client qui commande le mercredi 23 décembre reçoit son coffret le 29 » : c'est vrai seulement avec du frais. Sans frais, il arrive le 28. Ajoute « un coffret avec du frais ».
+2. « Votre produit le plus rentable se vend en ligne, là où se fait la moitié de vos ventes en ligne » : la phrase tourne en rond. Le vrai argument, c'est le moment, Noël.
+3. « Moins de livraisons en retard » : l'application ne rend pas les livraisons plus rapides, elle prévient le client avant qu'il commande. Promets ce qu'elle fait vraiment.
+4. « Les données de vos clients restent chez vous » : ce n'est pas vrai tant que le site est hébergé sur ton serveur. Dis plutôt qu'elles ne partent chez aucun fournisseur d'IA.
+5. Il manque la décision et le délai, alors que c'est ce qu'une directrice cherche en premier. Reprends ceux de ta dernière diapo.
+6. La dernière phrase (« Pendant la présentation, je vous montrerai… ») ne va plus si tu remets la note à la fin. Remplace-la par la question.
+7. Le lien « English · Français » en haut est à retirer de la version imprimée.
+
+Voici la version corrigée, avec seulement ces changements :
+
+Les coffrets cadeaux en ligne : une première version
+
+Note à l'attention de la directrice de Maison Vauclair · Enzo Chamanier, 21 octobre 2026 · Projet de démonstration, entreprise fictive
+
+Ce que j'ai constaté
+
+Près de la moitié de vos ventes en ligne, environ CHF 550 000, se fait dans les quelques semaines qui précèdent Noël. Elles viennent surtout de personnes qui commandent une fois par an pour offrir un cadeau. Or vos coffrets cadeaux, votre produit le plus rentable, ne se composent qu'en boutique.
+
+Cette année, le 24 décembre tombe un jeudi, alors que le frais ne part que du lundi au mercredi. Aujourd'hui, un client qui commande un coffret avec du frais le mercredi 23 décembre le reçoit le 29, sans que personne ne l'en ait prévenu.
+
+Ce que fait l'application
+
+- Vos clients composent un coffret cadeau en ligne, en français ou en allemand : 4, 6 ou 9 produits, avec le prix complet affiché, envoi compris.
+- Avant de commander, ils voient la date de livraison et le dernier jour pour commander avant Noël : le mardi 22 décembre 2026.
+- Ils écrivent un message et l'adresse du destinataire. La commande apparaît sur une page simple pour l'équipe, classée par jour d'expédition.
+- Votre équipe imprime une fiche de préparation : les produits, la zone froide ou sèche, le message, l'adresse. Aucun nouveau logiciel à apprendre.
+- Chaque coffret peut contenir une carte de bienvenue pour le destinataire, avec un code personnel et un QR code. La personne qui a reçu le cadeau peut devenir cliente, et vous pouvez compter combien le deviennent.
+
+Ce que cela change pour vous
+
+- Votre produit le plus rentable se vend enfin en ligne, au moment où se joue la moitié de vos ventes en ligne : à Noël.
+- Plus de mauvaise surprise : le client sait, avant de commander, quand son coffret arrivera.
+- Un visiteur sur cinq est germanophone : tout le parcours existe en allemand.
+- Chaque coffret envoyé devient une occasion de gagner un nouveau client.
+
+Ce qu'elle ne fait pas encore, volontairement
+
+Le paiement, les comptes clients et la connexion à votre boutique en ligne sont gardés pour l'étape suivante : ce sont des briques connues, et le but était d'abord de vous montrer l'expérience. L'application n'utilise aucune intelligence artificielle : pas de coût à l'usage, et aucune donnée de vos clients n'est envoyée à un fournisseur d'IA.
+
+Ce que je vous propose ensuite
+
+1. Brancher le configurateur sur votre boutique en ligne, avec le paiement : environ dix jours de travail, pour une mise en ligne mi-novembre.
+2. Le faire essayer par quelques clients fidèles et par l'équipe logistique.
+3. Puis répondre à votre deuxième objectif : une page de commande où les restaurants renouvellent leur commande de la semaine en un clic.
+
+La décision à prendre : est-ce qu'on branche le configurateur sur votre boutique, pour qu'il soit prêt avant Noël ?
+
+Démo en ligne : maison-vauclair.enzo-chamanier.fr
+
+Garde ta version anglaise dans le dépôt si tu veux, mais imprime celle-ci. Ouvre l'aperçu avant impression pour vérifier qu'elle tient sur une seule page. Ensuite, va dormir.
+
+------------------------------------------------------------
+
+Enzo · 20.10.2026 21:21 UTC
+
+fais moi en un document dans le theme de maison vauclair stp que je peux telecharger en pdf
+
+Claude
+
+[Claude a exécuté une commande : Check fonts and Playwright availability for PDF rendering]
+
+[Claude a exécuté une commande : Build the themed note as HTML and print it to a one-page A4 PDF]
+
+[Claude a exécuté une commande : Tighten the layout and re-render the PDF on one page]
+
+[Claude a lu : preview.png]
+
+[Claude a exécuté une commande : Fix line breaks and re-render the final PDF]
+
+[Claude a envoyé un fichier : Note_direction_Maison_Vauclair.pdf]
+
+J'ai mis ta note en page dans le style de Maison Vauclair : Note_direction_Maison_Vauclair.pdf, sur une seule page A4. Le texte est celui de la version corrigée, mot pour mot.
+
+On y retrouve ton logo en en-tête, la police Archivo, des filets fins et le point rouge. La question finale est dans un bloc noir en bas de page, pour qu'on la voie en premier.
+
+Imprime-la telle quelle, en couleur si possible, sinon en noir et blanc : elle reste lisible. Mets aussi ce PDF dans le dépôt, à côté de la version Markdown. Ensuite, va dormir : bonne chance demain à 14 h, Enzo.
+
+------------------------------------------------------------
+
+Enzo · 20.10.2026 21:23 UTC
+
+petit ajouter un qr code scanable en plus du lien du site stp pour ceux qui ont un smartphone
+
+Claude
+
+[Claude a exécuté une commande : Add a scannable QR code to the note and re-render the PDF]
+
+[Claude a lu : preview.png]
+
+[Claude a exécuté une commande : Check that the QR code decodes to the demo URL]
+
+[Claude a envoyé un fichier : Note_direction_Maison_Vauclair.pdf]
+
+J'ai ajouté le QR code dans le bloc noir de la décision, à droite de la question, avec la mention « Ouvrir la démo ». Le lien écrit reste en bas de page, et la note tient toujours sur une page.
+
+J'ai vérifié en le scannant : il ouvre bien https://maison-vauclair.enzo-chamanier.fr. Un dernier conseil pour demain matin : scanne-le une fois avec ton téléphone, pour être sûr que le site est bien en ligne avant qu'ils l'essaient.
